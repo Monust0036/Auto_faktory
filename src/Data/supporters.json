@@ -1,0 +1,27 @@
+[
+    {
+        "name":"Accenture",
+        "logo":"/images/LogoOfpress/timesofindia.jpg",
+        "link":"https://www.accenture.com/in-en"
+    },
+    {
+        "name":"Social Alpha",
+        "logo":"/images/LogoOfpress/timesofindia.jpg",
+        "link":"http://socialalpha.in/"
+    },
+    {
+        "name":"N/core",
+        "logo":"/images/LogoOfpress/timesofindia.jpg",
+        "link":"http://ncore.thenudge.org/"
+    },
+    {
+        "name":"UnLtd india",
+        "logo":"/images/LogoOfpress/timesofindia.jpg",
+        "link":"http://unltdindia.org/"
+    },
+    {
+        "name":"dunnhumby",
+        "logo":"/images/LogoOfpress/timesofindia.jpg",
+        "link":"http://dunnhumby.com/"
+    }
+]
