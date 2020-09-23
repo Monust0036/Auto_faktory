@@ -26,11 +26,11 @@ i.far.fa-heart,i.fa.fa-user-circle{
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: url('/images/Imagesofteam/car12.jpg');
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%), url("/images/Imagesofteam/car14.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
 .search-Btn{
@@ -66,4 +66,9 @@ i.far.fa-heart,i.fa.fa-user-circle{
 }
 .md-form.md-bg .form-control{
  padding: 0 !important;
+}
+
+/* for popup  */
+.modal-content{
+    margin-top: 100px;
 }

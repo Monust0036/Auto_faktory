@@ -110,21 +110,7 @@ class Menubar extends Component {
                     </MDBContainer>
 
                     {/* end modal */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  </MDBNavLink>
+                </MDBNavLink>
                 </MDBNavItem>
 
 

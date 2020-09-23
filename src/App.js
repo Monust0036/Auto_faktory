@@ -8,6 +8,7 @@ import Header from './Compo/Header'
 import Presssupported from './Compo/PressSupported';
 import Footer from './Compo/Footer';
 import ReacentCar from './Compo/recentCar'
+// import Carousel from './Compo/Carousel'
 // import FirstStep from './Compo/FisrtStep';
 
 
