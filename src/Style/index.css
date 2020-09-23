@@ -32,3 +32,38 @@ i.far.fa-heart,i.fa.fa-user-circle{
     background-repeat: no-repeat;
     opacity: 0.7;
   }
+
+.search-Btn{
+    width: 100%;
+    margin-top: 0px !important;
+    /* color: rgb(195, 59, 42) !important; */
+    height: 50px !important;
+}
+.custom-select{
+    height: 50px !important;
+}
+.mt{
+    margin-top: 20% !important;
+}
+.bg-color{
+    background-color: rgb(163, 153, 153) !important;
+    color: rgb(125, 125, 125) !important;
+    
+    border-color: rgb(210, 214, 203) !important;
+}
+.font-w {
+    color: white !important;
+    font-weight: 900 !important;
+}
+.lead{
+    color: white !important;
+    font-weight: 300;
+}
+
+.modal-body{
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+.md-form.md-bg .form-control{
+ padding: 0 !important;
+}

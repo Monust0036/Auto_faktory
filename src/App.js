@@ -7,7 +7,8 @@ import Theorychange from './Compo/Changes';
 import Header from './Compo/Header'
 import Presssupported from './Compo/PressSupported';
 import Footer from './Compo/Footer';
-import FirstStep from './Compo/FisrtStep';
+import ReacentCar from './Compo/recentCar'
+// import FirstStep from './Compo/FisrtStep';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         <Header/>
         <Teams/> 
         <Presssupported/>
+        <ReacentCar/>
         <Theorychange/> 
         <Footer/>
       </div>
