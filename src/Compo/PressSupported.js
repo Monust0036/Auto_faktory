@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {MDBContainer } from "mdbreact";
 import pressdata from '../Data/press.json'
+
 // import supportersdata from '../Data/supporters.json'
 
 
@@ -30,6 +31,9 @@ class Presssupported extends Component {
                             </div>
                         })}
                     </div>
+
+
+                    
              
                     
                     {/* <div className="row">
@@ -46,8 +50,9 @@ class Presssupported extends Component {
                         })}
                     </div> */}
               <hr className="my-5" />
-                
+              
         </MDBContainer>
+        
          );
     }
 }
