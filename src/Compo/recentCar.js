@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn,MDBView } from "mdbreact";
 
 class Slider extends React.Component{
     render(){
@@ -9,10 +9,12 @@ class Slider extends React.Component{
                <h2 className="h1-responsive font-weight-bold text-center my-5">
                Discover our most recent additions
               </h2>
-            <MDBCarousel activeItem={1} length={3} slide={true} multiItem>
+            <MDBCarousel activeItem={1} length={3} slide={true} showControls={true}
+        showIndicators={false} multiItem>
               <MDBCarouselInner>
                 <MDBRow>
                   <MDBCarouselItem itemId="1">
+                  <MDBView>
                   <MDBRow>
                     <MDBCol md="4">
                       <MDBCard className="mb-2">
@@ -66,6 +68,7 @@ class Slider extends React.Component{
                       </MDBCard>
                     </MDBCol>
                     </MDBRow>
+                    </MDBView>
                   </MDBCarouselItem>
                   <MDBCarouselItem itemId="2">
                   <MDBRow>

@@ -8,7 +8,7 @@ import Header from './Compo/Header'
 import Presssupported from './Compo/PressSupported';
 import Footer from './Compo/Footer';
 import ReacentCar from './Compo/recentCar'
-// import Carousel from './Compo/Carousel'
+import Carousel from './Compo/caraousel/Carousel.js'
 // import FirstStep from './Compo/FisrtStep';
 
 
@@ -26,6 +26,7 @@ class App extends Component {
         <Presssupported/>
         <ReacentCar/>
         <Theorychange/> 
+        <Carousel />
         <Footer/>
       </div>
      );
