@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import './Style/index.css'
 import Menu from './Compo/Menubar'
@@ -8,30 +8,32 @@ import Header from './Compo/Header'
 import Presssupported from './Compo/PressSupported';
 import Footer from './Compo/Footer';
 import ReacentCar from './Compo/recentCar'
-// import Carousel from './Compo/Carousel'
-// import FirstStep from './Compo/FisrtStep';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Lovestory from "./Compo/loveStory"
+import Carshowroom from './Compo/carshowroom';
+// import history from  './history';
+// console.log(history, "rRRRRRRRRRRRRRRRRRRRRRRR")
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = {}
   }
-  render() { 
-    return ( 
+  render() {
+    return (
       <div className="App">
-        <Menu/>
-        <Header/>
-        <Teams/> 
-        <Presssupported/>
-        <ReacentCar/>
-        <Lovestory/>
-        <Theorychange/> 
-        <Footer/>
+          <Menu />
+          <Header />
+          <Teams />
+          <Presssupported />
+          <ReacentCar />
+          <Lovestory />
+          <Theorychange />
+          <Footer />
       </div>
-     );
-     
+    );
+
   }
 }
- 
+
 export default App;
