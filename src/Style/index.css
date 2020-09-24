@@ -194,3 +194,53 @@ text-align: center !important;
 .view-car:hover{
     color: rgb(223, 78, 60) !important;
 }
+
+.content-section {
+    width: 90%;
+    position: relative;
+    bottom: 2em;
+    left: 5%;
+    padding: 1em;
+    color: #3b0364;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 2;
+   
+    box-shadow: 0 3px 6px #89898950;
+}
+
+.content-section:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    left: 75%;
+    margin-left: -10px;
+    bottom: auto;
+    border: 10px solid hsla(0,0%,100%,0);
+    border-top: 0;
+    border-bottom-color: #fff;
+}
+
+.top-section {
+    white-space: normal;
+    font-family: futura-light;
+    font-size: .9em;
+    margin-bottom: 2em;
+    min-height: 8em; 
+}
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    font-size: .8em;
+}
+.bottom-section .person-name {
+    font-family: futura-black;
+    /* color: #3b0364 !important; */
+    font-weight: 700;
+}
+.bottom-section .car-name {
+    font-family: futura-light;
+    font-size: .9em;
+}

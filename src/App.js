@@ -10,7 +10,7 @@ import Footer from './Compo/Footer';
 import ReacentCar from './Compo/recentCar'
 // import Carousel from './Compo/Carousel'
 // import FirstStep from './Compo/FisrtStep';
-
+import Lovestory from "./Compo/loveStory"
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class App extends Component {
         <Teams/> 
         <Presssupported/>
         <ReacentCar/>
+        <Lovestory/>
         <Theorychange/> 
         <Footer/>
       </div>

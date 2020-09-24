@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+MDBCardBody } from "mdbreact";
 
 class Slider extends React.Component{
     render(){
