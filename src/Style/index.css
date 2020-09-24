@@ -67,3 +67,62 @@ i.far.fa-heart,i.fa.fa-user-circle{
 .md-form.md-bg .form-control{
  padding: 0 !important;
 }
+
+.LoginModal-whatsappCheckWrap {
+   
+text-align: center !important;
+    display: flex;
+    padding-left: 23%;
+    color: #888 !important;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 8px;
+}
+.LoginModal-terms {
+    padding: 16px 0;
+    font-size: 12px;
+    color: #888 !important;
+    font-family: futura-book;
+}
+
+.LoginModal__checkIcon.LoginModal__checked {
+    background-color: #6300a3;
+}
+
+.LoginModal__loginHeading {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0 16px;
+}
+
+.LoginModal__checkIcon {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #6300a3;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.modal-header{
+    border-bottom: none !important;
+}
+
+.LoginModal-getOtpBtnWrap {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #ed264f !important;
+    border-top: 1px solid #f6f6f6;
+    text-align: center;
+    border: none !important;
+    color: #fff !important;
+}
+
+/* .btn-default{
+    background-color: #ed264f !important;
+
+} */

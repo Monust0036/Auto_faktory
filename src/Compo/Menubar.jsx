@@ -96,16 +96,20 @@ class Menubar extends Component {
 
 
                         <MDBModalBody>
-                          <h4 className="h5-responsive font-weight-bold text-center my-3">
-                            Login/Signup</h4>
+                          <h4 className="LoginModal__loginHeading">
+                            Login / Signup</h4>
 
                             <MDBInput label=" Enter phone number" background size="lg" />
-                            <p className="h6-responsive font-weight-bold text-center">Send updates on Whatsapp</p>
-                            <p>By logging in, I agree to <a href="#">terms</a>  and '&nbsp' privacy policy</p>
+                            <div className="LoginModal-whatsappCheckWrap">
+                              <i className="fa fa-check LoginModal__checkIcon LoginModal__checked" aria-hidden="true"></i>
+                              Send updates on Whatsapp</div>
+                            <p className="LoginModal-terms">By logging in, I agree to <a href="#">terms</a>  and <a href="#">privacy policy</a> </p>
+                            <hr/>
+                            <button className="LoginModal-getOtpBtnWrap">proceed</button>
                         </MDBModalBody>
-                        <MDBModalFooter>
-                          <MDBBtn color="primary">Save changes</MDBBtn>
-                        </MDBModalFooter>
+                        {/* <MDBModalFooter>
+                          <MDBBtn className="LoginModal-getOtpBtnWrap">proceed</MDBBtn>
+                        </MDBModalFooter> */}
                       </MDBModal>
                     </MDBContainer>
 
