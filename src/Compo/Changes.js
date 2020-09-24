@@ -83,6 +83,11 @@ class Theorychange extends Component {
 
               
             </MDBCardBody>
+
+<div className="find-car">
+  <h1 className="find-car-title">Find your Next car</h1>
+  <a href="#" className="find-car-btn">Search Car</a>
+</div>
           </MDBContainer>
          );
     }

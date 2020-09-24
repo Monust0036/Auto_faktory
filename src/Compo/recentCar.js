@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-MDBCardBody } from "mdbreact";
+MDBCardBody, MDBBtn } from "mdbreact";
 
 class Slider extends React.Component{
     render(){
@@ -180,6 +180,10 @@ class Slider extends React.Component{
                 </MDBRow>
               </MDBCarouselInner>
             </MDBCarousel>
+
+
+            <button type="button" className="btn btn-elegant search-car-btn">Search Car</button>
+<hr></hr>
           </MDBContainer>
         )
     }
