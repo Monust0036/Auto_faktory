@@ -11,6 +11,8 @@ class Presssupported extends Component {
         return ( 
             <MDBContainer >
                 {/* press */}
+                <br></br>
+                <br></br>
                     <h2 className="h1-responsive font-weight-bold">
                        Browse by lifestyle
                     </h2>

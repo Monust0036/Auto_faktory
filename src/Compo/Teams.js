@@ -7,6 +7,8 @@ class Teams extends Component {
         return (
             <MDBContainer className="text-center">
                 <MDBCardBody >
+                    <br></br>
+                    <br></br>
                     <h2 className="h1-responsive font-weight-bold" style={{color:"#2E2725"}}>
                         How it works
                     </h2>
@@ -40,6 +42,7 @@ class Teams extends Component {
                         })}
                     </MDBRow>
                 </MDBCardBody>
+                <hr></hr>
             </MDBContainer>
           );
     }
