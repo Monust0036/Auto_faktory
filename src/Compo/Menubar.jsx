@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
   MDBCollapse, MDBIcon, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCol,
-  MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter,MDBInput
+  MDBContainer, MDBModal, MDBModalBody, MDBModalHeader,MDBInput
 } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
 
 class Menubar extends Component {
   state = {
@@ -24,9 +23,10 @@ class Menubar extends Component {
     });
   }
 
+
   render() {
     return (
-      <Router>
+      // <Router>
         <MDBNavbar className="p-none sticky-top">
           <MDBNavbar dark expand="md" className="container innernav">
             <MDBNavbarBrand>
@@ -87,7 +87,7 @@ class Menubar extends Component {
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#Home">
+                  <MDBNavLink to="/carshowroom">
                     <MDBIcon icon="user-circle" onClick={this.toggle(13)} />
                     {/* modal */}
                     <MDBContainer>
@@ -105,11 +105,10 @@ class Menubar extends Component {
                               Send updates on Whatsapp</div>
                             <p className="LoginModal-terms">By logging in, I agree to <a href="#">terms</a>  and <a href="#">privacy policy</a> </p>
                             <hr/>
-                            <button className="LoginModal-getOtpBtnWrap">proceed</button>
+                            <button className="LoginModal-getOtpBtnWrap" >proceed</button>
                         </MDBModalBody>
-                        {/* <MDBModalFooter>
-                          <MDBBtn className="LoginModal-getOtpBtnWrap">proceed</MDBBtn>
-                        </MDBModalFooter> */}
+                      
+                      
                       </MDBModal>
                     </MDBContainer>
 
@@ -124,7 +123,7 @@ class Menubar extends Component {
             </MDBCollapse>
           </MDBNavbar>
         </MDBNavbar>
-      </Router>
+      //  </Router>
     );
   }
 }

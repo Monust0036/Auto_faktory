@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  MDBRow, MDBCardBody,MDBView, MDBMask, MDBCol,MDBContainer } from "mdbreact";
-import Teamdata from '../Data/team.json'
+import Teamdata from '../../Data/team.json'
 
 class Teams extends Component {
     render() { 

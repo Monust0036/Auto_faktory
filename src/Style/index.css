@@ -90,7 +90,7 @@ text-align: center !important;
 }
 
 .LoginModal__loginHeading {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 18px;
     margin: 0;
     padding: 0 16px;
@@ -120,16 +120,14 @@ text-align: center !important;
     text-align: center;
     border: none !important;
     color: #fff !important;
+    font-size: 20px;
+    font-weight: 700;
 }
-.LoginModal-getOtpBtnWrap:hover{
-    border: none !important;
-}
 
 
-/* .btn-default{
-    background-color: #ed264f !important;
 
-} */
+
+/* carsouler */
 .slider-container{
     width: 1000px !important;
  
@@ -303,4 +301,7 @@ text-align: center !important;
     border-image: initial;
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease-in-out 0s;
+}
+.find-car-btn:hover{
+    background-color: rgb(223, 78, 60) !important;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {MDBContainer } from "mdbreact";
-import pressdata from '../Data/press.json'
+import pressdata from '../../Data/press.json'
 
 // import supportersdata from '../Data/supporters.json'
 
