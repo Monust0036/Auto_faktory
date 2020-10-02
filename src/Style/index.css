@@ -143,10 +143,16 @@ text-align: center !important;
     float: left !important;
     margin-left: -88px;
 }
+
 .ratedate{
     margin-top: 4rem !important;
   
     margin-left: -130px;
+}
+.ratedate1{
+    margin-top: 1rem !important;
+  
+    margin-left: -75px;
 }
 .bnKmZw {
     background-color: rgb(244, 246, 245);
@@ -304,4 +310,41 @@ text-align: center !important;
 }
 .find-car-btn:hover{
     background-color: rgb(223, 78, 60) !important;
+}
+
+.row{
+    margin-top: 20px;
+}
+.css-dmx3ll-InputIcon-left{
+    top:35px !important;
+    padding-right: 12px !important;
+    right: 0 !important;
+    padding-left: unset !important;
+    left: unset !important;
+}
+input#searchbox-downshift-input {
+    border-radius: 4px;
+}
+.filter.col-md-3 {
+    position: sticky !important;
+    margin-top: 20px !important;
+    border-radius: 6px;
+    flex: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px !important;
+    height: calc(100vh + 16px) !important;
+    background: hsla(0,0%,67.5%,.2) !important;
+}
+
+ul.css-1w1pnf0-UL.eekr4lp2 {
+    list-style: none;
+    margin: 0;
+    max-height: 240px;
+    position: relative;
+    overflow-x: auto;
+    float: left;
+    padding-bottom: 12px;
+    padding-left: 2px;
+    padding-top: 20px;
 }

@@ -68,9 +68,9 @@ class Slider extends Component {
                       </MDBCard>
                     </MDBCol>
                     </MDBRow>
-        </MDBRow>
-        <MDBRow>
-        <MDBRow>
+                    </MDBRow>
+                    <MDBRow>
+                    <MDBRow>
                     <MDBCol md="4">
                       <MDBCard className="mb-2">
                         <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />

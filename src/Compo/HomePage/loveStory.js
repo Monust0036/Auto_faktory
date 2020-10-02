@@ -171,10 +171,6 @@ class Slider extends React.Component{
                 </MDBRow>
               </MDBCarouselInner>
             </MDBCarousel>
-            <div className="find-car">
-            <h1 className="find-car-title">Find your Next car</h1>
-            <a href="#" className="find-car-btn">Search Car</a>
-              </div>
           </MDBContainer>
 
         )

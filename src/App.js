@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import './Style/index.css'
 import Home from './Compo/Home.js'
+import UsedCar from './Compo/UsedCars'
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import NotFoundPage from './Pages/404';
+
 // import Menu from './Compo/Menubar'
 // import Teams from './Compo/HomePage/Teams'
 // import Theorychange from './Compo/HomePage/Changes';
@@ -23,18 +27,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Home />
-        {/* <Menu/>
-        <Header/>
-        <Teams/> 
-        <Presssupported/>
-        <ReacentCar/>
-        <Carousel/>
-        <Theorychange/> 
-        <Lovestory/>
-        <Footer/> */}
-      </div>
+      // <div className="App">
+        <Router>
+          <Switch>
+          <Route  exact path="/" component={Home} />
+          <Route exact path="/used-car" component={UsedCar} />
+          <Route component={NotFoundPage} />
+
+          </Switch>
+        </Router>
+        
+
+        
     );
 
   }

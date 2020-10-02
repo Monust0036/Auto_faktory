@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../Style/index.css'
 import Menu from './Menubar'
-import Teams from './HomePage/Teams'
-import Theorychange from './HomePage/Changes';
-import Header from './HomePage/Header'
-import Presssupported from './HomePage/PressSupported';
 import Footer from './Footer';
 import ReacentCar from './HomePage/recentCar'
 import Carousel from './HomePage/caraousel/Carousel.js'
 // import FirstStep from './Compo/FisrtStep';
 import Lovestory from "./HomePage/loveStory"
-import Find from './HomePage/Find';
+import Carshowroom from "./UsedCars/carshowroom";
+import MainFilter from "./UsedCars/MainFilter";
 
 
 // import history from  './history';
 // console.log(history, "rRRRRRRRRRRRRRRRRRRRRRRR")
 
-class Main extends Component {
+class UsedCar extends Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -26,14 +23,9 @@ class Main extends Component {
     return (
       <div className="App">
         <Menu/>
-        <Header/>
-        <Teams/> 
-        <Presssupported/>
-        <ReacentCar/>
-        <Carousel/>
-        <Theorychange/> 
-        <Lovestory/>
-        <Find/>
+        <MainFilter/>
+        <Carshowroom/>
+        <Lovestory />
         <Footer/>
       </div>
     );
@@ -41,4 +33,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default UsedCar;
