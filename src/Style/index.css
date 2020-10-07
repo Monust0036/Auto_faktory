@@ -312,9 +312,9 @@ text-align: center !important;
     background-color: rgb(223, 78, 60) !important;
 }
 
-.row{
+/* .row{
     margin-top: 20px;
-}
+} */
 .css-dmx3ll-InputIcon-left{
     top:35px !important;
     padding-right: 12px !important;
@@ -334,7 +334,9 @@ input#searchbox-downshift-input {
     position: sticky;
     top: 20px !important;
     height: calc(100vh + 16px) !important;
-    background: hsla(0,0%,67.5%,.2) !important;
+    /* background: hsla(0,0%,67.5%,.2) !important; */
+    box-shadow: 0 3px 16px rgba(0,0,0,.188235) !important;
+    overflow-x: auto;
 }
 
 ul.css-1w1pnf0-UL.eekr4lp2 {
@@ -348,3 +350,68 @@ ul.css-1w1pnf0-UL.eekr4lp2 {
     padding-left: 2px;
     padding-top: 20px;
 }
+/* scrollbar  */
+
+
+.scrollbar {
+    overflow: scroll;
+    height: 300px !important;
+  }
+  
+  
+  .scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* custom colors  */
+  .scrollbar-primary::-webkit-scrollbar {
+    background-color: #F5F5F5;
+  }
+  .scrollbar-primary {
+    scrollbar-color: #4285f4 #f5f5f5;
+  }
+  .scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: hsla(0,0%,67.5%,.2);
+    height: 50px !important;
+  } 
+  .css-i35pig-Slider .rheostat-progress{
+    background-color: #0bb0ff !important;
+  }
+  .css-dmx3ll-InputIcon-left svg.search-icon{
+      fill: #0bb0ff !important;
+  }
+  .css-9d37m9-Radio-vh + label::after{
+      background-color: #0bb0ff !important;
+  }
+  svg.search-icon {
+    height: 18px;
+}
+.btn.btn-lg {
+    padding: 1rem 2.4rem;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    width: 231px !important;
+}
+i.fa.fa-heart.ml-2 {
+    float: right;
+}
+body.modal-open {
+    font-family: Roboto,Arial,sans-serif !important;
+}
+button.btn-deep-orange.btn.Ripple-parent.full-detail.btn-lg {
+    margin-left: 900px;
+    /* float: inline-end !important;     */
+}
+.mui-checkbox {
+    text-align: initial;
+}
+

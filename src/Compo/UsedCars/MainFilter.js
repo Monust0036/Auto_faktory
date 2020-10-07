@@ -13,7 +13,7 @@ class MainFilter extends React.Component {
     return (
         <Container>
             <Row className="show-grid">
-                <Col md={3} className="filter">
+                <Col md={3} className="scrollbar scrollbar-primary filter">
                     <Filter/>
                 </Col>
                 <Col md={9}>
