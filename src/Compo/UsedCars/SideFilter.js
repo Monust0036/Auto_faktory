@@ -15,7 +15,11 @@ import {
 // import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from 'muicss/lib/react/checkbox';
 
-import { MDBInput, MDBFormInline } from 'mdbreact';
+import { MDBInput, MDBFormInline, MDBSelect } from 'mdbreact';
+import ListContainer from "./ExpansionMain/ListContainer"
+import ReactCircleColorPicker from 'react-circle-color-picker';
+import Grid from '@material-ui/core/Grid';
+
 // import Checkbox from '@material-ui/core/Checkbox';
 
 
@@ -35,6 +39,7 @@ class Sidefilter extends Component {
 		checkedT2: false,
 		checkedO1: false,
 		checkedO2: false,
+		color: [],
 
 	  };
 	
@@ -82,6 +87,7 @@ class Sidefilter extends Component {
 	                categoryField="brand.keyword"
 	                placeholder="Search cars by Model"
                 />
+				<ListContainer/>
             </div>
         </div>
 		<hr></hr>
@@ -145,7 +151,7 @@ class Sidefilter extends Component {
         	/>
 			<Checkbox
 		  checked={this.state.checkedC}
-		  label=" CNG"
+		  label="CNG"
 		  onChange={this.handleChange('checkedC')}
           value="checkedC"
         	/>
@@ -227,6 +233,92 @@ class Sidefilter extends Component {
 				</div>
         	</div>
 		</div>
+		<hr></hr>
+		<div className="row">
+    <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Body Type</h5>
+			{/* <div className="col">
+				<h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Color</h5>
+				<div size="2" className="col">
+					<ReactCircleColorPicker colors={[{ hex: '#84947F', selected: true }, { hex: '#E53B2C', selected: false }]} />
+				</div>
+				
+				
+			</div> */}
+			<div >
+                    <Grid container spacing={1} >
+                      <Grid container item xs={12} spacing={3} style={{alignItems:'center'}}>
+                        <React.Fragment >
+                          <Grid item xs={4} style={{alignItems:'center'}}>
+                            <ReactCircleColorPicker
+                              //checked={this.state.checkedWhiteColor}
+                              
+
+                              colors={[{ hex: '#FFFFFF' }]}
+                            />
+                            White
+                          </Grid>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              //checked={this.state.checkedBlackColor}
+                              colors={[{ hex: '#000000' }]} />
+                            Black
+                          </Grid>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              //checked={this.state.checkedSilverColor}
+                               colors={[{ hex: '#C0C0C0' }]} />
+                            Silver
+                          </Grid>
+                        </React.Fragment>
+                      </Grid>
+                      <Grid container item xs={12} spacing={3}>
+                        <React.Fragment>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              // checked={this.state.checkedGreyColor}
+                               colors={[{ hex: '#808080' }]} />
+                            Grey
+                          </Grid>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                               colors={[{ hex: '#0000FF' }]} />
+                            Blue
+                          </Grid>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              // checked={this.state.checkedBeigeColor}
+                               colors={[{ hex: '#f5f5dc' }]} />
+                            Beige
+                          </Grid>
+                        </React.Fragment>
+                      </Grid>
+                      <Grid container item xs={12} spacing={3}>
+                        <React.Fragment>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              // checked={this.state.checkedBronzeColor}
+                              colors={[{ hex: '#cd7f32' }]} />
+                            Bronze
+                          </Grid>
+                          <Grid item xs={4}>
+                            <ReactCircleColorPicker
+                              colors={[{ hex: '#A52A2A' }]} />
+                            Brown
+                          </Grid>
+                          <Grid item xs={4} >
+                            
+                            <ReactCircleColorPicker
+                              //
+                               colors={[{ hex: '#800000' }]} />
+                            Maroon
+                          </Grid>
+                        </React.Fragment>
+                      </Grid>
+                    </Grid>
+                  </div>
+
+                    
+        </div>
 
 		
 

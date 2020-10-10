@@ -8,18 +8,14 @@ import Carousel from './HomePage/caraousel/Carousel.js'
 // import FirstStep from './Compo/FisrtStep';
 import Lovestory from "./HomePage/loveStory"
 import Carshowroom from "./UsedCars/carshowroom";
-import Topstrip from "./DetailCar/Topstrip"
-import DetailsTop from "./DetailCar/DetailTops"
-import KeyFeatures from "./DetailCar/KeyFeatures"
-import RecentlyViewCar from "./DetailCar/RecentlyView"
-import CarReports from "./DetailCar/CarReports"
-import CarSpecifications from "./DetailCar/CarSpecifications"
-import CarFeatures from "./DetailCar/CarFeatures"
+import SellCarForm from "./SellCar/SellCar.js"
+import SellTopBanner from "./SellCar/TopBanner"
 
 
+// import history from  './history';
+// console.log(history, "rRRRRRRRRRRRRRRRRRRRRRRR")
 
-
-class UsedCar extends Component {
+class SellCar extends Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -28,13 +24,8 @@ class UsedCar extends Component {
     return (
       <div className="App">
         <Menu/>
-        <DetailsTop/>
-        <Topstrip/>
-        <KeyFeatures/>
-        <CarSpecifications/>
-        <CarFeatures/>
-        <CarReports/>
-        <RecentlyViewCar/>
+        <SellTopBanner />
+        <SellCarForm/>
         <Carshowroom/>
         <Lovestory />
         <Footer/>
@@ -44,4 +35,4 @@ class UsedCar extends Component {
   }
 }
 
-export default UsedCar;
+export default SellCar;

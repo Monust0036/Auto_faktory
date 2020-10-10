@@ -7,7 +7,7 @@ import {
 class Slider extends React.Component {
   render() {
     return (
-      <MDBContainer className="slider-container">
+      <MDBContainer >
         <h3 className="h1-responsive font-weight-bold text-center my-5">
           Recommended Cars 
               </h3>
@@ -18,7 +18,7 @@ class Slider extends React.Component {
                 <MDBRow>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/HN17VAM/KXq3cGP7HWiPtYGqSKqn.JPG" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -35,7 +35,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -52,7 +52,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/HN17VAM/KXq3cGP7HWiPtYGqSKqn.JPG" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -73,7 +73,7 @@ class Slider extends React.Component {
                 <MDBRow>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(60).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -90,7 +90,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/HN17VAM/KXq3cGP7HWiPtYGqSKqn.JPG" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -107,7 +107,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(48).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -128,7 +128,7 @@ class Slider extends React.Component {
                 <MDBRow>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -145,7 +145,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(45).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -162,7 +162,7 @@ class Slider extends React.Component {
                   </MDBCol>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" />
                       <MDBCardBody>
                         <h2 className="carName"> Hyundai i10</h2>
                         <p className="rate">1.2L SE</p>
@@ -183,7 +183,7 @@ class Slider extends React.Component {
           </MDBCarouselInner>
         </MDBCarousel>
 
-
+        <br></br>
         <hr></hr> 
       </MDBContainer>
       

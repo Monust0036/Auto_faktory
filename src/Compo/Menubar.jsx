@@ -50,15 +50,18 @@ class Menubar extends Component {
                       <span className="mr-2">BUY A CAR</span>
                     </MDBDropdownToggle>
                     <MDBDropdownMenu>
-                      <MDBDropdownItem href="#!">Mumbai</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Delhi</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Bangluru</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">Hyderabad</MDBDropdownItem>
+                    <MDBNavLink to="/used-car">
+                      <MDBDropdownItem href="/used-car">Mumbai</MDBDropdownItem>
+                      </MDBNavLink>
+                      
+                      <MDBDropdownItem href="/used-car">Delhi</MDBDropdownItem>
+                      <MDBDropdownItem href="http://localhost:3000/used-car">Bangluru</MDBDropdownItem>
+                      <MDBDropdownItem href="http://localhost:3000/used-car">Hyderabad</MDBDropdownItem>
                     </MDBDropdownMenu>
                   </MDBDropdown>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#About">SELL CAR</MDBNavLink>
+                  <MDBNavLink to="/used-car">SELL CAR</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
                   <MDBDropdown>

@@ -59,6 +59,16 @@ i.far.fa-heart,i.fa.fa-user-circle{
     color: white !important;
     font-weight: 300;
 }
+.font-w1 {
+    color: #333 !important;
+    font-weight: 900 !important;
+    text-align: left;
+}
+.lead1{
+    color: #333 !important;
+    font-weight: 400;
+    text-align: left;
+}
 
 .modal-body{
     padding-left: 3rem !important;
@@ -414,4 +424,26 @@ button.btn-deep-orange.btn.Ripple-parent.full-detail.btn-lg {
 .mui-checkbox {
     text-align: initial;
 }
-
+input[type="checkbox"] {
+    height: 20px;
+    width: 34px;
+}
+.MuiListItem-root-109,.MuiListItem-root-206{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.MuiContainer-root.MuiContainer-maxWidthSm {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgb(226 48 48 / 21%);
+    padding: 30px;
+    border-radius: 4px;
+}
+.SellCar-top-banner {
+    padding: 30px;
+    /* height: 100vh; */
+    min-height: 350px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%), url("/images/backgroundtopbanner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}

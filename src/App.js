@@ -4,6 +4,7 @@ import './Style/index.css'
 import Home from './Compo/Home.js'
 import UsedCar from './Compo/UsedCars'
 import DetailCarMain from './Compo/DetailCarMain'
+import SellCarMain from './Compo/SellCarMain'
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 import NotFoundPage from './Pages/404';
 
@@ -34,6 +35,7 @@ class App extends Component {
           <Route  exact path="/" component={Home} />
           <Route exact path="/used-car" component={UsedCar} />
           <Route exact path="/detail-car" component={DetailCarMain} />
+          <Route exact path="/sell-car" component={SellCarMain} />
           <Route component={NotFoundPage} />
 
           </Switch>
