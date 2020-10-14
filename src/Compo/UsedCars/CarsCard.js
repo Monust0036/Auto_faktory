@@ -15,7 +15,7 @@ const CardExampl = () => {
             <MDBIcon icon="heart" className="ml-2" />
         
                         <div className="ratedate1">
-                          <p className="bnKmZw">26,402  miles</p>
+                          <p className="bnKmZw l">26,402 miles</p>
                           <p className="bnKmZw l">2017 reg</p>
                           <p className="bnKmZw l">Diesel</p>
                           <p className="bnKmZw l">Manual</p>
@@ -34,7 +34,7 @@ const CardExampl = () => {
       <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
       <MDBIcon icon="heart" className="ml-2" />
                       <div className="ratedate1">
-                        <p className="bnKmZw">26,402  miles</p>
+                        <p className="bnKmZw l">26,402 miles</p>
                         <p className="bnKmZw l">2017 reg</p>
                         <p className="bnKmZw l">Diesel</p>
                         <p className="bnKmZw l">Manual</p>
@@ -56,7 +56,7 @@ const CardExampl = () => {
             <MDBIcon icon="heart" className="ml-2" />
         
                         <div className="ratedate1">
-                          <p className="bnKmZw">26,402  miles</p>
+                          <p className="bnKmZw l">26,402 miles</p>
                           <p className="bnKmZw l">2017 reg</p>
                           <p className="bnKmZw l">Diesel</p>
                           <p className="bnKmZw l">Manual</p>
@@ -75,7 +75,7 @@ const CardExampl = () => {
       <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
       <MDBIcon icon="heart" className="ml-2" />
                       <div className="ratedate1">
-                        <p className="bnKmZw">26,402  miles</p>
+                        <p className="bnKmZw l">26,402 miles</p>
                         <p className="bnKmZw l">2017 reg</p>
                         <p className="bnKmZw l">Diesel</p>
                         <p className="bnKmZw l">Manual</p>
@@ -98,7 +98,7 @@ const CardExampl = () => {
             <MDBIcon icon="heart" className="ml-2" />
         
                         <div className="ratedate1">
-                          <p className="bnKmZw">26,402  miles</p>
+                          <p className="bnKmZw l">26,402 miles</p>
                           <p className="bnKmZw l">2017 reg</p>
                           <p className="bnKmZw l">Diesel</p>
                           <p className="bnKmZw l">Manual</p>
@@ -117,7 +117,7 @@ const CardExampl = () => {
       <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
       <MDBIcon icon="heart" className="ml-2" />
                       <div className="ratedate1">
-                        <p className="bnKmZw">26,402  miles</p>
+                        <p className="bnKmZw l">26,402 miles</p>
                         <p className="bnKmZw l">2017 reg</p>
                         <p className="bnKmZw l">Diesel</p>
                         <p className="bnKmZw l">Manual</p>
@@ -139,7 +139,7 @@ const CardExampl = () => {
             <MDBIcon icon="heart" className="ml-2" />
         
                         <div className="ratedate1">
-                          <p className="bnKmZw">26,402  miles</p>
+                          <p className="bnKmZw l">26,402 miles</p>
                           <p className="bnKmZw l">2017 reg</p>
                           <p className="bnKmZw l">Diesel</p>
                           <p className="bnKmZw l">Manual</p>
@@ -158,7 +158,7 @@ const CardExampl = () => {
       <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
       <MDBIcon icon="heart" className="ml-2" />
                       <div className="ratedate1">
-                        <p className="bnKmZw">26,402  miles</p>
+                        <p className="bnKmZw l">26,402 miles</p>
                         <p className="bnKmZw l">2017 reg</p>
                         <p className="bnKmZw l">Diesel</p>
                         <p className="bnKmZw l">Manual</p>
@@ -181,7 +181,7 @@ const CardExampl = () => {
             <MDBIcon icon="heart" className="ml-2" />
         
                         <div className="ratedate1">
-                          <p className="bnKmZw">26,402  miles</p>
+                          <p className="bnKmZw l">26,402 miles</p>
                           <p className="bnKmZw l">2017 reg</p>
                           <p className="bnKmZw l">Diesel</p>
                           <p className="bnKmZw l">Manual</p>
@@ -200,7 +200,7 @@ const CardExampl = () => {
       <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
       <MDBIcon icon="heart" className="ml-2" />
                       <div className="ratedate1">
-                        <p className="bnKmZw">26,402  miles</p>
+                        <p className="bnKmZw l">26,402 miles</p>
                         <p className="bnKmZw l">2017 reg</p>
                         <p className="bnKmZw l">Diesel</p>
                         <p className="bnKmZw l">Manual</p>

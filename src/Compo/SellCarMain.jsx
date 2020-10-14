@@ -9,6 +9,7 @@ import Carousel from './HomePage/caraousel/Carousel.js'
 import Lovestory from "./HomePage/loveStory"
 import Carshowroom from "./UsedCars/carshowroom";
 import SellCarForm from "./SellCar/SellCar.js"
+// import SellCarform from "./SellCar/StepForm"
 import SellTopBanner from "./SellCar/TopBanner"
 
 
@@ -26,6 +27,7 @@ class SellCar extends Component {
         <Menu/>
         <SellTopBanner />
         <SellCarForm/>
+        {/* <SellCarform/> */}
         <Carshowroom/>
         <Lovestory />
         <Footer/>

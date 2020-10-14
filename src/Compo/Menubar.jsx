@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
   MDBCollapse, MDBIcon, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCol,
-  MDBContainer, MDBModal, MDBModalBody, MDBModalHeader,MDBInput
+  MDBContainer, MDBModal, MDBModalBody, MDBModalHeader,MDBInput,MDBBtn,MDBModalFooter,MDBRow
 } from "mdbreact";
 
 class Menubar extends Component {
   state = {
     isOpen: false,
-    modal13: false
+    modal13: false,
+    modal14: false
 
   };
 
@@ -22,6 +23,16 @@ class Menubar extends Component {
       [modalNumber]: !this.state[modalNumber]
     });
   }
+  // state = {
+  //   modal14: false
+  // }
+  
+  // toggle = nr => () => {
+  //   let modalNumber = 'modal' + nr
+  //   this.setState({
+  //     [modalNumber]: !this.state[modalNumber]
+  //   });
+  // }
 
 
   render() {
@@ -52,7 +63,7 @@ class Menubar extends Component {
                     <MDBDropdownMenu>
                     <MDBNavLink to="/used-car">
                       <MDBDropdownItem href="/used-car">Mumbai</MDBDropdownItem>
-                      </MDBNavLink>
+                    </MDBNavLink>
                       
                       <MDBDropdownItem href="/used-car">Delhi</MDBDropdownItem>
                       <MDBDropdownItem href="http://localhost:3000/used-car">Bangluru</MDBDropdownItem>
@@ -61,7 +72,7 @@ class Menubar extends Component {
                   </MDBDropdown>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="/used-car">SELL CAR</MDBNavLink>
+                  <MDBNavLink to="/sell-car">SELL CAR</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
                   <MDBDropdown>
@@ -78,8 +89,9 @@ class Menubar extends Component {
 
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBIcon icon="phone-alt" > </MDBIcon>
-             727-727-7275
+                <MDBNavLink  onClick={this.toggle(14)}>CONTACT US</MDBNavLink>
+
+
             {/* <MDBIcon far icon="heart" />
             <MDBIcon icon="user-circle" /> */}
                 </MDBNavItem>
@@ -90,7 +102,7 @@ class Menubar extends Component {
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="/carshowroom">
+                  <MDBNavLink>
                     <MDBIcon icon="user-circle" onClick={this.toggle(13)} />
                     {/* modal */}
                     <MDBContainer>
@@ -102,7 +114,7 @@ class Menubar extends Component {
                           <h4 className="LoginModal__loginHeading">
                             Login / Signup</h4>
 
-                            <MDBInput label=" Enter phone number" background size="lg" />
+                            <MDBInput label=" Enter phone number" type="text" id="inputMDEx" class="form-control" />
                             <div className="LoginModal-whatsappCheckWrap">
                               <i className="fa fa-check LoginModal__checkIcon LoginModal__checked" aria-hidden="true"></i>
                               Send updates on Whatsapp</div>
@@ -114,6 +126,47 @@ class Menubar extends Component {
                       
                       </MDBModal>
                     </MDBContainer>
+
+                    {/* end modal */}
+
+
+                    {/* model for contact us */}
+
+                    <MDBContainer>
+        {/* <MDBBtn color="primary" onClick={this.toggle(14)}>MDBModal</MDBBtn> */}
+        <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
+          {/* <MDBModalHeader toggle={this.toggle(14)} >Contact US </MDBModalHeader> */}
+          <MDBModalBody>
+          <MDBRow>
+       <MDBCol md="12">
+          <form>
+            <p className="h5 text-center mb-4">Write to us</p>
+            <div className="grey-text">
+          <MDBInput label="Your name" icon="user" group type="text" validate error="wrong"
+            success="right" />
+          <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong"
+            success="right" />
+          <MDBInput label="Subject" icon="tag" group type="text" validate error="wrong" success="right" />
+          <MDBInput type="textarea" rows="2" label="Your message" icon="pencil-alt" />
+        </div>
+        <div className="text-center">
+          <MDBBtn outline color="secondary">
+            Send
+            <MDBIcon far icon="paper-plane" className="ml-1" />
+          </MDBBtn>
+        </div>
+      </form>
+    </MDBCol>
+  </MDBRow>
+          
+          </MDBModalBody>
+          {/* <MDBModalFooter>
+            <MDBBtn color="secondary" onClick={this.toggle(14)}>Close</MDBBtn>
+            <MDBBtn color="primary">SUBMIT</MDBBtn>
+          </MDBModalFooter> */}
+        </MDBModal>
+      </MDBContainer>
+
 
                     {/* end modal */}
                 </MDBNavLink>

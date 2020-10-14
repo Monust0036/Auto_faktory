@@ -21,10 +21,10 @@ export class Success extends Component {
     return (
       <MuiThemeProvider>
         <>
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{ marginTop:"50px"}}>
         <AppBar title="Success" />
-            <h1>Thank You For Your Submission</h1>
-            <p>You will get an email with further instructions.</p>
+            <h1 style={{fontWeight:"500"}} >Thank you for your Application!</h1>
+            <p>Our Sales Agent will contact you shortly.</p>
         </Container>
           {/* <Dialog
             open

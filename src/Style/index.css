@@ -125,15 +125,28 @@ text-align: center !important;
     width: 100%;
     padding: 16px;
     box-sizing: border-box;
-    background-color: #ed264f !important;
+    background-color:#e6540ff2 !important;
     border-top: 1px solid #f6f6f6;
     text-align: center;
     border: none !important;
     color: #fff !important;
     font-size: 20px;
     font-weight: 700;
+    border-radius: 4px;
 }
+/* .modal-dialog .modal-content {
 
+    margin-top: 100px;
+}
+ */
+ .interior-view, .slides-view{
+    background: black;
+    
+   
+}
+.pnlm-fullscreen-toggle-button.pnlm-sprite.pnlm-fullscreen-toggle-button-inactive.pnlm-controls.pnlm-control {
+    display: none !important;
+}
 
 
 
@@ -447,3 +460,66 @@ input[type="checkbox"] {
     background-repeat: no-repeat;
     
 }
+.MuiButton-containedPrimary {
+    color: #fff;
+    background-color: #de1717 !important;
+    width: 220px;
+    height: 45px;
+}
+.MuiButton-containedSecondary {
+    color: #fff;
+    background-color: #655e5c !important;
+    width: 220px;
+    height: 45px;
+}
+.MuiButton-containedPrimary:hover {
+    background-color: #b10a0ade !important;
+}
+.MuiButton-containedSecondary:hover {
+    background-color: #4e4c4b !important;
+}
+.dropdown .dropdown-menu .dropdown-item:active {
+    background-color: #fff;
+    color: #ca0b0bde;
+}
+.hotspot {
+    display: none;
+}
+.carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon {
+    width: 30px !important;
+    height: 30px !important;
+}
+button.close span {
+    color: #fff !important;
+}
+.md-form.form-group {
+    display: flex;
+}
+.md-form {
+    display: flex;
+}
+.navbar.navbar-dark form .md-form .form-control {
+    color: black !important;
+    padding-left: 35px;
+}
+.chowzb:hover:enabled, .chowzb:focus:enabled {
+    color: #fff;
+    background-color: rgb(212 61 4) !important;
+    box-shadow: 0 0 2px 0 #333;
+}
+textarea.md-textarea.form-control {
+    padding-left: 10px !important;
+    padding-bottom: 10px !important;
+}
+.modal-backdrop.show {
+    opacity: .9 !important;
+}
+.btn-outline-secondary {
+    border: 2px solid #e04320 !important;
+    background-color: transparent !important;
+    color: #c54a0e !important;
+}
+button.close {
+    text-shadow: -8px 4px 0px #333 !important;
+}
+h4.LoginModal__loginHeading {font-weight: 500;}

@@ -15,6 +15,7 @@ import RecentlyViewCar from "./DetailCar/RecentlyView"
 import CarReports from "./DetailCar/CarReports"
 import CarSpecifications from "./DetailCar/CarSpecifications"
 import CarFeatures from "./DetailCar/CarFeatures"
+// import PanaromaView from "./DetailCar/360View"
 
 
 
@@ -37,6 +38,7 @@ class UsedCar extends Component {
         <RecentlyViewCar/>
         <Carshowroom/>
         <Lovestory />
+        {/* <PanaromaView /> */}
         <Footer/>
       </div>
     );

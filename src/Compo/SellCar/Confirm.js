@@ -21,7 +21,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { name, email, mobile,maker,model,variant,kms, rto, ownership, year,city }
     } = this.props;
     return (
       <MuiThemeProvider>
@@ -31,26 +31,38 @@ export class Confirm extends Component {
             fullWidth
             maxWidth='sm'
           > */}
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" style={{marginTop:"50px"}}>
           <AppBar title="Confirm User Data" />
             <List>
               <ListItem>
-                <ListItemText primary="First Name" secondary={firstName} />
+                <ListItemText primary="Name" secondary={name} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Last Name" secondary={lastName} />
+                <ListItemText primary="Phone" secondary={mobile} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Email" secondary={email} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Occupation" secondary={occupation} />
+                <ListItemText primary="Car Maker" secondary={maker} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="City" secondary={city} />
+                <ListItemText primary="Car Model" secondary={model} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Bio" secondary={bio} />
+                <ListItemText primary="Car Year" secondary={year} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Car Variant" secondary={variant} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Kms Driven" secondary={kms} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="City" secondary={rto} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Ownership" secondary={ownership} />
               </ListItem>
             </List>
             <br />
