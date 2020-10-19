@@ -6,7 +6,7 @@
 // import SecondStep from "./FormPersonalDetails"
 // import Confirm from "./Confirm"
 // import Success from "./Success"
-// // import MAKER_MODEL from "assets/enums/MAKER_MODEL.js";
+// // import MAKER_MODEL from "assets/enums/    .js";
 // const emailRegex = RegExp(/^[^@]+@[^@]+\.[^@]+$/)
 // //const phoneRegex = RegExp(/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4,6})$/)
 // const phoneRegex = RegExp(/^[6-9]\d{9}$/)
@@ -127,7 +127,7 @@
 //       default:
 //         break
 //     }
-//   }
+//   }  
 
 //   // Handle components
 //   return (

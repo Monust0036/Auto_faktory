@@ -92,7 +92,7 @@ class Menubar extends Component {
 
                 </MDBNavItem>
                 <MDBNavItem>
-                <MDBNavLink  onClick={this.toggle(14)}>CONTACT US</MDBNavLink>
+                <MDBNavLink to="/Contact-form">CONTACT US</MDBNavLink>
 
 
             {/* <MDBIcon far icon="heart" />

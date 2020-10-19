@@ -6,7 +6,7 @@ const CardExampl = () => {
   return (
      <MDBContainer >
        <br></br>
-         <MDBRow>
+         <MDBRow className="contact-us-form">
          {/* <MDBCard style={{marginTop:"40px",marginBottom:"40px",padding:"20px 0 20px 0"}}> */}
          <MDBCol sm="1"></MDBCol>
        <MDBCol sm="5" style={{backgroundImage:"linear-gradient(rgb(255 251 251), rgb(224 55 16 / 24%))",padding:"50px"}}>
