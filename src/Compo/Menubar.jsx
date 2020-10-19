@@ -40,19 +40,22 @@ class Menubar extends Component {
       // <Router>
         <MDBNavbar className="p-none sticky-top">
           <MDBNavbar dark expand="md" className="container innernav">
-            <MDBNavbarBrand>
-              <div className="logo">
-                <img src='/images/logo/AutoFactory.jpg' width="150" height="50" alt="Auto-factory" />
+            <MDBNavbarBrand >
+            <MDBNavLink to="/">
+            <div className="logo">
+                <img  src='/images/logo/AutoFactory.jpg' width="200" height="70" alt="Auto-factory" />
               </div>
+            </MDBNavLink>
+              
             </MDBNavbarBrand>
             <MDBNavbarToggler onClick={this.toggleCollapse} />
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
 
               <MDBNavbarNav  >
                 <MDBCol md="4" >
-                  <form className="form-inline mt-1 mb-1">
+                  {/* <form className="form-inline mt-1 mb-1">
                     <input className="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search for Cars" aria-label="Search" ></input>
-                  </form>
+                  </form> */}
                 </MDBCol>
                 <MDBNavItem >
                   {/* <MDBNavLink to="#Home">BUY A CAR</MDBNavLink> */}
@@ -105,23 +108,48 @@ class Menubar extends Component {
                   <MDBNavLink>
                     <MDBIcon icon="user-circle" onClick={this.toggle(13)} />
                     {/* modal */}
-                    <MDBContainer>
-                      <MDBModal isOpen={this.state.modal13} toggle={this.toggle(13)}>
+                    <MDBContainer >
+                      <MDBModal isOpen={this.state.modal13} toggle={this.toggle(13)} size="lg" >
+                        <div style={{background:"linear-gradient(to right bottom, rgba(244, 79, 16, 0.89) 0%, transparent 50.5%) center bottom no-repeat, linear-gradient(0deg, rgb(251, 251, 251), rgb(245, 245, 245)) center top no-repeat"}}>
                         <MDBModalHeader toggle={this.toggle(13)}>  </MDBModalHeader>
 
 
                         <MDBModalBody>
-                          <h4 className="LoginModal__loginHeading">
-                            Login / Signup</h4>
+                          <MDBRow>
+                            <MDBCol>
+                              <h1 style={{textAlign:"left"}}>Log In</h1>
+                              <div className="feature">
+                                <MDBIcon icon="thumbs-up" />
+                                <p style={{margin:"0 0 0 20px"}}>Get personalized recommendations
+                                    </p>
+                              </div>
+                              <div className="feature">
+                              <MDBIcon icon="bell" />
+                                <p style={{margin:"0 0 0 20px"}}>Receive alerts on newly added cars
+                                  </p>
+                              </div>
+                              <div>
+                                  <img src='/images/Loginpage.jpg' width="80%" alt="Auto-factory" />
 
-                            <MDBInput label=" Enter phone number" type="text" id="inputMDEx" class="form-control" />
-                            <div className="LoginModal-whatsappCheckWrap">
-                              <i className="fa fa-check LoginModal__checkIcon LoginModal__checked" aria-hidden="true"></i>
-                              Send updates on Whatsapp</div>
-                            <p className="LoginModal-terms">By logging in, I agree to <a href="#">terms</a>  and <a href="#">privacy policy</a> </p>
-                            <hr/>
-                            <button className="LoginModal-getOtpBtnWrap" >proceed</button>
+                              </div>
+                            </MDBCol>
+                            <MDBCol>
+                              <br></br>
+                              <br></br>
+                              <br></br>
+                              <div className="form-group">
+                                  <input type="email" className="form-control" placeholder="Phone Number" />
+                                  <br></br>
+                                 
+                                </div>
+                                <button className="LoginModal-getOtpBtnWrap" >Get OTP</button>
+                                <p style={{fontSize:"12px"}}>By Signing up, I agree to terms and privacy policy</p>
+                            
+                            </MDBCol>
+                          </MDBRow>
+                           
                         </MDBModalBody>
+                        </div>
                       
                       
                       </MDBModal>

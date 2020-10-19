@@ -8,17 +8,21 @@ import Carousel from './HomePage/caraousel/Carousel.js'
 // import FirstStep from './Compo/FisrtStep';
 import Lovestory from "./HomePage/loveStory"
 import Carshowroom from "./UsedCars/carshowroom";
-import SellCarForm from "./SellCar/SellCar.js"
-// import SellCarforms from "./SellCar/StepForm"
+import Topstrip from "./DetailCar/Topstrip"
+import DetailsTop from "./DetailCar/DetailTops"
+import KeyFeatures from "./DetailCar/KeyFeatures"
+import RecentlyViewCar from "./DetailCar/RecentlyView"
+import CarReports from "./DetailCar/CarReports"
+import CarSpecifications from "./DetailCar/CarSpecifications"
+import CarFeatures from "./DetailCar/CarFeatures"
+// import PanaromaView from "./DetailCar/360View"
 import SellTopBanner from "./SellCar/TopBanner"
-import DetailSection from "./SellCar/DetailSection"
-import DetailSec2 from "./SellCar/DetailsSection2"
+import ContactForm from "./ContactUs/Form"
 
 
-// import history from  './history';
-// console.log(history, "rRRRRRRRRRRRRRRRRRRRRRRR")
 
-class SellCar extends Component {
+
+class UsedCar extends Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -27,13 +31,10 @@ class SellCar extends Component {
     return (
       <div className="App">
         <Menu/>
-        <SellTopBanner />
-        <SellCarForm/>
-        <DetailSection/>
-        {/* <SellCarforms/> */}
-        <DetailSec2/>
-        <Carshowroom/>
-        <Lovestory />
+        
+        <SellTopBanner/>
+        <ContactForm />
+        {/* <PanaromaView /> */}
         <Footer/>
       </div>
     );
@@ -41,4 +42,4 @@ class SellCar extends Component {
   }
 }
 
-export default SellCar;
+export default UsedCar;

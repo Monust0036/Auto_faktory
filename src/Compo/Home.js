@@ -12,6 +12,7 @@ import Carousel from './HomePage/caraousel/Carousel.js'
 // import FirstStep from './Compo/FisrtStep';
 import Lovestory from "./HomePage/loveStory"
 import Find from './HomePage/Find';
+import CarBuyingConf from './HomePage/CarBuyingConfidence'
 
 
 // import history from  './history';
@@ -28,9 +29,10 @@ class Main extends Component {
         <Menu/>
         <Header/>
         <Teams/> 
+        <CarBuyingConf/>
         <Presssupported/>
         <ReacentCar/>
-        <Carousel/>
+        {/* <Carousel/> */}
         <Theorychange/> 
         <Lovestory/>
         <Find/>

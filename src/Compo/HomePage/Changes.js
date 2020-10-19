@@ -8,14 +8,14 @@ class Theorychange extends Component {
     }
     render() { 
         return ( 
-            <MDBContainer className="mb-5 px-5 pb-5">
+            <MDBContainer >
             <MDBCardBody>
               <h2 className="h1-responsive font-weight-bold text-center my-5">
               Section Heading 
               </h2>
 
               <MDBRow>
-                <MDBCol lg="5">
+                <MDBCol lg="6">
                   <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
                     <img
                       className="img-fluid"
@@ -24,7 +24,7 @@ class Theorychange extends Component {
                     />
                   </MDBView>
                 </MDBCol>
-                <MDBCol lg="7">
+                <MDBCol lg="6">
                   <h3 className="font-weight-bold mb-3 p-0">
                     <strong>150+ point inspection</strong>
                   </h3>
@@ -36,7 +36,7 @@ class Theorychange extends Component {
               </MDBRow>
               <hr className="my-5" />
               <MDBRow>
-                <MDBCol lg="7">
+                <MDBCol lg="6">
 
                   <h3 className="font-weight-bold mb-3 p-0">
                     <strong>360-degree digital photography</strong>
@@ -47,7 +47,7 @@ class Theorychange extends Component {
                     
                   </p>
                 </MDBCol>
-                <MDBCol lg="5">
+                <MDBCol lg="6">
                   <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
                     <img
                       className="img-fluid"
@@ -61,7 +61,7 @@ class Theorychange extends Component {
               <hr className="my-5" />
 
               <MDBRow>
-                <MDBCol lg="5">
+                <MDBCol lg="6">
                   <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
                     <img
                       className="img-fluid"
@@ -70,7 +70,7 @@ class Theorychange extends Component {
                     />
                   </MDBView>
                 </MDBCol>
-                <MDBCol lg="7">
+                <MDBCol lg="6">
                   <h3 className="font-weight-bold mb-3 p-0">
                     <strong>150+ point inspection</strong>
                   </h3>

@@ -10,7 +10,7 @@ class Footer extends Component {
                   <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 className="text-uppercase mb-4 font-weight-bold">AutoFactory</h6>
                     <p className="footertext">
-Spinny is the most trusted way of buying & selling used cars. Choose from over 1000+ fully inspected second hand cars models. Select online and book a test drive at a Spinny Car Hub near you. Get 5 days assured money back guarantee and free 1 year extended warranty on all Spinny Assured pre owned cars.</p>
+                      Spinny is the most trusted way of buying & selling used cars. Choose from over 1000+ fully inspected second hand cars models. Select online and book a test drive at a Spinny Car Hub near you. Get 5 days assured money back guarantee and free 1 year extended warranty on all Spinny Assured pre owned cars.</p>
                   </div>
                   <hr className="w-100 clearfix d-md-none"/>
                   <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

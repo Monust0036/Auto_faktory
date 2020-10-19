@@ -123,11 +123,12 @@ text-align: center !important;
 
 .LoginModal-getOtpBtnWrap {
     width: 100%;
-    padding: 16px;
+    padding: 5px;
     box-sizing: border-box;
     background-color:#e6540ff2 !important;
     border-top: 1px solid #f6f6f6;
     text-align: center;
+    border-radius: 4px;
     border: none !important;
     color: #fff !important;
     font-size: 20px;
@@ -307,11 +308,11 @@ text-align: center !important;
 }
 
 
-.find-car-title {
+/* .find-car-title {
     font-weight: 900;
     line-height: 3.25;
     font-size: 2.25rem !important;
-}
+} */
 
 .find-car-btn {
 
@@ -331,9 +332,9 @@ text-align: center !important;
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease-in-out 0s;
 }
-.find-car-btn:hover{
+/* .find-car-btn:hover{
     background-color: rgb(223, 78, 60) !important;
-}
+} */
 
 /* .row{
     margin-top: 20px;
@@ -523,3 +524,46 @@ button.close {
     text-shadow: -8px 4px 0px #333 !important;
 }
 h4.LoginModal__loginHeading {font-weight: 500;}
+button.navbar-toggler {
+    background: #eabea9;
+}
+.card.mb-2{
+    margin: 10px !important;
+}
+
+.find-car-title {
+    font-weight: 900;
+    line-height: 1.25;
+    font-size: 2.25rem !important;
+    padding-bottom: 20px;
+}
+
+.z-depth-2 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+}
+.find-car-btn:hover {
+    background-color: rgb(193 17 17 / 88%) !important;
+}
+a:hover {
+    text-decoration: none;
+    color: #eff4fd;
+    transition: all 0.2s ease-in-out;
+}
+.feature {
+    margin-bottom: 0.5em;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    line-height: 2em;
+    font-family: "futura-semibold";
+}
+.sale-detail-sec2{
+    margin-top: 40px;
+    min-height: 400px;
+    background-image: linear-gradient(to top, rgb(239 159 119 / 53%) 0%, rgb(25 24 23 / 45%) 50%), url(/images/taxi-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+
+}

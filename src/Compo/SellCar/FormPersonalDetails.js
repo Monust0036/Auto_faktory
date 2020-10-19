@@ -43,6 +43,7 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="Enter Your Email"
               label="Email"
+              type="email"
               onChange={handleChange('email')}
               defaultValue={values.email}
               margin="normal"

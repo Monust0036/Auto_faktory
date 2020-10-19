@@ -15,6 +15,7 @@
     "eslint-plugin-react": "^7.21.4",
     "gh-pages": "^2.1.1",
     "js-cloudimage-360-view": "^2.6.0",
+    "lodash": "^4.17.20",
     "mdbreact": "^4.19.2",
     "muicss": "^0.10.2",
     "pannellum-react": "^1.2.4",
@@ -60,6 +61,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.10.4"
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-class-properties": "^7.10.4"
   }
 }

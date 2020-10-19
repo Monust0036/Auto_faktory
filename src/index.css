@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.carousel .carousel-indicators li {
+  width: 10px !important;
+ height: 1px !important;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgb(63, 61, 61) !important;
+}
+ol.carousel-indicators {
+  margin-bottom: -25px;
+}
