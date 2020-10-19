@@ -16,7 +16,7 @@ import CarReports from "./DetailCar/CarReports"
 import CarSpecifications from "./DetailCar/CarSpecifications"
 import CarFeatures from "./DetailCar/CarFeatures"
 // import PanaromaView from "./DetailCar/360View"
-import SellTopBanner from "./SellCar/TopBanner"
+import ContactFormTopBanner from "./ContactUs/ContactUsBanner"
 import ContactForm from "./ContactUs/Form"
 
 
@@ -32,7 +32,7 @@ class UsedCar extends Component {
       <div className="App">
         <Menu/>
         
-        <SellTopBanner/>
+        <ContactFormTopBanner/>
         <ContactForm />
         {/* <PanaromaView /> */}
         <Footer/>

@@ -461,7 +461,23 @@ input[type="checkbox"] {
     background-repeat: no-repeat;
     
 }
-/* .contact-us-form{} */
+.ContactForm-top-banner{
+    padding: 30px;
+    /* height: 100vh; */
+    min-height: 450px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.753) 50%, rgba(0, 0, 0, 0) 90%), url("/images/contact-us.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1 !important;
+    
+}
+.contact-us-form{
+    /* margin-top: -60px; */
+    z-index: 2 !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    /* background: linear-gradient(to left bottom, rgba(244, 79, 16, 0.89) 0%, transparent 50.5%) center bottom no-repeat, linear-gradient(-10deg, rgb(251, 251, 251), rgb(245, 245, 245)) center top no-repeat; */
+}
 .MuiButton-containedPrimary {
     color: #fff;
     background-color: #de1717 !important;

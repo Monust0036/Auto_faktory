@@ -9,7 +9,7 @@ const CardExampl = () => {
          <MDBRow className="contact-us-form">
          {/* <MDBCard style={{marginTop:"40px",marginBottom:"40px",padding:"20px 0 20px 0"}}> */}
          <MDBCol sm="1"></MDBCol>
-       <MDBCol sm="5" style={{backgroundImage:"linear-gradient(rgb(255 251 251), rgb(224 55 16 / 24%))",padding:"50px"}}>
+       <MDBCol sm="5" style={{padding:"50px"}}>
           <form>
             <h1 style={{font:"50px", fontWeight:"600"}}>Contact us</h1>
             <div className="grey-text">
@@ -39,7 +39,7 @@ const CardExampl = () => {
       </div>
         
     </MDBCol>
-    <MDBCol sm="1"></MDBCol>
+    <MDBCol sm="1" style={{backgroundImage:"linear-gradient(rgb(255 251 251), rgb(224 55 16 / 24%))"}}></MDBCol>
     {/* </MDBCard> */}
   </MDBRow>
   <br></br>
