@@ -8,7 +8,7 @@ class Find extends React.Component{
             <MDBContainer>
             <div className="find-car">
             <h1 className="find-car-title">Find your Next car</h1>
-            <a href="http://localhost:3000/used-car" className="find-car-btn">Search Car</a>
+            <a href="/used-car" className="find-car-btn">Search Car</a>
               </div>
           </MDBContainer>
 

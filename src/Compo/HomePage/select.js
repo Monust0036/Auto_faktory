@@ -34,7 +34,7 @@ class SelectPage extends Component {
 
 </MDBCol>
 <MDBCol lg="3">
-<MDBBtn className="search-Btn" color="red accent-4">SEarch car</MDBBtn>
+<MDBBtn className="search-Btn" color="red accent-4">Search car</MDBBtn>
 </MDBCol>
 </MDBRow>
 

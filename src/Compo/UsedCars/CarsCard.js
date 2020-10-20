@@ -8,7 +8,7 @@ const CardExampl = () => {
      
     <MDBRow style={{ marginTop:"5px", }}>
     <MDBCol>
-      <a href="http://localhost:3000/detail-car">
+      <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Alto K10.jpg" waves />
         <MDBCardBody>
@@ -34,7 +34,7 @@ const CardExampl = () => {
       
     </MDBCol>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Grand i10.jpg" waves />
         <MDBCardBody>
@@ -61,7 +61,7 @@ const CardExampl = () => {
   </MDBRow>
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Brio.jpg" waves />
         <MDBCardBody>
@@ -86,7 +86,7 @@ const CardExampl = () => {
       </a>
     </MDBCol>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Wagon R.jpg" waves />
         <MDBCardBody>
@@ -114,7 +114,7 @@ const CardExampl = () => {
 
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/City.jpg" waves />
         <MDBCardBody>
@@ -139,7 +139,7 @@ const CardExampl = () => {
       </a>
     </MDBCol>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Innova.jpg" waves />
         <MDBCardBody>
@@ -166,7 +166,7 @@ const CardExampl = () => {
   </MDBRow>
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Etios.jpg" waves />
         <MDBCardBody>
@@ -191,7 +191,7 @@ const CardExampl = () => {
       </a>
     </MDBCol>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Swift.jpg" waves />
         <MDBCardBody>
@@ -219,7 +219,7 @@ const CardExampl = () => {
 
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Ertiga.jpg" waves />
         <MDBCardBody>
@@ -244,7 +244,7 @@ const CardExampl = () => {
       </a>
     </MDBCol>
     <MDBCol>
-    <a href="http://localhost:3000/detail-car">
+    <a href="/detail-car">
       <MDBCard>
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/XUV500.jpg" waves />
         <MDBCardBody>

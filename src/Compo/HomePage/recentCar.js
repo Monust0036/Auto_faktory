@@ -51,7 +51,7 @@ class Slider extends React.Component {
                 itemClass="carousel-item-padding-40-px"
               >
       <div style={{padding:"0 10x 0 10px"}}>
-          <a href="http://localhost:3000/detail-car">
+          <a href="/detail-car">
           <MDBCard className="mb-2">
           <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Alto K10.jpg" waves />
           <MDBCardBody>
@@ -76,7 +76,7 @@ class Slider extends React.Component {
       </a>
       </div>
         <div style={{padding:"0 10x 0 10px"}}>
-        <a href="http://localhost:3000/detail-car">
+        <a href="/detail-car">
       <MDBCard className="mb-2">
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Grand i10.jpg" waves />
         <MDBCardBody>
@@ -101,7 +101,7 @@ class Slider extends React.Component {
       </a>
       </div>
         <div style={{padding:"0 10x 0 10px"}}>
-        <a href="http://localhost:3000/detail-car">
+        <a href="/detail-car">
       <MDBCard className="mb-2">
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Brio.jpg" waves />
         <MDBCardBody>
@@ -126,7 +126,7 @@ class Slider extends React.Component {
       </a>
                   </div>
                 <div style={{padding:"0 10x 0 10px"}}>
-                <a href="http://localhost:3000/detail-car">
+                <a href="/detail-car">
       <MDBCard className="mb-2">
         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Wagon R.jpg" waves />
         <MDBCardBody>
@@ -154,7 +154,7 @@ class Slider extends React.Component {
         
 
 
-        <a href="http://localhost:3000/used-car">
+        <a href="/used-car">
           <button type="button" className="btn btn-elegant search-car-btn">Search Car</button>
         </a>
        
