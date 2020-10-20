@@ -6,211 +6,267 @@ const CardExampl = () => {
   return (
      <MDBContainer>
      
-    <MDBRow style={{ marginTop:"20px", }}>
+    <MDBRow style={{ marginTop:"5px", }}>
     <MDBCol>
+      <a href="http://localhost:3000/detail-car">
       <MDBCard>
-        <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" waves />
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Alto K10.jpg" waves />
         <MDBCardBody>
-            <h2 className="carName"> 2018 Maruti Suzuki Dzire VDI</h2>
-            <MDBIcon icon="heart" className="ml-2" />
-        
-                        <div className="ratedate1">
-                          <p className="bnKmZw l">26,402 miles</p>
-                          <p className="bnKmZw l">2017 reg</p>
-                          <p className="bnKmZw l">Diesel</p>
-                          <p className="bnKmZw l">Manual</p>
-                        </div>
+          <div className="heart-carName">
+          <h2 className="carName"> 2013 Maruti Suzuki Alto</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">10000 miles</p>
+              <p className="bnKmZw l" >2013 reg</p>
+              <p className="bnKmZw l">Petrol</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
                         <div className="ljwTDc">
-                          <p className="iFsKIn"> £18,850</p>
+                          <p className="iFsKIn"> ₹1,25000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
                         </div>
-                        <a href="#" type="btn" className="view-car">View this car</a>
+                        
         </MDBCardBody>
       </MDBCard>
+      </a>
+      
     </MDBCol>
     <MDBCol>
-    <MDBCard >
-      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" waves />
-      <MDBCardBody>
-      <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
-      <MDBIcon icon="heart" className="ml-2" />
-                      <div className="ratedate1">
-                        <p className="bnKmZw l">26,402 miles</p>
-                        <p className="bnKmZw l">2017 reg</p>
-                        <p className="bnKmZw l">Diesel</p>
-                        <p className="bnKmZw l">Manual</p>
-                      </div>
-                      <div className="ljwTDc">
-                        <p className="iFsKIn"> £18,850</p>
-                      </div>
-                      <a href="#" type="btn" className="view-car">View this car</a>
-      </MDBCardBody>
-    </MDBCard>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Grand i10.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2014 Hyundai Grand i10</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">15000 miles</p>
+              <p className="bnKmZw l" >2014 reg</p>
+              <p className="bnKmZw l">Petrol</p>
+              <p className="bnKmZw l">Automatic</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹3,30000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
   </MDBCol>
   </MDBRow>
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
-      <MDBCard  >
-        <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/RO67UPT/05.jpg" waves />
-        <MDBCardBody>
-            <h2 className="carName"> 2018 Maruti Suzuki Dzire VDI</h2>
-            <MDBIcon icon="heart" className="ml-2" />
-        
-                        <div className="ratedate1">
-                          <p className="bnKmZw l">26,402 miles</p>
-                          <p className="bnKmZw l">2017 reg</p>
-                          <p className="bnKmZw l">Diesel</p>
-                          <p className="bnKmZw l">Manual</p>
-                        </div>
-                        <div className="ljwTDc">
-                          <p className="iFsKIn"> £18,850</p>
-                        </div>
-                        <a href="#" type="btn" className="view-car">View this car</a>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBCol>
-    <MDBCol>
-    <MDBCard >
-      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/HN17VAM/KXq3cGP7HWiPtYGqSKqn.JPG" waves />
-      <MDBCardBody>
-      <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
-      <MDBIcon icon="heart" className="ml-2" />
-                      <div className="ratedate1">
-                        <p className="bnKmZw l">26,402 miles</p>
-                        <p className="bnKmZw l">2017 reg</p>
-                        <p className="bnKmZw l">Diesel</p>
-                        <p className="bnKmZw l">Manual</p>
-                      </div>
-                      <div className="ljwTDc">
-                        <p className="iFsKIn"> £18,850</p>
-                      </div>
-                      <a href="#" type="btn" className="view-car">View this car</a>
-      </MDBCardBody>
-    </MDBCard>
-  </MDBCol>
-  </MDBRow>
-
-  <MDBRow style={{ marginTop:"20px", }}>
-    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
       <MDBCard>
-        <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/WR17YVF/qpR1KljASb7XO9CvcL2u.JPG" waves />
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Brio.jpg" waves />
         <MDBCardBody>
-            <h2 className="carName"> 2018 Maruti Suzuki Dzire VDI</h2>
-            <MDBIcon icon="heart" className="ml-2" />
-        
-                        <div className="ratedate1">
-                          <p className="bnKmZw l">26,402 miles</p>
-                          <p className="bnKmZw l">2017 reg</p>
-                          <p className="bnKmZw l">Diesel</p>
-                          <p className="bnKmZw l">Manual</p>
-                        </div>
+          <div className="heart-carName">
+          <h2 className="carName"> 2015 Honda Brio</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">50000 miles</p>
+              <p className="bnKmZw l" >2015 reg</p>
+              <p className="bnKmZw l">Petrol</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
                         <div className="ljwTDc">
-                          <p className="iFsKIn"> £18,850</p>
+                          <p className="iFsKIn"> ₹2,50000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
                         </div>
-                        <a href="#" type="btn" className="view-car">View this car</a>
+                        
         </MDBCardBody>
       </MDBCard>
+      </a>
     </MDBCol>
     <MDBCol>
-    <MDBCard >
-      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" waves />
-      <MDBCardBody>
-      <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
-      <MDBIcon icon="heart" className="ml-2" />
-                      <div className="ratedate1">
-                        <p className="bnKmZw l">26,402 miles</p>
-                        <p className="bnKmZw l">2017 reg</p>
-                        <p className="bnKmZw l">Diesel</p>
-                        <p className="bnKmZw l">Manual</p>
-                      </div>
-                      <div className="ljwTDc">
-                        <p className="iFsKIn"> £18,850</p>
-                      </div>
-                      <a href="#" type="btn" className="view-car">View this car</a>
-      </MDBCardBody>
-    </MDBCard>
-  </MDBCol>
-  </MDBRow>
-  <MDBRow style={{ marginTop:"20px", }}>
-    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
       <MDBCard>
-        <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" waves />
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Wagon R.jpg" waves />
         <MDBCardBody>
-            <h2 className="carName"> 2018 Maruti Suzuki Dzire VDI</h2>
-            <MDBIcon icon="heart" className="ml-2" />
-        
-                        <div className="ratedate1">
-                          <p className="bnKmZw l">26,402 miles</p>
-                          <p className="bnKmZw l">2017 reg</p>
-                          <p className="bnKmZw l">Diesel</p>
-                          <p className="bnKmZw l">Manual</p>
-                        </div>
+          <div className="heart-carName">
+          <h2 className="carName"> 2012 Maruti Suzuki Wagon R</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">48000 miles</p>
+              <p className="bnKmZw l" >2012 reg</p>
+              <p className="bnKmZw l">CNG</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
                         <div className="ljwTDc">
-                          <p className="iFsKIn"> £18,850</p>
+                          <p className="iFsKIn"> ₹2,39000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
                         </div>
-                        <a href="#" type="btn" className="view-car">View this car</a>
+                        
         </MDBCardBody>
       </MDBCard>
-    </MDBCol>
-    <MDBCol>
-    <MDBCard >
-      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/HG17STZ/05.jpg" waves />
-      <MDBCardBody>
-      <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
-      <MDBIcon icon="heart" className="ml-2" />
-                      <div className="ratedate1">
-                        <p className="bnKmZw l">26,402 miles</p>
-                        <p className="bnKmZw l">2017 reg</p>
-                        <p className="bnKmZw l">Diesel</p>
-                        <p className="bnKmZw l">Manual</p>
-                      </div>
-                      <div className="ljwTDc">
-                        <p className="iFsKIn"> £18,850</p>
-                      </div>
-                      <a href="#" type="btn" className="view-car">View this car</a>
-      </MDBCardBody>
-    </MDBCard>
+      </a>
   </MDBCol>
   </MDBRow>
 
   <MDBRow style={{ marginTop:"20px", }}>
     <MDBCol>
+    <a href="http://localhost:3000/detail-car">
       <MDBCard>
-        <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/WR17YVF/qpR1KljASb7XO9CvcL2u.JPG" waves />
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/City.jpg" waves />
         <MDBCardBody>
-            <h2 className="carName"> 2018 Maruti Suzuki Dzire VDI</h2>
-            <MDBIcon icon="heart" className="ml-2" />
-        
-                        <div className="ratedate1">
-                          <p className="bnKmZw l">26,402 miles</p>
-                          <p className="bnKmZw l">2017 reg</p>
-                          <p className="bnKmZw l">Diesel</p>
-                          <p className="bnKmZw l">Manual</p>
-                        </div>
+          <div className="heart-carName">
+          <h2 className="carName"> 2015 Honda City</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">90000 miles</p>
+              <p className="bnKmZw l" >2015 reg</p>
+              <p className="bnKmZw l">Petrol</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
                         <div className="ljwTDc">
-                          <p className="iFsKIn"> £18,850</p>
+                          <p className="iFsKIn"> ₹6,48000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
                         </div>
-                        <a href="#" type="btn" className="view-car">View this car</a>
+                        
         </MDBCardBody>
       </MDBCard>
+      </a>
     </MDBCol>
     <MDBCol>
-    <MDBCard >
-      <MDBCardImage className="img-fluid" src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/AY67WCV/bSA80MZJpJUHI1tg2MM2.JPG" waves />
-      <MDBCardBody>
-      <h2 className="carName"> 2015 Ford EcoSport Trend</h2>
-      <MDBIcon icon="heart" className="ml-2" />
-                      <div className="ratedate1">
-                        <p className="bnKmZw l">26,402 miles</p>
-                        <p className="bnKmZw l">2017 reg</p>
-                        <p className="bnKmZw l">Diesel</p>
-                        <p className="bnKmZw l">Manual</p>
-                      </div>
-                      <div className="ljwTDc">
-                        <p className="iFsKIn"> £18,850</p>
-                      </div>
-                      <a href="#" type="btn" className="view-car">View this car</a>
-      </MDBCardBody>
-    </MDBCard>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Innova.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2015 Toyota Innova</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">69000 miles</p>
+              <p className="bnKmZw l" >2015 reg</p>
+              <p className="bnKmZw l">Diesel</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹12,00000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
+  </MDBCol>
+  </MDBRow>
+  <MDBRow style={{ marginTop:"20px", }}>
+    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Etios.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2011 Toyota Etios</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">70000 miles</p>
+              <p className="bnKmZw l" >2011 reg</p>
+              <p className="bnKmZw l">Diesel</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹4,00000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
+    </MDBCol>
+    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Swift.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2012 Maruti Suzuki Swift</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">39000 miles</p>
+              <p className="bnKmZw l" >2012 reg</p>
+              <p className="bnKmZw l">Diesel</p>
+              <p className="bnKmZw l">Automatic</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹3,75000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
+  </MDBCol>
+  </MDBRow>
+
+  <MDBRow style={{ marginTop:"20px", }}>
+    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Ertiga.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2016 Maruti Suzuki Ertiga</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">34000 miles</p>
+              <p className="bnKmZw l" >2016 reg</p>
+              <p className="bnKmZw l">Diesel</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹5,20000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
+    </MDBCol>
+    <MDBCol>
+    <a href="http://localhost:3000/detail-car">
+      <MDBCard>
+        <MDBCardImage className="img-fluid-cards" src="/images/SampleData/XUV500.jpg" waves />
+        <MDBCardBody>
+          <div className="heart-carName">
+          <h2 className="carName"> 2014 Mahindra XUV 500</h2>
+            <MDBIcon icon="heart" className="ml-2"/>
+          </div>
+          <div className="ratedate1">
+              <p className="bnKmZw l">67000 miles</p>
+              <p className="bnKmZw l" >2014 reg</p>
+              <p className="bnKmZw l">Diesel</p>
+              <p className="bnKmZw l">Manual</p>
+            </div>
+                        <div className="ljwTDc">
+                          <p className="iFsKIn"> ₹6,00000</p>
+                          {/* <a href="#" type="btn" className="view-car">View this car</a> */}
+                          <MDBBtn color="deep-orange" size="md">View </MDBBtn>
+                        </div>
+                        
+        </MDBCardBody>
+      </MDBCard>
+      </a>
   </MDBCol>
   </MDBRow>
    

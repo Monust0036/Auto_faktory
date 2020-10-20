@@ -2,22 +2,19 @@
     {
         "press": "Car By Lifstyle 1",
         "logo": "/images/LogoOfpress/car11.jpg",
-        "link":"https://www.thebetterindia.com/102699/navgurukul-skilling-underprivileged-delhi-computer-engineering-jobs/"
+        "link":"http://localhost:3000/used-car"
     },
     {
         "press": "Car By Lifstyle 2",
         "logo": "/images/LogoOfpress/car12.jpg",
-        "link":"https://timesofindia.indiatimes.com/home/sunday-times/how-a-gurukul-for-coders-is-changing-lives/articleshow/60896051.cms"
-    },
+        "link":"http://localhost:3000/used-car"    },
     {
         "press": "Car By Lifstyle 3",
         "logo": "/images/LogoOfpress/car13.jpg",
-        "link":"https://thelogicalindian.com/story-feed/get-inspired/navgurukul/"
-    },
+        "link":"http://localhost:3000/used-car"    },
     {
         "press": "Car By Lifstyle 4",
         "logo": "/images/LogoOfpress/car14.jpg",
-        "link":"https://qz.com/1086297/iit-grads-no-its-the-school-dropouts-who-are-hot-property-in-indian-it-now/"
-    }
+        "link":"http://localhost:3000/used-car"    }
 
 ]

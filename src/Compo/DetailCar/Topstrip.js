@@ -3,6 +3,8 @@ import { MDBBtn,MDBRow, MDBCard, MDBCardBody,MDBCarousel, MDBCarouselInner, MDBC
   MDBModalFooter,MDBCardTitle, MDBCardText, MDBCol,MDBIcon, MDBContainer,MDBModal, MDBModalBody, MDBModalHeader,MDBInput} from 'mdbreact';
 import { Pannellum } from "pannellum-react";
 import myImage from "./carsample.jpeg"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 class CardExampl extends Component {
@@ -107,7 +109,7 @@ class CardExampl extends Component {
 
                      {/* modal */}
               <MDBContainer className="360-view-color">
-                      <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} size="fluid" >
+                      <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} size="lg" className="image-gallery-slide">
                         <div className="slides-view">
                         <MDBModalHeader toggle={this.toggle(14)} style={{color:"#fff"}}> 
                          </MDBModalHeader>
@@ -117,43 +119,25 @@ class CardExampl extends Component {
                           
 
                         <MDBContainer>
-      <MDBCarousel
-        activeItem={1}
-        length={3}
-        showControls={true}
-        showIndicators={true}
-        className="z-depth-1"
-      >
-        <MDBCarouselInner>
-          <MDBCarouselItem itemId="1">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/cazoo-imagery/car_gallery_images/DE67DHM/jI1RDybVtJNRBUgxmuD4.JPG"
-                alt="First slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="2">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2808/cazoo/BL17OAZ/e06.jpg"
-                alt="Second slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="3">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2808/cazoo/BL17OAZ/e04.jpg"
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-        </MDBCarouselInner>
-      </MDBCarousel>
+      
+<Carousel>
+                <div>
+                    <img src="/images/detailedCarImages/car_img1.jpeg" />
+                    {/* <p className="legend">Legend 1</p> */}
+                </div>
+                <div>
+                    <img src="/images/detailedCarImages/car_img2.jpg" />
+                    {/* <p className="legend">Legend 2</p> */}
+                </div>
+                <div>
+                    <img src="/images/detailedCarImages/car_img3.jpg" />
+                    {/* <p className="legend">Legend 3</p> */}
+                </div>
+                <div>
+                    <img src="/images/detailedCarImages/car_img4.jpg" />
+                    {/* <p className="legend">Legend 3</p> */}
+                </div>
+            </Carousel>
     </MDBContainer>
                         </MDBModalBody>
 

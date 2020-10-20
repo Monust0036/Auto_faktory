@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap" ;
 import Filter from "./SideFilter.js";
 import CarsCard from "./CarsCard.js"
+import TopStripBanner from "./TopBannerStrip"
 
 
 
@@ -17,6 +18,7 @@ class MainFilter extends React.Component {
                     <Filter/>
                 </Col>
                 <Col md={9}>
+                    <TopStripBanner/>
                     <CarsCard />
                 </Col>
             </Row>

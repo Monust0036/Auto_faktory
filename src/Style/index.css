@@ -140,7 +140,7 @@ text-align: center !important;
     margin-top: 100px;
 }
  */
- .interior-view, .slides-view{
+ .interior-view,.slides-view{
     background: black;
     
    
@@ -159,7 +159,12 @@ text-align: center !important;
 .carName{
     font-weight: 600 !important;
     font-size: 1rem !important;
-    float: left !important;
+    color:#444747!important
+    /* float: left !important; */
+}
+.heart-carName {
+    display: flex;
+    justify-content: space-between;
 }
 .rate{
     font-size: 0.875rem !important;
@@ -175,8 +180,9 @@ text-align: center !important;
 }
 .ratedate1{
     margin-top: 1rem !important;
-  
-    margin-left: -75px;
+    /* margin-left: -75px; */
+    display: flex;
+    justify-content: space-between;
 }
 .bnKmZw {
     background-color: rgb(244, 246, 245);
@@ -197,6 +203,7 @@ text-align: center !important;
     display: flex;
     -webkit-box-align: baseline;
     align-items: baseline;
+    justify-content: space-between;
     /* padding: 1rem; */
 }
 .iFsKIn {
@@ -233,12 +240,12 @@ text-align: center !important;
     bottom: 2em;
     left: 5%;
     padding: 1em;
-    color: #3b0364;
+    color: #080808;
     background-color: #fff;
     border-radius: 5px;
     z-index: 2;
    
-    box-shadow: 0 3px 6px #89898950;
+    box-shadow: 0 3px 6px #ec080850;
 }
 
 .content-section:before {
@@ -425,9 +432,9 @@ ul.css-1w1pnf0-UL.eekr4lp2 {
     font-weight: 600 !important;
     width: 231px !important;
 }
-i.fa.fa-heart.ml-2 {
+/* i.fa.fa-heart.ml-2 {
     float: right;
-}
+} */
 body.modal-open {
     font-family: Roboto,Arial,sans-serif !important;
 }
@@ -556,7 +563,7 @@ button.navbar-toggler {
 }
 
 .z-depth-2 {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(227, 100, 44);
 }
 .find-car-btn:hover {
     background-color: rgb(193 17 17 / 88%) !important;
@@ -583,4 +590,38 @@ a:hover {
     background-repeat: no-repeat;
     opacity: 0.9;
 
+}
+
+.carousel .carousel-status{
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    right: unset;
+    padding: 5px;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+    color: #fff;
+}
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+    opacity: 2.4 !important;
+}
+i.fa.fa-heart.ml-2 {
+    color: #444747!important;
+}   
+button.btn-deep-orange.btn.Ripple-parent.btn-md {
+    font-weight: 600;
+}
+.img-fluid-cards{
+    width: 100%;
+}
+img.img-fluid {
+    width: 100%;
+}
+.img-fluid-banner{
+    width: 80%;
+    height: 50px;
+}
+.top-strip{
+    display: flex;
+    justify-content:space-between;
 }

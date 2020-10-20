@@ -1,7 +1,7 @@
 import React from 'react';
 import List from './List';
 
-const createFakeDataSource = (listCount = 10, listItemCount = 10) => {
+const createFakeDataSource = (listCount = 5, listItemCount = 5) => {
     let data = [];
     for (let i = 1; i <= listCount; i++) {
         let list = {};

@@ -35,15 +35,15 @@ class Slider extends React.Component {
               <Carousel
                 swipeable={false}
                 draggable={false}
-                showDots={true}
+                showDots={false}
                 responsive={responsive}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
                 autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                autoPlaySpeed={1000}
+                autoPlaySpeed={3000}
                 keyBoardControl={true}
                 customTransition="all .5"
-                transitionDuration={500}
+                transitionDuration={1000}
                 containerClass="carousel-container"
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 deviceType={this.props.deviceType}
@@ -52,7 +52,7 @@ class Slider extends React.Component {
               >
               <div style={{padding:"0 10x 0 10px"}}>
                       <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-1.jpg" />
                         
                       </MDBCard>
                       <div className="content-section">
@@ -69,7 +69,7 @@ class Slider extends React.Component {
                 <div style={{padding:"0 10x 0 10px"}}>
 
                 <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://images.prismic.io/cazoo/d05fa720-85bb-40a9-903a-917d7b90df35_Woman+smiling+with+coffee+searching+online_1038127477+%281%29.jpg?auto=compress,format&rect=0,15,2808,1787&w=1100&h=700" />
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-5.jpg" />
                         
                       </MDBCard>
                       <div className="content-section">
@@ -86,7 +86,7 @@ class Slider extends React.Component {
                   </div>
                 <div style={{padding:"0 10x 0 10px"}}>
                 <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-6.jpg" />
                         
                       </MDBCard>
                       <div className="content-section">
@@ -102,7 +102,24 @@ class Slider extends React.Component {
                   </div>
                 <div style={{padding:"0 10x 0 10px"}}>
                 <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-5.jpg" />
+                        
+                      </MDBCard>
+                      <div className="content-section">
+                            <div className="top-section">
+                            "Had been postponing the decision to get a car. Couldn't take a chance with my or my son's health. The car delivered at my home and the entire process was completely contactless."
+                            </div>
+                            <div className="bottom-section">
+                            <div className="person-name">- Vandana Arora, Delhi</div>
+                            <div className="car-name"> 2016 Duster 4X4</div>
+
+                            </div>
+                        </div>
+
+                </div>
+                <div style={{padding:"0 10x 0 10px"}}>
+                <MDBCard className="mb-2">
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-1.jpg" />
                         
                       </MDBCard>
                       <div className="content-section">
@@ -118,23 +135,7 @@ class Slider extends React.Component {
                 </div>
                 <div style={{padding:"0 10x 0 10px"}}>
                 <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-                        
-                      </MDBCard>
-                      <div className="content-section">
-                            <div className="top-section">
-                            "Had been postponing the decision to get a car. Couldn't take a chance with my or my son's health. The car delivered at my home and the entire process was completely contactless."
-                            </div>
-                            <div className="bottom-section">
-                            <div className="person-name">- Vandana Arora, Delhi</div>
-                            <div className="car-name"> 2016 Duster 4X4</div>
-
-                            </div>
-                        </div>
-                </div>
-                <div style={{padding:"0 10x 0 10px"}}>
-                <MDBCard className="mb-2">
-                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
+                        <MDBCardImage className="img-fluid" src="/images/LoveStory/testimonial-6.jpg" />
                         
                       </MDBCard>
                       <div className="content-section">
