@@ -58,6 +58,7 @@ class Sidefilter extends Component {
 	>
 		<div className="row">
 			<div className="col">
+				<br></br>
                 <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Budget</h5>
                 <br></br>
                 
@@ -235,7 +236,7 @@ class Sidefilter extends Component {
 		</div>
 		<hr></hr>
 		<div className="row">
-    <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Body Type</h5>
+    {/* <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Body Type</h5> */}
 			{/* <div className="col">
 				<h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Color</h5>
 				<div size="2" className="col">
@@ -255,19 +256,19 @@ class Sidefilter extends Component {
 
                               colors={[{ hex: '#FFFFFF' }]}
                             />
-                            White
+                           
                           </Grid>
                           <Grid item xs={4}>
                             <ReactCircleColorPicker
                               //checked={this.state.checkedBlackColor}
                               colors={[{ hex: '#000000' }]} />
-                            Black
+                            
                           </Grid>
                           <Grid item xs={4}>
                             <ReactCircleColorPicker
                               //checked={this.state.checkedSilverColor}
                                colors={[{ hex: '#C0C0C0' }]} />
-                            Silver
+                           
                           </Grid>
                         </React.Fragment>
                       </Grid>
@@ -277,18 +278,18 @@ class Sidefilter extends Component {
                             <ReactCircleColorPicker
                               // checked={this.state.checkedGreyColor}
                                colors={[{ hex: '#808080' }]} />
-                            Grey
+                            
                           </Grid>
                           <Grid item xs={4}>
                             <ReactCircleColorPicker
                                colors={[{ hex: '#0000FF' }]} />
-                            Blue
+                            
                           </Grid>
                           <Grid item xs={4}>
                             <ReactCircleColorPicker
                               // checked={this.state.checkedBeigeColor}
                                colors={[{ hex: '#f5f5dc' }]} />
-                            Beige
+                            
                           </Grid>
                         </React.Fragment>
                       </Grid>
@@ -298,19 +299,19 @@ class Sidefilter extends Component {
                             <ReactCircleColorPicker
                               // checked={this.state.checkedBronzeColor}
                               colors={[{ hex: '#cd7f32' }]} />
-                            Bronze
+                            
                           </Grid>
                           <Grid item xs={4}>
                             <ReactCircleColorPicker
                               colors={[{ hex: '#A52A2A' }]} />
-                            Brown
+                            
                           </Grid>
                           <Grid item xs={4} >
                             
                             <ReactCircleColorPicker
                               //
                                colors={[{ hex: '#800000' }]} />
-                            Maroon
+                            
                           </Grid>
                         </React.Fragment>
                       </Grid>

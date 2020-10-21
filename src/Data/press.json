@@ -2,19 +2,19 @@
     {
         "press": "Car By Lifstyle 1",
         "logo": "/images/LogoOfpress/car11.jpg",
-        "link":"http://localhost:3000/used-car"
+        "link":"/used-car"
     },
     {
         "press": "Car By Lifstyle 2",
         "logo": "/images/LogoOfpress/car12.jpg",
-        "link":"http://localhost:3000/used-car"    },
+        "link":"/used-car"    },
     {
         "press": "Car By Lifstyle 3",
         "logo": "/images/LogoOfpress/car13.jpg",
-        "link":"http://localhost:3000/used-car"    },
+        "link":"/used-car"    },
     {
         "press": "Car By Lifstyle 4",
         "logo": "/images/LogoOfpress/car14.jpg",
-        "link":"http://localhost:3000/used-car"    }
+        "link":"/used-car"    }
 
 ]

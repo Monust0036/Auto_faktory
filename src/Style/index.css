@@ -625,3 +625,11 @@ img.img-fluid {
     display: flex;
     justify-content:space-between;
 }
+.col-sm.mt-4.example.hoverable{
+    padding: 0;
+    margin-left: 10px;
+}
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-3.MuiGrid-item.MuiGrid-grid-xs-12 {
+    margin-left: 0;
+    padding: 5px 0 5px 0;
+}
