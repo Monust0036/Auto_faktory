@@ -69,6 +69,22 @@ class Slider extends React.Component {
       <MDBCard className="mb-2">
           <MDBCardBody>
               <div className="top-strip">
+              <h2 className="carName"> Customer Satisfaction</h2>
+              <MDBCardImage className="img-fluid-banner" src="/images/Loginpage.jpg" waves />
+            </div>
+              <div>
+              <p>Sanitised cars for every test</p>
+            </div>
+                        
+            </MDBCardBody>
+        </MDBCard>
+      
+      </div>
+      <div style={{padding:"0 10x 0 10px"}}>
+         
+      <MDBCard className="mb-2">
+          <MDBCardBody>
+              <div className="top-strip">
               <h2 className="carName"> Car Sanitisation</h2>
               <MDBCardImage className="img-fluid-banner" src="/images/Loginpage.jpg" waves />
             </div>
@@ -96,8 +112,24 @@ class Slider extends React.Component {
         </MDBCard>
       
       </div>
+      <div style={{padding:"0 10x 0 10px"}}>
+         
+      <MDBCard className="mb-2">
+          <MDBCardBody>
+              <div className="top-strip">
+              <h2 className="carName"> Quality Services</h2>
+              <MDBCardImage className="img-fluid-banner" src="/images/Loginpage.jpg" waves />
+            </div>
+              <div>
+              <p>Sanitised cars for every test</p>
+            </div>
+                        
+            </MDBCardBody>
+        </MDBCard>
+      
+      </div>
         
-        </Carousel>;
+        </Carousel>
         
       </>
     )

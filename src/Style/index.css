@@ -553,6 +553,7 @@ button.navbar-toggler {
 }
 .card.mb-2{
     margin: 10px !important;
+    background: linear-gradient(to right bottom, rgb(255 71 1 / 28%) 0%, transparent 50.5%) center bottom no-repeat, linear-gradient(0deg, rgb(251, 251, 251), rgb(245 245 245 / 15%)) center top no-repeat;
 }
 
 .find-car-title {
