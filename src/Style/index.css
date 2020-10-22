@@ -634,3 +634,8 @@ img.img-fluid {
     margin-left: 0;
     padding: 5px 0 5px 0;
 }
+.MuiGrid-spacing-xs-1 {
+    width: calc(100% + 8px);
+    margin: -8px !important;
+    padding-left: 25px !important;
+}

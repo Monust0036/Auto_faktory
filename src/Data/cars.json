@@ -1,0 +1,77 @@
+[
+    {
+        "Make":"Maruti Suzuki",
+        "Model":"Alto",
+        "City":"Mumbai",
+        "Year":"2013",
+        "Mileage":"10000",
+        "Fuel":"Petrol",
+        "Body":"Hatchback",
+        "Transmission":"Manual",
+        "color":"Grey",
+        "Owner":"1",
+        "Price":"125000",
+        "img":"/images/SampleData/Alto K10.jpg"
+
+    },
+    {   
+        "Make":"Hyundai",
+        "Model":"Grand i10",
+        "City":"Mumbai",
+        "Year":"2014",
+        "Mileage":"15000",
+        "Fuel":"Petrol",
+        "Body":"Hatchback",
+        "Transmission":"Automatic",
+        "color":"White",
+        "Owner":"1",
+        "Price":"330000",
+        "img":"/images/SampleData/Grand i10.jpg"
+
+    },
+    {   
+        "Make":"Honda",
+        "Model":"Brio",
+        "City":"Mumbai",
+        "Year":"2015",
+        "Mileage":"50000",
+        "Fuel":"Petrol",
+        "Body":"Hatchback",
+        "Transmission":"Automatic",
+        "color":"Red",
+        "Owner":"3",
+        "Price":"250000",
+        "img":"/images/SampleData/Brio.jpg"
+
+    },
+    {   
+        "Make":"Maruti Suzuki",
+        "Model":"Wagon R",
+        "City":"Mumbai",
+        "Year":"2012",
+        "Mileage":"48000",
+        "Fuel":"CNG",
+        "Body":"Hatchback",
+        "Transmission":"Manual",
+        "color":"Red",
+        "Owner":"2",
+        "Price":"2,39000",
+        "img":"/images/SampleData/Wagon R.jpg"
+
+    },
+    {   
+        "Make":"Honda",
+        "Model":"City",
+        "City":"Mumbai",
+        "Year":"2015",
+        "Mileage":"90000",
+        "Fuel":"Petrol",
+        "Body":"Sedan",
+        "Transmission":"Manual",
+        "color":"Black",
+        "Owner":"1",
+        "Price":"6,68000",
+        "img":"/images/SampleData/City.jpg"
+
+    }
+]

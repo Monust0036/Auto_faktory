@@ -1,22 +1,115 @@
 import React from 'react';
 import List from './List';
 
-const createFakeDataSource = (listCount = 5, listItemCount = 5) => {
-    let data = [];
-    for (let i = 1; i <= listCount; i++) {
-        let list = {};
-        list.title = `List ${i}`;
-        list.id = `list${i}`;
-        list.items = [];
-        for (let j = 1; j <= listItemCount; j++) {
-            list.items.push({
-                id: `listItem${i}${j}`,
-                name: `List Item ${j}`,
-                value: `listItem${i}${j}`
-            });
-        }
-        data.push(list);
-    }
+const createFakeDataSource = () => {
+    let data = [{
+        "id":1,
+        "title":"Hyundai",
+        "items":
+            [{
+                "id":1,
+                "name":"Accent",
+                "value":"Hyundai Accent"
+            },
+            {
+                "id":2,
+                "name":"Accent Viva",
+                "value":"Hyundai Accent Viva"
+            },
+            {
+                "id":3,
+                "name":"Aura",
+                "value":"Hyundai Aura"
+            },
+            {
+                "id":4,
+                "name":"Creta",
+                "value":"Hyundai Creta"
+            },
+            {
+                "id":5,
+                "name":"Grand i 10",
+                "value":"Hyundai Grand i 10"
+            },
+            {
+                "id":6,
+                "name":"i10",
+                "value":"Hyundai i10"
+            },
+            {
+                "id":7,
+                "name":"i20",
+                "value":"Hyundai i20"
+            },
+        ]
+
+    },
+    {
+        "id":2,
+        "title":"Maruti Suzuki",
+        "items":
+            [{
+                "id":1,
+                "name":"800",
+                "value":"Maruti Suzuki 800"
+            },
+            {
+                "id":2,
+                "name":"Alto",
+                "value":"Maruti Suzuki Alto"
+            },
+            {
+                "id":3,
+                "name":"Alto 800",
+                "value":"Maruti Suzuki Alto 800"
+            },
+            {
+                "id":4,
+                "name":"Alto K10",
+                "value":"Maruti Suzuki Alto K10"
+            }]
+
+    },
+    {
+        "id":3,
+        "title":"Honda",
+        "items":
+            [{
+                "id":1,
+                "name":"Accord",
+                "value":"Honda Accord"
+            },
+            {
+                "id":2,
+                "name":"Amaze",
+                "value":"Honda Amaze"
+            },
+            {
+                "id":3,
+                "name":"Brio",
+                "value":"Honda Brio"
+            },
+            {
+                "id":4,
+                "name":"City",
+                "value":"Honda City"
+            }]
+
+    }];
+    // for (let i = 1; i <= listCount; i++) {
+    //     let list = {};
+    //     list.title = `List ${i}`;
+    //     list.id = `list${i}`;
+    //     list.items = [];
+    //     for (let j = 1; j <= listItemCount; j++) {
+    //         list.items.push({
+    //             id: `listItem${i}${j}`,
+    //             name: `List Item ${j}`,
+    //             value: `listItem${i}${j}`
+    //         });
+    //     }
+    //     data.push(list);
+    
     return data;
 };
 
