@@ -6,8 +6,7 @@ class CardExampl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Carsdata: [],
-      carsdata: ""
+      carsData: this.props.carsData,
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,8 +16,8 @@ class CardExampl extends React.Component {
     this.setState({ value: event.target.value });
   };
 
-  handleChangeCarsdata = event => {
-    this.setState({ Carsdata: event.target.value });
+  handleChangecarsData = event => {
+    this.setState({ carsData: event.target.value });
   };
   getUnique(arr, comp) {
     const unique = arr
@@ -36,42 +35,41 @@ class CardExampl extends React.Component {
     return unique;
   }
   componentDidMount() {
-    const Carsdata = require("../../Data/cars.json");
-    this.setState({ Carsdata: Carsdata });
+    this.setState({ carsData: this.props.carsData });
   }
 
   render(){
-    const uniqueCouse = this.getUnique(this.state.Carsdata, "Transmission");
+    console.log(this.props.carsData)
+    const uniqueCouse = this.getUnique(this.state.carsData, "Transmission");
 
-    const Carsdata = this.state.Carsdata;
-    const carsdata = this.state.carsdata;
+    const carsData = this.state.carsData;
 
-    const filterDropdown = Carsdata.filter(function(result) {
-      return result.Transmission === carsdata;
+    const filterDropdown = carsData.filter(function(result) {
+      return result.Transmission === carsData;
     });
 
     return (
       <MDBContainer>
       
      <MDBRow >
-     { Carsdata.map((Carsdata, index) => {
+     { this.props.carsData.map((carsData, index) => {
      return <MDBCol key = {index} lg="6" style={{ marginTop:"20px"}}>
        <a href="/detail-car">
        <MDBCard>
-         <MDBCardImage className="img-fluid-cards" src={Carsdata.img} waves />
+         <MDBCardImage className="img-fluid-cards" src={carsData.img} waves />
          <MDBCardBody>
            <div className="heart-carName">
-     <h2 className="carName"> {Carsdata.Year} {Carsdata.Make} {Carsdata.Model}</h2>
+     <h2 className="carName"> {carsData.Year} {carsData.Make} {carsData.Model}</h2>
              <MDBIcon icon="heart" className="ml-2"/>
            </div>
            <div className="ratedate1">
-               <p className="bnKmZw l">{Carsdata.Mileage}</p>
-               <p className="bnKmZw l" >{Carsdata.Year} reg</p>
-               <p className="bnKmZw l">{Carsdata.Fuel}</p>
-               <p className="bnKmZw l">{Carsdata.Transmission}</p>
+               <p className="bnKmZw l">{carsData.Mileage}</p>
+               <p className="bnKmZw l" >{carsData.Year} reg</p>
+               <p className="bnKmZw l">{carsData.Fuel}</p>
+               <p className="bnKmZw l">{carsData.Transmission}</p>
              </div>
                          <div className="ljwTDc">
-                           <p className="iFsKIn"> ₹{Carsdata.Price}</p>
+                           <p className="iFsKIn"> ₹{carsData.Price}</p>
                            {/* <a href="#" type="btn" className="view-car">View this car</a> */}
                            <MDBBtn color="deep-orange" size="md">View </MDBBtn>
                          </div>

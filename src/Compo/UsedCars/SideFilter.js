@@ -44,7 +44,12 @@ class Sidefilter extends Component {
 	  };
 	
 	  handleChange = name => event => {
-		this.setState({ [name]: event.target.checked });
+		const word = 'Petrol'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Fuel == word)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked  });
 	  };
 	
     render() {
@@ -169,7 +174,7 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedB1}
 		  			label="Hatchback"
-		  			onChange={this.handleChange('checkedB1')}
+		  			onChange={this.handleChange('checkedB1','Hatchback')}
           			value="checkedB1"
 					/>
 					<Checkbox

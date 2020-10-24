@@ -96,19 +96,7 @@ const createFakeDataSource = () => {
             }]
 
     }];
-    // for (let i = 1; i <= listCount; i++) {
-    //     let list = {};
-    //     list.title = `List ${i}`;
-    //     list.id = `list${i}`;
-    //     list.items = [];
-    //     for (let j = 1; j <= listItemCount; j++) {
-    //         list.items.push({
-    //             id: `listItem${i}${j}`,
-    //             name: `List Item ${j}`,
-    //             value: `listItem${i}${j}`
-    //         });
-    //     }
-    //     data.push(list);
+
     
     return data;
 };
