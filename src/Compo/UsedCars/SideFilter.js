@@ -19,6 +19,7 @@ import { MDBInput, MDBFormInline, MDBSelect } from 'mdbreact';
 import ListContainer from "./ExpansionMain/ListContainer"
 import ReactCircleColorPicker from 'react-circle-color-picker';
 import Grid from '@material-ui/core/Grid';
+import BodyTypeCheckbox from "./BodyTypeCheckbox"
 
 // import Checkbox from '@material-ui/core/Checkbox';
 
@@ -42,20 +43,97 @@ class Sidefilter extends Component {
 		color: [],
 
 	  };
+	  
 	
-	  handleChange = name => event => {
+	  handleChangeP = name => event => {
 		const fuel = 'Petrol'
-		const year ='2014'
-
 		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel && car.Year==year)
+		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
 		// console.log(dataOfcars)
 		this.props.updateState('carsData',dataOfcars)
 		this.setState({ [name]: event.target.checked  });
 	  };
+	  handleChangeC = name => event => {
+		const fuel = 'CNG'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeD = name => event => {
+		const fuel = 'Diesel'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeB1 = name => event => {
+		const body = 'Hatchback'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Body == body)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeB2 = name => event => {
+		const body = 'Sedan'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Body == body)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeB3 = name => event => {
+		const body = 'SUV'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Body == body)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeT1 = name => event => {
+		const transmission = 'Manual'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Transmission == transmission)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeT2 = name => event => {
+		const transmission = 'Automatic'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Transmission == transmission)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeO1 = name => event => {
+		const owner = '1'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Owner == owner)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+	  handleChangeO2 = name => event => {
+		const owner = '2'
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car.Owner == owner)
+		// console.log(dataOfcars)
+		this.props.updateState('carsData',dataOfcars)
+		this.setState({ [name]: event.target.checked });
+	  };
+
 	
     render() {
 		
+
+			const handleFilters = (filters, category) =>{
+				console.log(filters)
+
+			}		
 		//   const { selectedOption } = this.state;
         return (
             <ReactiveBase
@@ -148,19 +226,19 @@ class Sidefilter extends Component {
 			<Checkbox
 		  checked={this.state.checkedA}
 		  label="Petrol"
-		  onChange={this.handleChange('checkedA')}
+		  onChange={this.handleChangeP('checkedA')}
           value="checkedA"
         	/>
 				<Checkbox
 		  	checked={this.state.checkedB}
 		  	label="Diesel"
-		  	onChange={this.handleChange('checkedB')}
+		  	onChange={this.handleChangeD('checkedB')}
           	value="checkedB"
         	/>
 			<Checkbox
 		  checked={this.state.checkedC}
 		  label="CNG"
-		  onChange={this.handleChange('checkedC')}
+		  onChange={this.handleChangeC('checkedC')}
           value="checkedC"
         	/>
 				
@@ -173,22 +251,26 @@ class Sidefilter extends Component {
             	<h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Body Type</h5>
 			
 				<div style={{float:"left"}}>
+					{/* <BodyTypeCheckbox
+						handleFilters = { filters => handleFilters(filters, "continents")}
+					/> */}
+
 					<Checkbox
 		  			checked={this.state.checkedB1}
 		  			label="Hatchback"
-		  			onChange={this.handleChange('checkedB1','Hatchback')}
+		  			onChange={this.handleChangeB1("checkedB1") }
           			value="checkedB1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedB2}
 		  			label="Sedan"
-		  			onChange={this.handleChange('checkedB2')}
+		  			onChange={this.handleChangeB2('checkedB2')}
           			value="checkedB2"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedB3}
 		  			label="SUV"
-		  			onChange={this.handleChange('checkedB3')}
+		  			onChange={this.handleChangeB3('checkedB3')}
           			value="checkedB3"
 					/>
 				
@@ -204,13 +286,13 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedT1}
 		  			label="Automatic"
-		  			onChange={this.handleChange('checkedT1')}
+		  			onChange={this.handleChangeT2('checkedT1')}
           			value="checkedT1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedT2}
 		  			label="Manual"
-		  			onChange={this.handleChange('checkedT2')}
+		  			onChange={this.handleChangeT1('checkedT2')}
           			value="checkedT2"
 					/>
 					
@@ -227,13 +309,13 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedO1}
 		  			label="1st Owner"
-		  			onChange={this.handleChange('checkedO1')}
+		  			onChange={this.handleChangeO1('checkedO1')}
           			value="checkedO1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedO2}
 		  			label="2nd Owner"
-		  			onChange={this.handleChange('checkedO2')}
+		  			onChange={this.handleChangeO2('checkedO2')}
           			value="checkedO2"
 					/>
 					

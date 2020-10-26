@@ -69,8 +69,8 @@ class Menubar extends Component {
                     </MDBNavLink>
                       
                       <MDBDropdownItem href="/used-car">Delhi</MDBDropdownItem>
-                      <MDBDropdownItem href="http://localhost:3000/used-car">Bangluru</MDBDropdownItem>
-                      <MDBDropdownItem href="http://localhost:3000/used-car">Hyderabad</MDBDropdownItem>
+                      <MDBDropdownItem href="/used-car">Bangluru</MDBDropdownItem>
+                      <MDBDropdownItem href="/used-car">Hyderabad</MDBDropdownItem>
                     </MDBDropdownMenu>
                   </MDBDropdown>
                 </MDBNavItem>

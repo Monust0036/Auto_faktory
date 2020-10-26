@@ -39,7 +39,7 @@ class CardExampl extends React.Component {
   }
 
   render(){
-    console.log(this.props.carsData)
+    console.log(">>>>>>",this.props.carsData)
     const uniqueCouse = this.getUnique(this.state.carsData, "Transmission");
 
     const carsData = this.state.carsData;

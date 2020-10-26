@@ -21,10 +21,12 @@ class MainFilter extends React.Component {
     updateState=(key,value)=>{
         this.setState({[key]:value})
     }
+    filterProducts = (event) =>{
+        console.log(event.target.value)
+    }
 
     sortCarsdata = (event) => {
         const sort=event.target.value;
-        console.log(">>>>>>>>>>>>>.",event.target.value)
         this.setState((state) => ({
             sort:sort,
             carsData: this.state.carsData.slice().sort((a,b) =>(
