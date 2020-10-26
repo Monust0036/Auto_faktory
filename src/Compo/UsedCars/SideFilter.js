@@ -44,9 +44,11 @@ class Sidefilter extends Component {
 	  };
 	
 	  handleChange = name => event => {
-		const word = 'Petrol'
+		const fuel = 'Petrol'
+		const year ='2014'
+
 		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Fuel == word)
+		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel && car.Year==year)
 		// console.log(dataOfcars)
 		this.props.updateState('carsData',dataOfcars)
 		this.setState({ [name]: event.target.checked  });
