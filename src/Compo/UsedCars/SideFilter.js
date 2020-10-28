@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-// import Select from 'react-select';
-// import {  MDBRow, MDBCardBody,MDBView, MDBMask, MDBCol,MDBContainer,MDBSelect } from "mdbreact";
-// import RangeSlider from 'react-bootstrap-range-slider';
 import {
 	ReactiveBase,
 	RangeSlider,
@@ -9,10 +6,6 @@ import {
 	ResultList,
 	ReactiveList,CategorySearch,SingleRange,MultiList
 } from '@appbaseio/reactivesearch';
-// import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from 'muicss/lib/react/checkbox';
 
 import { MDBInput, MDBFormInline, MDBSelect } from 'mdbreact';
@@ -20,12 +13,8 @@ import ListContainer from "./ExpansionMain/ListContainer"
 import ReactCircleColorPicker from 'react-circle-color-picker';
 import Grid from '@material-ui/core/Grid';
 import BodyTypeCheckbox from "./BodyTypeCheckbox"
-
-// import Checkbox from '@material-ui/core/Checkbox';
-
-
-
-
+import YearRadio from "./yearRadio"
+import MileageRadio from "./MileageRadio"
 
 class Sidefilter extends Component {
 
@@ -180,39 +169,15 @@ class Sidefilter extends Component {
         <div className="row">
             <div className="col">
             <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Year</h5>
-            <SingleRange
-	            componentId="ratingsfilter"
-	            dataField="rating"
-	            
-	            data={[
-		                {"start": 4, "end": 5, "label": "2019 & above"},
-                        {"start": 3, "end": 5, "label": "2017 & above"},
-                        {"start": 3, "end": 5, "label": "2015 & above"},
-                        {"start": 3, "end": 5, "label": "2013 & above"},
-                        {"start": 3, "end": 5, "label": "2011 & above"},
-                        {"start": 3, "end": 5, "label": "2009 & above"}
-	                ]}
-	                defaultValue="2015 & above"
-            />
+			<YearRadio/>
+
             </div>
         </div>
 		<hr></hr>
         <div className="row">
             <div className="col">
             <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Mileage</h5>
-            <SingleRange
-	            componentId="ratingsfilter"
-	            dataField="rating"
-	            
-	            data={[
-		                {"start": 4, "end": 5, "label": "10,000 kms & less"},
-                        {"start": 3, "end": 5, "label": "30,000 kms & less"},
-                        {"start": 3, "end": 5, "label": "50,000 kms & less"},
-                        {"start": 3, "end": 5, "label": "75,000 kms & less"},
-                        {"start": 3, "end": 5, "label": "1,00,000 kms & less"}
-	                ]}
-	                defaultValue="10,000 kms & less"
-            />
+			<MileageRadio/>
             </div>
         </div>
 		<hr></hr>

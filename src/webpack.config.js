@@ -5,23 +5,20 @@ var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
-    entry: APP_DIR + '/index.js',
+    entry: APP_DIR + '/index.jsx',
     output: {
         path: BUILD_DIR,
-        filename: 'html'
+        filename: 'bundle.js'
     },
     module : {
         loaders : [
             {
-                test : /\.html$/,
+                test : /\.js?/,
                 include : APP_DIR,
-                loader : 'html'
+                loader : 'babel'
             }
         ]
-    },
-    
+    }
 };
 
 module.exports = config;
-
-

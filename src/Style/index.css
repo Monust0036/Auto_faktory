@@ -639,3 +639,6 @@ img.img-fluid {
     margin: -8px !important;
     padding-left: 25px !important;
 }
+label.MuiFormControlLabel-root {
+    margin: 0 10px 0 5px !important;
+}

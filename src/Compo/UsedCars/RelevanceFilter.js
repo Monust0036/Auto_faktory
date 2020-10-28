@@ -27,8 +27,7 @@ class Slider extends React.Component {
                     <option value="yearhighTolow">Year- High to Low</option>
                 </select>
             </div>
-              
-      </div>
+          </div>
       </>
     )
   }
