@@ -4,6 +4,7 @@ import {
   MDBCollapse, MDBIcon, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCol,
   MDBContainer, MDBModal, MDBModalBody, MDBModalHeader,MDBInput,MDBBtn,MDBModalFooter,MDBRow
 } from "mdbreact";
+import Signin from "./Signin"
 
 class Menubar extends Component {
   state = {
@@ -137,12 +138,13 @@ class Menubar extends Component {
                               <br></br>
                               <br></br>
                               <br></br>
-                              <div className="form-group">
-                                  <input type="email" className="form-control" placeholder="Phone Number" />
-                                  <br></br>
+                              {/* <div className="form-group"> */}
+                                  <Signin/>
+                                  {/* <input type="email" className="form-control" placeholder="Phone Number" />
+                                  <br></br> */}
                                  
-                                </div>
-                                <button className="LoginModal-getOtpBtnWrap" >Get OTP</button>
+                                {/* </div> */}
+                                {/* <button className="LoginModal-getOtpBtnWrap" >Get OTP</button> */}
                                 <p style={{fontSize:"12px"}}>By Signing up, I agree to terms and privacy policy</p>
                             
                             </MDBCol>

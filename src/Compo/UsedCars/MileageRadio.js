@@ -45,9 +45,9 @@ export default function ErrorRadios() {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{textAlign:"initial"}}>
+   
       <FormControl component="fieldset" error={error} className={classes.formControl}>
-        <RadioGroup aria-label="quiz" name="quiz" value={this.props.sort} onChange={this.props.sortCarsdata}>
+        <RadioGroup aria-label="quiz" name="quiz"  >
           <FormControlLabel value="10000" control={<Radio />} label="10,000km & less" />
           <FormControlLabel value="30000" control={<Radio />} label="30,000km & less" />
           <FormControlLabel value="50000" control={<Radio />} label="50,000km & less" />
@@ -56,6 +56,6 @@ export default function ErrorRadios() {
           
         </RadioGroup>
       </FormControl>
-    </form>
+   
   );
 }
