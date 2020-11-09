@@ -1,5 +1,6 @@
 import  React  from  'react';
 import  validator  from  'validator';
+import { API } from "../config.js";
 import { NavLink, withRouter } from  'react-router-dom';
 
 class  Auth  extends  React.Component {
@@ -18,6 +19,7 @@ class  Auth  extends  React.Component {
         this.setState({ invalid:  '', msg:  '' });
         let { name, value } = event.target;
         this.setState({ [name]:  value });
+       
     };
 
     editPhoneNo = () => {
@@ -26,7 +28,7 @@ class  Auth  extends  React.Component {
 
     handleSendOtp = () => {
         this.setState({ dispalyPhonePage:  false });
-        fetch('localhost:4200/api/sendotp',
+        fetch(`${API}/sendotp`,
             {
                 method:  'POST',
                 headers: {
@@ -37,9 +39,13 @@ class  Auth  extends  React.Component {
                 })
             }
         )
-        .then(res  =>  res.json())
+        .then(res  =>  {
+            return res.json();
+        })
         .then(data  => {
+            
             if (data.success) {
+                // console.log(">>>>>>>>>>>>>>>>",data)
                 this.setState({ dispalyPhonePage:  false });
             } else {
                 this.setState({ dispalyPhonePage:  true });
@@ -48,9 +54,10 @@ class  Auth  extends  React.Component {
     };
 
     submitPhoneNo = e  => {
-        console.log("i am coming here ")
+       
         e.preventDefault();
         if(this.state.phoneNumber) {
+            console.log(e,"i am coming here ")
             validator.isMobilePhone(this.state.phoneNumber)
                 ? this.handleSendOtp()
                 : this.setState({ invalid:  'Enter a valid Phone Number' })
@@ -60,10 +67,47 @@ class  Auth  extends  React.Component {
         }
     };
 
+    // handleVerifyOtp = e  => {
+    //     e.preventDefault();
+    //     if(this.state.otp){
+    //         fetch(`${API}/verifyotp`,
+    //             {
+    //                 method:  'POST',
+    //                 headers: {
+    //                     'Content-Type':  'application/json'
+    //                 },
+    //                 body:  JSON.stringify({
+    //                     phoneNumber:  this.state.phoneNumber,
+    //                     otp:  this.state.otp
+    //                 })
+    //             }
+    //         )
+    //         .then(res  =>  res.json())
+    //         .then(data  => {
+    //             if (data.success) {
+    //                 localStorage.setItem('storiesloggeduser', data.signuptoken);
+    //                 localStorage.setItem('storiesloggeduserid', data.userId);
+    //                 this.props.handleIslogged(true);
+    //                 this.props.history.push('/');
+    //             }
+    //             if (!data.success) this.setState({ msg:  data.message });
+    //             if (data.logintoken) {
+    //                 localStorage.setItem('storiesloggeduser', data.logintoken);
+    //                 localStorage.setItem('storiesloggeduserid', data.userId);
+    //                 this.props.handleIslogged(true);
+    //                 this.props.history.push('/');
+    //             }
+    //         })
+    //          }
+    //     else {
+    //         this.setState({ msg:  "OTP can't be empty" })
+    //     }
+    // };
     handleVerifyOtp = e  => {
         e.preventDefault();
+        console.log(">>>>>>>>>>>>>>>>>>>>")
         if(this.state.otp){
-            fetch('/api/v1/users/verifyotp',
+            fetch(`${API}/verifyotp`,
                 {
                     method:  'POST',
                     headers: {
@@ -99,7 +143,7 @@ class  Auth  extends  React.Component {
 
     displayPhonePage = () => {
         return (
-            <form onSubmit={this.submitPhoneNo}>
+            <form >
                 <label>{this.state.invalid}</label>
                 <label>{this.state.msg}</label>
                 <label>Enter a phone number</label>
@@ -113,14 +157,14 @@ class  Auth  extends  React.Component {
                     required
                 />
                 <br></br>
-                <input type="submit" className="LoginModal-getOtpBtnWrap" value="NEXT"/>
+                <input type="submit" onClick={this.submitPhoneNo} className="LoginModal-getOtpBtnWrap" value="NEXT"/>
             </form>
         )
     }
 
     displayOtpPage = () => {
         return (
-            <form onSubmit={this.handleVerifyOtp}>
+            <form >
                 <label>{this.state.invalid}</label>
                 <label>{this.state.msg}</label>
                 <label>Enter OTP</label>
@@ -137,7 +181,7 @@ class  Auth  extends  React.Component {
                     <button onClick={this.editPhoneNo}>Edit Phone Number </button>
                     <button onClick={this.handleSendOtp}> Resend OTP </button>
                 </div>
-                <input type="submit"  value="NEXT"/>
+                <input type="submit" onClick={this.handleVerifyOtp}  value="NEXT"/>
             </form>
         )
     }

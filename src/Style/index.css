@@ -156,6 +156,9 @@ text-align: center !important;
     width: 1000px !important;
  
 }
+.container{
+    max-width:1350px !important;
+}
 .carName{
     font-weight: 600 !important;
     font-size: 1rem !important;
@@ -641,4 +644,7 @@ img.img-fluid {
 }
 label.MuiFormControlLabel-root {
     margin: 0 10px 0 5px !important;
+}
+fieldset.MuiFormControl-root.makeStyles-formControl-23{
+    display: block !important;
 }

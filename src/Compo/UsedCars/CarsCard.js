@@ -39,7 +39,7 @@ class CardExampl extends React.Component {
   }
 
   render(){
-    console.log(">>>>>>",this.props.carsData)
+    // console.log(">>>>>>",this.props.carsData)
     const uniqueCouse = this.getUnique(this.state.carsData, "Transmission");
 
     const carsData = this.state.carsData;
@@ -48,7 +48,7 @@ class CardExampl extends React.Component {
       return result.Transmission === carsData;
     });
 
-    return (
+    return (  
       <MDBContainer>
       
      <MDBRow >
@@ -80,30 +80,7 @@ class CardExampl extends React.Component {
        
      </MDBCol>
      })}
-     {/* <MDBCol>
-     <a href="/detail-car">
-       <MDBCard>
-         <MDBCardImage className="img-fluid-cards" src="/images/SampleData/Grand i10.jpg" waves />
-         <MDBCardBody>
-           <div className="heart-carName">
-           <h2 className="carName"> 2014 Hyundai Grand i10</h2>
-             <MDBIcon icon="heart" className="ml-2"/>
-           </div>
-           <div className="ratedate1">
-               <p className="bnKmZw l">15000 miles</p>
-               <p className="bnKmZw l" >2014 reg</p>
-               <p className="bnKmZw l">Petrol</p>
-               <p className="bnKmZw l">Automatic</p>
-             </div>
-                         <div className="ljwTDc">
-                           <p className="iFsKIn"> ₹3,30000</p>
-                           <MDBBtn color="deep-orange" size="md">View </MDBBtn>
-                         </div>
-                         
-         </MDBCardBody>
-       </MDBCard>
-       </a>
-   </MDBCol> */}
+    
    </MDBRow>
    {/* <MDBRow style={{ marginTop:"20px", }}>
      <MDBCol>
