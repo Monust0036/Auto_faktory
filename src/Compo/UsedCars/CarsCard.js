@@ -48,7 +48,7 @@ class CardExampl extends React.Component {
       return result.Transmission === carsData;
     });
 
-    return (  
+    return (
       <MDBContainer>
       
      <MDBRow >

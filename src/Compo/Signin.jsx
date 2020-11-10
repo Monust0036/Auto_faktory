@@ -1,13 +1,15 @@
 import  React  from  'react';
 import  validator  from  'validator';
 import { API } from "../config.js";
-import { NavLink, withRouter } from  'react-router-dom';
+import { NavLink, withRouter,Redirect } from  'react-router-dom';
+import Home from "./Home";
 
 class  Auth  extends  React.Component {
     constructor() {
         super();
         this.state = {
             dispalyPhonePage:  true,
+            handleIslogged:true,
             phoneNumber:  '',
             otp:  '',
             invalid:  '',
@@ -57,7 +59,7 @@ class  Auth  extends  React.Component {
        
         e.preventDefault();
         if(this.state.phoneNumber) {
-            console.log(e,"i am coming here ")
+            // console.log(e,"i am coming here ")
             validator.isMobilePhone(this.state.phoneNumber)
                 ? this.handleSendOtp()
                 : this.setState({ invalid:  'Enter a valid Phone Number' })
@@ -67,45 +69,10 @@ class  Auth  extends  React.Component {
         }
     };
 
-    // handleVerifyOtp = e  => {
-    //     e.preventDefault();
-    //     if(this.state.otp){
-    //         fetch(`${API}/verifyotp`,
-    //             {
-    //                 method:  'POST',
-    //                 headers: {
-    //                     'Content-Type':  'application/json'
-    //                 },
-    //                 body:  JSON.stringify({
-    //                     phoneNumber:  this.state.phoneNumber,
-    //                     otp:  this.state.otp
-    //                 })
-    //             }
-    //         )
-    //         .then(res  =>  res.json())
-    //         .then(data  => {
-    //             if (data.success) {
-    //                 localStorage.setItem('storiesloggeduser', data.signuptoken);
-    //                 localStorage.setItem('storiesloggeduserid', data.userId);
-    //                 this.props.handleIslogged(true);
-    //                 this.props.history.push('/');
-    //             }
-    //             if (!data.success) this.setState({ msg:  data.message });
-    //             if (data.logintoken) {
-    //                 localStorage.setItem('storiesloggeduser', data.logintoken);
-    //                 localStorage.setItem('storiesloggeduserid', data.userId);
-    //                 this.props.handleIslogged(true);
-    //                 this.props.history.push('/');
-    //             }
-    //         })
-    //          }
-    //     else {
-    //         this.setState({ msg:  "OTP can't be empty" })
-    //     }
-    // };
+    
     handleVerifyOtp = e  => {
         e.preventDefault();
-        console.log(">>>>>>>>>>>>>>>>>>>>")
+        // console.log(">>>>>>>>>>>>>>>>>>>>")
         if(this.state.otp){
             fetch(`${API}/verifyotp`,
                 {
@@ -126,13 +93,17 @@ class  Auth  extends  React.Component {
                     localStorage.setItem('storiesloggeduserid', data.userId);
                     this.props.handleIslogged(true);
                     this.props.history.push('/');
+                 
+
                 }
                 if (!data.success) this.setState({ msg:  data.message });
                 if (data.logintoken) {
                     localStorage.setItem('storiesloggeduser', data.logintoken);
                     localStorage.setItem('storiesloggeduserid', data.userId);
                     this.props.handleIslogged(true);
+                    
                     this.props.history.push('/');
+                    
                 }
             })
         }
@@ -140,6 +111,10 @@ class  Auth  extends  React.Component {
             this.setState({ msg:  "OTP can't be empty" })
         }
     };
+
+    handleIslogged = () =>{
+        return(<Home/>)
+    }
 
     displayPhonePage = () => {
         return (
@@ -187,10 +162,11 @@ class  Auth  extends  React.Component {
     }
 
     render() {
-        let { dispalyPhonePage } = this.state;
+        let { dispalyPhonePage,handleIslogged  } = this.state;
         return(
             <>
                 {dispalyPhonePage ? this.displayPhonePage() : this.displayOtpPage()}
+                
             </>
         )
     }
