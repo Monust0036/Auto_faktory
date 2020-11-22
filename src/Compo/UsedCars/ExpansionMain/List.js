@@ -29,7 +29,7 @@ const List = ({onCheckItem, list, checkedItems, classes}) => {
                     {list.items.map(item =>
                         <ListItem
                             checked={checkedItems[item.value] !== undefined}
-                            onCheckItem={onCheckItem}
+                            onCheckItem={(e)=>onCheckItem(list,item,e)}
                             key={item.id}
                             item={item}/>
                     )}

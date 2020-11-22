@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ErrorRadios() {
+export default function ErrorRadios(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
@@ -49,12 +49,12 @@ export default function ErrorRadios() {
       <FormControl component="fieldset" error={error} className={classes.formControl}>
         {/* <FormLabel component="legend">Pop quiz: Material-UI is...</FormLabel> */}
         <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-          <FormControlLabel value="2019" control={<Radio />} label="2019 & above" />
-          <FormControlLabel value="2017" control={<Radio />} label="2017 & above" />
-          <FormControlLabel value="2015" control={<Radio />} label="2015 & above" />
-          <FormControlLabel value="2013" control={<Radio />} label="2013 & above" />
-          <FormControlLabel value="2011" control={<Radio />} label="2011 & above" />
-          <FormControlLabel value="2009" control={<Radio />} label="2009 & above" />
+          <FormControlLabel value="2019" control={<Radio onChange={()=>props.getRadioBtnFilterData(2019,'year')}/>} label="2019 & above" />
+          <FormControlLabel value="2017" control={<Radio onChange={()=>props.getRadioBtnFilterData(2017,'year')}/>} label="2017 & above" />
+          <FormControlLabel value="2015" control={<Radio onChange={()=>props.getRadioBtnFilterData(2015,'year')}/>} label="2015 & above" />
+          <FormControlLabel value="2013" control={<Radio onChange={()=>props.getRadioBtnFilterData(2013,'year')}/>} label="2013 & above" />
+          <FormControlLabel value="2011" control={<Radio onChange={()=>props.getRadioBtnFilterData(2011,'year')}/>} label="2011 & above" />
+          <FormControlLabel value="2009" control={<Radio onChange={()=>props.getRadioBtnFilterData(2009,'year')}/>} label="2009 & above" />
         </RadioGroup>
       </FormControl>
     </form>

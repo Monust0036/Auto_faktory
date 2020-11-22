@@ -106,7 +106,7 @@ class ListContainer extends React.Component {
         checkedItems: {},
         source: createFakeDataSource()
     };
-    handleCheckItem = (e) => {
+    handleCheckItem = (list,item,e) => {
         let {checkedItems} = this.state;
         let {value} = e.target;
         if (checkedItems[value] === undefined) {
@@ -116,6 +116,7 @@ class ListContainer extends React.Component {
         }
 
         this.setState({checkedItems});
+        this.props.getCarNameFilter(list,item,e)
     };
 
     render() {

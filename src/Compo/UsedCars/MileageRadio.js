@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ErrorRadios() {
+export default function ErrorRadios(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
@@ -47,12 +47,12 @@ export default function ErrorRadios() {
   return (
    
       <FormControl component="fieldset" error={error} className={classes.formControl}>
-        <RadioGroup aria-label="quiz" name="quiz"  >
-          <FormControlLabel value="10000" control={<Radio />} label="10,000km & less" />
-          <FormControlLabel value="30000" control={<Radio />} label="30,000km & less" />
-          <FormControlLabel value="50000" control={<Radio />} label="50,000km & less" />
-          <FormControlLabel value="75000" control={<Radio />} label="75,000km & less" />
-          <FormControlLabel value="100000" control={<Radio />} label="1,00,000km & less" />
+        <RadioGroup aria-label="quiz" name="quiz"  style={{flexDirection: 'row'}}>
+          <FormControlLabel value="10000" control={<Radio  onChange={()=>props.getRadioBtnFilterData(10000,'mileage')}/>} label="10,000km & less" />
+          <FormControlLabel value="30000" control={<Radio  onChange={()=>props.getRadioBtnFilterData(30000,'mileage')}/>} label="30,000km & less" />
+          <FormControlLabel value="50000" control={<Radio  onChange={()=>props.getRadioBtnFilterData(50000,'mileage')}/>} label="50,000km & less" />
+          <FormControlLabel value="75000" control={<Radio  onChange={()=>props.getRadioBtnFilterData(75000,'mileage')}/>} label="75,000km & less" />
+          <FormControlLabel value="100000" control={<Radio  onChange={()=>props.getRadioBtnFilterData(10000,'mileage')}/>} label="1,00,000km & less" />
           
         </RadioGroup>
       </FormControl>

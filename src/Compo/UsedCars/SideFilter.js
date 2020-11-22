@@ -33,95 +33,32 @@ class Sidefilter extends Component {
 	  };
 	  
 	
-	  handleChangeP = name => event => {
-		const fuel = 'Petrol'
+	  handleChange = ( value,key,event) => {
 		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
+		dataOfcars = dataOfcars.filter(car =>car[key] == value)
 		// console.log(dataOfcars)
 		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked  });
-	  };
-	  handleChangeC = name => event => {
-		const fuel = 'CNG'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeD = name => event => {
-		const fuel = 'Diesel'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Fuel == fuel)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeB1 = name => event => {
-		const body = 'Hatchback'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Body == body)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeB2 = name => event => {
-		const body = 'Sedan'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Body == body)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeB3 = name => event => {
-		const body = 'SUV'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Body == body)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeT1 = name => event => {
-		const transmission = 'Manual'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Transmission == transmission)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeT2 = name => event => {
-		const transmission = 'Automatic'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Transmission == transmission)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeO1 = name => event => {
-		const owner = '1'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Owner == owner)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
-	  };
-	  handleChangeO2 = name => event => {
-		const owner = '2'
-		let dataOfcars = this.props.dataOfcars
-		dataOfcars = dataOfcars.filter(car =>car.Owner == owner)
-		// console.log(dataOfcars)
-		this.props.updateState('carsData',dataOfcars)
-		this.setState({ [name]: event.target.checked });
+		this.setState({ [event.target.value]: event.target.checked  });
 	  };
 
+	  getRadioBtnFilterData=(value,key)=>{
+		let dataOfcars = this.props.dataOfcars
+		dataOfcars = dataOfcars.filter(car =>car[key] < value)
+		this.props.updateState('carsData',dataOfcars)
+	  }
+	//   filter for make and modals
+	  getCarNameFilter=(list,item,e)=>{
+		// console.log(list,item,e.target.checked)
+
+	  }
+	//   budgetFilter=(e)=>{
+	// 	console.log('hiii')
+	//   }
 	
     render() {
 		
 
-			const handleFilters = (filters, category) =>{
-				console.log(filters)
-
-			}		
+				
 		//   const { selectedOption } = this.state;
         return (
             <ReactiveBase
@@ -136,6 +73,7 @@ class Sidefilter extends Component {
                 <br></br>
                 
 				<RangeSlider
+					// onChange={(e)=>this.budgetFilter(e)}
 					dataField="ratings_count"
 					componentId="BookSensor"
 					range={{    
@@ -159,16 +97,17 @@ class Sidefilter extends Component {
 	                componentId="searchbox"
 	                dataField="model"
 	                categoryField="brand.keyword"
-	                placeholder="Search cars by Model"
+					placeholder="Search cars by Model"
+					
                 />
-				<ListContainer/>
+				<ListContainer getCarNameFilter={this.getCarNameFilter}/>
             </div>
         </div>
 		<hr></hr>
         <div className="row">
             <div className="col">
             <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Year</h5>
-			<YearRadio/>
+			<YearRadio getRadioBtnFilterData={this.getRadioBtnFilterData}/>
 
             </div>
         </div>
@@ -176,7 +115,7 @@ class Sidefilter extends Component {
         <div className="row">
             <div className="col">
             <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Mileage</h5>
-			<MileageRadio/>
+			<MileageRadio  getRadioBtnFilterData={this.getRadioBtnFilterData}/>
             </div>
         </div>
 		<hr></hr>
@@ -190,19 +129,19 @@ class Sidefilter extends Component {
 			<Checkbox
 		  checked={this.state.checkedA}
 		  label="Petrol"
-		  onChange={this.handleChangeP('checkedA')}
+		  onChange={(e)=>this.handleChange('petrol','fuel',e)}
           value="checkedA"
         	/>
 				<Checkbox
 		  	checked={this.state.checkedB}
 		  	label="Diesel"
-		  	onChange={this.handleChangeD('checkedB')}
+		  	onChange={(e)=>this.handleChange('Diesel','fuel',e)}
           	value="checkedB"
         	/>
 			<Checkbox
 		  checked={this.state.checkedC}
 		  label="CNG"
-		  onChange={this.handleChangeC('checkedC')}
+		  onChange={(e)=>this.handleChange('cng','fuel',e)}
           value="checkedC"
         	/>
 				
@@ -222,19 +161,19 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedB1}
 		  			label="Hatchback"
-		  			onChange={this.handleChangeB1("checkedB1") }
+		  			onChange={(e)=>this.handleChange('hatchback','body',e)}
           			value="checkedB1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedB2}
 		  			label="Sedan"
-		  			onChange={this.handleChangeB2('checkedB2')}
+		  			onChange={(e)=>this.handleChange('sedan','body',e)}
           			value="checkedB2"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedB3}
 		  			label="SUV"
-		  			onChange={this.handleChangeB3('checkedB3')}
+		  			onChange={(e)=>this.handleChange('suv','body',e)}
           			value="checkedB3"
 					/>
 				
@@ -250,13 +189,13 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedT1}
 		  			label="Automatic"
-		  			onChange={this.handleChangeT2('checkedT1')}
+		  			onChange={(e)=>this.handleChange('automatic','transmission',e)}
           			value="checkedT1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedT2}
 		  			label="Manual"
-		  			onChange={this.handleChangeT1('checkedT2')}
+		  			onChange={(e)=>this.handleChange('manual','transmission',e)}
           			value="checkedT2"
 					/>
 					
@@ -273,13 +212,13 @@ class Sidefilter extends Component {
 					<Checkbox
 		  			checked={this.state.checkedO1}
 		  			label="1st Owner"
-		  			onChange={this.handleChangeO1('checkedO1')}
+		  			onChange={(e)=>this.handleChange('1','owner',e)}
           			value="checkedO1"
 					/>
 					<Checkbox
 		  			checked={this.state.checkedO2}
 		  			label="2nd Owner"
-		  			onChange={this.handleChangeO2('checkedO2')}
+		  			onChange={(e)=>this.handleChange('2','owner',e)}
           			value="checkedO2"
 					/>
 					
