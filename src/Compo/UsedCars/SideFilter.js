@@ -30,7 +30,6 @@ class Sidefilter extends Component {
 		checkedO1: false,
 		checkedO2: false,
 		color: [],
-
 	  };
 	  
 	

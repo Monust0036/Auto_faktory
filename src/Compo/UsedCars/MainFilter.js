@@ -4,7 +4,8 @@ import Filter from "./SideFilter.js";
 import CarsCard from "./CarsCard.js"
 import TopStripBanner from "./TopBannerStrip"
 import RelevanceFilter from "./RelevanceFilter"
-const Carsdata = require("../../Data/cars.json");
+import axios from "axios"
+// const Carsdata = require("../../Data/cars.json");
 
 
 
@@ -12,11 +13,26 @@ class MainFilter extends React.Component {
     constructor(){
         super();
         this.state={
-            carsData:Carsdata,
-            dataOfcars:Carsdata,
+            carsData:[],
+            dataOfcars:[],
             size:"",
             sort:"",
         }
+    }
+    componentDidMount(){
+        this.getCarData()
+    }
+    getCarData=()=>{
+        axios.get('http://d5d739545ba5.ngrok.io/api/cardatas')
+  .then( (response)=> {
+    // handle success
+    this.setState({carsData:response.data,dataOfcars:response.data})
+    console.log(response);
+  })
+  .catch( (error)=> {
+    // handle error
+    console.log(error);
+  })
     }
     updateState=(key,value)=>{
         this.setState({[key]:value})
