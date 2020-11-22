@@ -14,13 +14,26 @@ import MenuItem from "@material-ui/core/MenuItem"
 
 
 export class FirstForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state={
+      formData:this.props.formData
+    }
+  }
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
   };
-
+  handleChange=(e)=>{
+    let formData = this.state.formData
+    formData[e.target.name] = e.target.value
+    this.setState({formData:formData})
+    this.props.updateState('formData',formData)
+  }
   render() {
-    const { values, handleChange } = this.props;
+    console.log(this.state.formData)
+
+    const { formData } = this.state;
     return (
       <MuiThemeProvider>
         <>
@@ -40,9 +53,10 @@ export class FirstForm extends Component {
                     //     id="year"
                     //      clearOnEscape={true}
                     //     openOnFocus={true}
-                      defaultValue={values.year}
+                      defaultValue={formData.year}
                        style={{ width: 250, backgroundColor: "white", }}
-                       
+                       name='year'
+                       onChange={(e)=>this.handleChange(e)}
                         label="Year"
                       >
                         <MenuItem value={"2011"}>2011 </MenuItem>
@@ -72,7 +86,8 @@ export class FirstForm extends Component {
                     // onChange={(handleChange("maker"))  
                        
                     // }
-                 
+                    name='make'
+                    onChange={(e)=>this.handleChange(e)}
                     style={{ width: 250, backgroundColor: "white", }}
                   
                     label="Select Maker"
@@ -112,7 +127,8 @@ export class FirstForm extends Component {
                 //     value={model}
                    
                 //  onChange = { handleChange("model")}
-                   
+                name='model'
+                onChange={(e)=>this.handleChange(e)}
 
                     style={{ width: 250, backgroundColor: "white", }}
                   
@@ -152,7 +168,8 @@ export class FirstForm extends Component {
                     // onChange={  handleChange("variant")}   
                  
                     style={{ width: 250, backgroundColor: "white", }}
-                  
+                    name='fuel'
+                    onChange={(e)=>this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="Petrol">Petrol</MenuItem>
@@ -180,7 +197,8 @@ export class FirstForm extends Component {
                     // disabled={!disabledRto }
                   
                     style={{ width: 250, backgroundColor: "white", }}
-                   
+                    name='city'
+                    onChange={(e)=>this.handleChange(e)}
                     label="Select rto"
                   >
                     <MenuItem value="MUMBAI">MUMBAI</MenuItem>
@@ -215,7 +233,8 @@ export class FirstForm extends Component {
                    // value={this.state.selectedMaker}
                     style={{ width: 250, backgroundColor: "white", }}
                     // disabled={!disabledkms }
-
+                    name='mileage'
+                       onChange={(e)=>this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="10000">10,000</MenuItem>
@@ -242,7 +261,8 @@ export class FirstForm extends Component {
                     // onChange={  handleChange("ownership")}
                     // value={ownership}
                     style={{ width: 250, backgroundColor: "white", }}
-                   
+                    name='ownership'
+                       onChange={(e)=>this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="First">     First    </MenuItem>
@@ -290,7 +310,7 @@ export class FirstForm extends Component {
               placeholder="Enter Your First Name"
               label="First Name"
               onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              defaultValue={formData.firstName}
               margin="normal"
               fullWidth
             />
@@ -299,7 +319,7 @@ export class FirstForm extends Component {
               placeholder="Enter Your Last Name"
               label="Last Name"
               onChange={handleChange('lastName')}
-              defaultValue={values.lastName}
+              defaultValue={formData.lastName}
               margin="normal"
               fullWidth
             />
@@ -308,7 +328,7 @@ export class FirstForm extends Component {
               placeholder="Enter Your Email"
               label="Email"
               onChange={handleChange('email')}
-              defaultValue={values.email}
+              defaultValue={formData.email}
               margin="normal"
               fullWidth
             />
