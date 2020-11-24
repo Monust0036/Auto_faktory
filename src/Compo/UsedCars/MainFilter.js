@@ -26,7 +26,6 @@ class MainFilter extends React.Component {
       .then((response) => {
         // handle success
         this.setState({ carsData: response.data, dataOfcars: response.data });
-        console.log(response);
       })
       .catch((error) => {
         // handle error
