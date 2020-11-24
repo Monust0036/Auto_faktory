@@ -11,6 +11,7 @@ import {
   MDBIcon,
   MDBContainer,
 } from "mdbreact";
+import { Link } from 'react-router-dom'
 // import Sidefilter from './SideFilter'
 
 class CardExampl extends React.Component {
@@ -66,7 +67,7 @@ class CardExampl extends React.Component {
             ? this.props.carsData.map((carsData, index) => {
                 return (
                   <MDBCol key={index} lg="6" style={{ marginTop: "20px" }}>
-                    <a href="/detail-car">
+                    
                       <MDBCard>
                         <MDBCardImage
                           className="img-fluid-cards"
@@ -88,14 +89,23 @@ class CardExampl extends React.Component {
                           </div>
                           <div className="ljwTDc">
                             <p className="iFsKIn"> ₹{carsData.price}</p>
-                            {/* <a href="#" type="btn" className="view-car">View this car</a> */}
-                            <MDBBtn color="deep-orange" size="md">
-                              View
-                            </MDBBtn>
+                            {/* 
+                            <a href="#" type="btn" className="view-car">View this car</a> */}
+                            {/* <a href="/detail-car" params={}> */}
+                              <Link to={{
+                                pathname: "/detail-car",
+                                state: carsData
+                              }}>
+                                <MDBBtn color="deep-orange" size="md">
+                                  View
+                                </MDBBtn>
+                              </Link>
+                            
+                            {/* </a> */}
                           </div>
                         </MDBCardBody>
                       </MDBCard>
-                    </a>
+                   
                   </MDBCol>
                 );
               })

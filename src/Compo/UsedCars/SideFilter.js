@@ -30,6 +30,7 @@ class Sidefilter extends Component {
 		checkedO1: false,
 		checkedO2: false,
 		color: [],
+		savedMakeModelsObj:[]
 	  };
 	  
 	
@@ -49,12 +50,30 @@ class Sidefilter extends Component {
 	//   filter for make and modals
 	  getCarNameFilter=(list,item,e)=>{
 		// console.log(list,item,e.target.checked)
+		let dataOfcars = this.props.dataOfcars
+		let listOfObj = this.state.savedMakeModelsObj
+		let emptyList = []
+		if(e.target.checked){
+			listOfObj.push({model:item.name,make:list.title})
+			this.setState({savedMakeModelsObj:listOfObj})
+		}else{
+			let index = listOfObj.findIndex(e=>e.key == item.name)
+			listOfObj.splice(index, 1)
+		}
+		listOfObj.map((obj)=>emptyList =[...dataOfcars.filter(e =>obj.model==e.varient.model && e.varient.make == obj.make)])
+
+		if(listOfObj.length ==0){
+			emptyList = dataOfcars
+		}
+		this.props.updateState('carsData',emptyList)
 
 	  }
 	//   budgetFilter=(e)=>{
 	// 	console.log('hiii')
 	//   }
-	
+	getColorFilter=(e)=>{
+		console.log(e)
+	}
     render() {
 		
 
@@ -93,13 +112,13 @@ class Sidefilter extends Component {
             <div className="col">
                 <h5 style={{float:"left", fontSize:16, fontWeight:600}}>Make + Models</h5>
                 {/* <SelectedFilters /> */}
-                <CategorySearch
+                {/* <CategorySearch
 	                componentId="searchbox"
 	                dataField="model"
 	                categoryField="brand.keyword"
 					placeholder="Search cars by Model"
 					
-                />
+                /> */}
 				<ListContainer getCarNameFilter={this.getCarNameFilter}/>
             </div>
         </div>
@@ -198,8 +217,6 @@ class Sidefilter extends Component {
 		  			onChange={(e)=>this.handleChange('manual','transmission',e)}
           			value="checkedT2"
 					/>
-					
-				
 				</div>
         	</div>
 		</div>
@@ -238,14 +255,12 @@ class Sidefilter extends Component {
 				
 			</div> */}
 			<div >
-                    <Grid container spacing={1} >
+                    {/* <Grid container spacing={1} >
                       <Grid container item xs={12} spacing={3} style={{alignItems:'center'}}>
                         <React.Fragment >
                           <Grid item xs={4} style={{alignItems:'center'}}>
                             <ReactCircleColorPicker
                               //checked={this.state.checkedWhiteColor}
-                              
-
                               colors={[{ hex: '#FFFFFF' }]}
                             />
                            
@@ -307,7 +322,7 @@ class Sidefilter extends Component {
                           </Grid>
                         </React.Fragment>
                       </Grid>
-                    </Grid>
+                    </Grid> */}
                   </div>
 
                     
