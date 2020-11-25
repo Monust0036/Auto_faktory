@@ -1,8 +1,8 @@
 import React from 'react';
 import { MDBBtn,MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,MDBIcon, MDBContainer } from 'mdbreact';
 
-const CardExampl = () => {
-  
+const CardExampl = (props) => {
+//   console.log(props);
   return (
      <div className="detail-top-sec" style={{background:"rgb(244, 246, 245)",padding:"3rem 2rem",marginTop:"20px"}}>
      
