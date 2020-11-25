@@ -30,7 +30,8 @@ class UsedCar extends Component {
       <div className="App">
         <Menu/>
         <DetailsTop/>
-        <Topstrip/>
+        {Object.keys(this.props.location.state).length>0? <Topstrip carData = {this.props.location.state}/>:null}
+        
         <KeyFeatures/>
         <CarSpecifications/>
         <CarFeatures/>

@@ -8,6 +8,12 @@ import Container from '@material-ui/core/Container';
 
 
 export class FormPersonalDetails extends Component {
+  constructor(props) {
+    super(props)
+    this.state={
+      formData:this.props.formData
+    }
+  }
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -17,9 +23,14 @@ export class FormPersonalDetails extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
-
+  handleChange=(e)=>{
+    let formData = this.state.formData
+    formData[e.target.name] = e.target.value
+    this.setState({formData:formData})
+    this.props.updateState('formData',formData)
+  }
   render() {
-    const { values, handleChange } = this.props;
+    const { formData } = this.state;
     return (
       <MuiThemeProvider>
         <div >
@@ -34,9 +45,10 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="Enter Your FullName"
               label="Name"
-              onChange={handleChange('name')}
-              defaultValue={values.name}
+              onChange={(e)=>this.handleChange(e)}
+              value={formData.name}
               margin="normal"
+              name='name'
               fullWidth
             />
             <br />
@@ -44,18 +56,20 @@ export class FormPersonalDetails extends Component {
               placeholder="Enter Your Email"
               label="Email"
               type="email"
-              onChange={handleChange('email')}
-              defaultValue={values.email}
+              onChange={(e)=>this.handleChange(e)}
+              value={formData.email}
               margin="normal"
+              name='email'
               fullWidth
             />
             <br />
             <TextField
               placeholder="i.e: xxx-xxx-xxxx"
               label="Phone number*"
-              onChange={handleChange('mobile')}
-              defaultValue={values.mobile}
+              onChange={(e)=>this.handleChange(e)}
+              value={formData.mobile}
               margin="normal"
+              name='phone'
               fullWidth
             />
             <br />

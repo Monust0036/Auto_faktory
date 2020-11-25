@@ -5,12 +5,18 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-
+import axios from 'axios';
 
 export class Confirm extends Component {
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
+    axios.post('http://d5d739545ba5.ngrok.io/api/sellerdata/create/', this.props.formData)
+    .then( (response)=> {
+      console.log(response);
+    }).catch((error)=>{
+      console.log(error);
+    })
     this.props.nextStep();
   };
 
@@ -20,9 +26,7 @@ export class Confirm extends Component {
   };
 
   render() {
-    const {
-      values: { name, email, mobile,maker,model,variant,kms, rto, ownership, year,city }
-    } = this.props;
+    const {formData} = this.props;
     return (
       <MuiThemeProvider>
         <>
@@ -34,36 +38,12 @@ export class Confirm extends Component {
           <Container maxWidth="sm" style={{marginTop:"50px"}}>
           <AppBar title="Confirm User Data" />
             <List>
+              {Object.keys(formData).map((item,index)=>
               <ListItem>
-                <ListItemText primary="Name" secondary={name} />
+                <ListItemText primary={item} secondary={formData[item]} />
               </ListItem>
-              <ListItem>
-                <ListItemText primary="Phone" secondary={mobile} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Email" secondary={email} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Car Maker" secondary={maker} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Car Model" secondary={model} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Car Year" secondary={year} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Car Variant" secondary={variant} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Kms Driven" secondary={kms} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="City" secondary={rto} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ownership" secondary={ownership} />
-              </ListItem>
+              )}
+              
             </List>
             <br />
 

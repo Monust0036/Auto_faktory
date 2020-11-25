@@ -7,12 +7,18 @@ import Success from './Success';
 export class UserForm extends Component {
   state = {
     step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
+    formData:{email:'',
+    name:'',
+    phone:null,
+    year:null,
+    make:'',
+    model:'',
+    fuel:'',
+    city:'',
+    mileage:null,
+    ownership:null
+    }
+
   };
 
   // Proceed to next step
@@ -35,9 +41,13 @@ export class UserForm extends Component {
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
+  updateState=(key,value)=>{
+    this.setState({[key]:value});
+  }
 
   render() {
-    const { step } = this.state;
+    // console.log(this.state.formData)
+    const { step,formData } = this.state;
     const { name, email, mobile, city, bio } = this.state;
     const values = { name, email, mobile, city, bio };
 
@@ -47,7 +57,8 @@ export class UserForm extends Component {
           <FormUserDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            values={values}
+            formData={formData}
+            updateState={this.updateState}
           />
         );
       case 2:
@@ -56,7 +67,8 @@ export class UserForm extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
-            values={values}
+            formData={formData}
+            updateState={this.updateState}
           />
         );
       case 3:
@@ -64,7 +76,7 @@ export class UserForm extends Component {
           <Confirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            values={values}
+            formData={formData}
           />
         );
       case 4:
