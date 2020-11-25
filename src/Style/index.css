@@ -418,10 +418,10 @@ ul.css-1w1pnf0-UL.eekr4lp2 {
     height: 50px !important;
   } 
   .css-i35pig-Slider .rheostat-progress{
-    background-color: #0bb0ff !important;
+    background-color:#ff700b !important;
   }
   .css-dmx3ll-InputIcon-left svg.search-icon{
-      fill: #0bb0ff !important;
+      fill: #ff700b !important;
   }
   .css-9d37m9-Radio-vh + label::after{
       background-color: #0bb0ff !important;
@@ -645,4 +645,11 @@ img.img-fluid {
 label.MuiFormControlLabel-root {
     margin: 0 10px 0 5px !important;
 }
-
+.makeStyles-formControl-11{
+    float: left;
+}
+.login-next {
+    padding:20px;
+    display: flex;
+    justify-content: space-evenly;
+}

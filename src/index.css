@@ -22,3 +22,13 @@ code {
 ol.carousel-indicators {
   margin-bottom: -25px;
 }
+.form-group{
+    text-align: initial;
+}
+form{
+  text-align: initial;
+}
+.btn-primary {
+  background-color: #ea720a !important;
+  color: #fff;
+}

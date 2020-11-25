@@ -1,7 +1,7 @@
 import  React  from  'react';
 import  validator  from  'validator';
 import { API } from "../config.js";
-import { NavLink, withRouter,Redirect } from  'react-router-dom';
+import { Link, withRouter,Redirect } from  'react-router-dom';
 import Home from "./Home";
 
 class  Auth  extends  React.Component {
@@ -91,8 +91,9 @@ class  Auth  extends  React.Component {
                 if (data.success) {
                     localStorage.setItem('storiesloggeduser', data.signuptoken);
                     localStorage.setItem('storiesloggeduserid', data.userId);
-                    this.props.handleIslogged(true);
+                    // this.props.handleIslogged(true);
                     this.props.history.push('/');
+                    return('success')
                  
 
                 }
@@ -100,7 +101,7 @@ class  Auth  extends  React.Component {
                 if (data.logintoken) {
                     localStorage.setItem('storiesloggeduser', data.logintoken);
                     localStorage.setItem('storiesloggeduserid', data.userId);
-                    this.props.handleIslogged(true);
+                    // this.props.handleIslogged(true);
                     
                     this.props.history.push('/');
                     
@@ -112,9 +113,9 @@ class  Auth  extends  React.Component {
         }
     };
 
-    handleIslogged = () =>{
-        return(<Home/>)
-    }
+    // handleIslogged = () =>{
+    //     return(<Home/>)
+    // }
 
     displayPhonePage = () => {
         return (
@@ -152,11 +153,15 @@ class  Auth  extends  React.Component {
                     onChange={this.handleChange}
                     required
                 />
-                <div>
-                    <button onClick={this.editPhoneNo}>Edit Phone Number </button>
+                <div className="login-next">
+                    {/* <button onClick={this.editPhoneNo}>Edit Phone Number </button> */}
                     <button onClick={this.handleSendOtp}> Resend OTP </button>
+                    <Link to={`/#`}>
+                    <input type="submit" onClick={this.handleVerifyOtp}  value="NEXT"/>
+                </Link>
                 </div>
-                <input type="submit" onClick={this.handleVerifyOtp}  value="NEXT"/>
+                
+                
             </form>
         )
     }

@@ -5,7 +5,6 @@ import Menu from './Menubar'
 import Footer from './Footer';
 import ReacentCar from './HomePage/recentCar'
 import Carousel from './HomePage/caraousel/Carousel.js'
-// import FirstStep from './Compo/FisrtStep';
 import Lovestory from "./HomePage/loveStory"
 import Carshowroom from "./UsedCars/carshowroom";
 import MainFilter from "./UsedCars/MainFilter";
