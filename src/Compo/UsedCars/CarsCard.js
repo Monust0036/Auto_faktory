@@ -78,11 +78,13 @@ class CardExampl extends React.Component {
                           <div className="heart-carName">
                           <h2 className="carName">
                           {" "}
-                          {new Date(carsData.varient.updatedAt).getFullYear() +
+                          { carsData.year +
                             " " +
                             carsData.varient.make +
                             " " +
-                            carsData.varient.model}
+                            carsData.varient.model+
+                            " " +
+                            carsData.varient.modelType}
                         </h2>
                             <MDBIcon icon="heart" className="ml-2" />
                           </div>
