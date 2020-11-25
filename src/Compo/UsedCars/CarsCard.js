@@ -76,9 +76,14 @@ class CardExampl extends React.Component {
                         />
                         <MDBCardBody>
                           <div className="heart-carName">
-                            <h2 className="carName">
-                              {carsData.year} {carsData.make} {carsData.model}
-                            </h2>
+                          <h2 className="carName">
+                          {" "}
+                          {new Date(carsData.varient.updatedAt).getFullYear() +
+                            " " +
+                            carsData.varient.make +
+                            " " +
+                            carsData.varient.model}
+                        </h2>
                             <MDBIcon icon="heart" className="ml-2" />
                           </div>
                           <div className="ratedate1">

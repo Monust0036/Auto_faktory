@@ -15,6 +15,7 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
+import { API } from "../../config.js";
 
 const responsive = {
   desktop: {
@@ -43,8 +44,7 @@ class Slider extends React.Component {
   }
   getCarData = () => {
     axios
-      .get(
-        "http://d6280fea6dad.ngrok.io/api/cardatas/related/5fb8b6b0129b6a4f48b0ab10"
+      .get(`${API}/cardatas/related/5fb8b6b0129b6a4f48b0ab10`
       )
       .then((response) => {
         // handle success
