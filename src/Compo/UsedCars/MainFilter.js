@@ -5,6 +5,7 @@ import CarsCard from "./CarsCard.js";
 import TopStripBanner from "./TopBannerStrip";
 import RelevanceFilter from "./RelevanceFilter";
 import axios from "axios";
+import { API } from "../../config.js";
 // const Carsdata = require("../../Data/cars.json");
 
 class MainFilter extends React.Component {
@@ -22,7 +23,7 @@ class MainFilter extends React.Component {
   }
   getCarData = () => {
     axios
-      .get("http://d6280fea6dad.ngrok.io/api/cardatas")
+      .get(`${API}/cardatas`)
       .then((response) => {
         // handle success
         this.setState({ carsData: response.data, dataOfcars: response.data });

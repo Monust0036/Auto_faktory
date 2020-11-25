@@ -100,8 +100,8 @@ class Sidefilter extends Component {
 						end: 50000,
 					}}
 					rangeLabels={{
-						start: '₹5000',
-						end: '₹50000',
+						start: '₹100000',
+						end: '₹2000000',
 					}}
 				/>
 			</div>

@@ -6,12 +6,13 @@ import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import { API } from "../../config.js";
 
 export class Confirm extends Component {
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
-    axios.post('http://d5d739545ba5.ngrok.io/api/sellerdata/create/', this.props.formData)
+    axios.post(`${API}/sellerdata/create/`, this.props.formData)
     .then( (response)=> {
       console.log(response);
     }).catch((error)=>{
