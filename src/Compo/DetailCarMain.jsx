@@ -32,10 +32,10 @@ class UsedCar extends Component {
         <DetailsTop/>
         {Object.keys(this.props.location.state).length>0? <Topstrip carData = {this.props.location.state}/>:null}
         
-        <KeyFeatures/>
-        <CarSpecifications/>
-        <CarFeatures/>
-        <CarReports/>
+        <KeyFeatures carData = {this.props.location.state}/>
+        <CarSpecifications carData = {this.props.location.state}/>
+        <CarFeatures carData = {this.props.location.state}/>
+        <CarReports carData = {this.props.location.state}/>
         <RecentlyViewCar/>
         <Carshowroom/>
         <Lovestory />

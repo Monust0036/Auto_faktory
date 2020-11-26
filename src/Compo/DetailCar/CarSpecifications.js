@@ -1,8 +1,8 @@
 import React from 'react';
 import { MDBBtn,MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,MDBIcon, MDBContainer } from 'mdbreact';
 
-const CardExampl = () => {
-  
+const CardExampl = (props) => {
+  console.log(props.carData)
   return (
      <div className="detail-top-sec" style={{padding:"2rem 2rem",marginTop:"20px"}}>
      
@@ -25,7 +25,7 @@ const CardExampl = () => {
             <MDBCardBody>
                 
                 <h6 style={{ textAlign:"center",fontSize:"14px"}}>Make Year</h6>
-                <h5 style={{ fontWeight:"600", fontSize:"16px", textAlign:"center"}}>2016</h5>
+                <h5 style={{ fontWeight:"600", fontSize:"16px", textAlign:"center"}}>{new Date(props.carData.year).getFullYear()}</h5>
             </MDBCardBody>
             
             
