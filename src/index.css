@@ -32,3 +32,9 @@ form{
   background-color: #ea720a !important;
   color: #fff;
 }
+.carousel .slide img {
+  width: 800px !important;
+  height: 480px !important;
+  vertical-align: top;
+  border: 0;
+}

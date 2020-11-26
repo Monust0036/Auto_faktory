@@ -213,7 +213,7 @@ class CardExampl extends Component {
           <MDBModal
             isOpen={this.state.modal14}
             toggle={this.toggle(14)}
-            size="lg"
+            size="fluid"
             className="image-gallery-slide"
           >
             <div className="slides-view">

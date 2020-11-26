@@ -95,7 +95,7 @@ class Slider extends React.Component {
                       <div className="heart-carName">
                         <h2 className="carName">
                           {" "}
-                          {new Date(data.varient.updatedAt).getFullYear() +
+                          {data.year +
                             " " +
                             data.varient.make +
                             " " +
@@ -122,96 +122,7 @@ class Slider extends React.Component {
               </div>
             );
           })}
-          <div style={{ padding: "0 10x 0 10px" }}>
-            <a href="/detail-car">
-              <MDBCard className="mb-2">
-                <MDBCardImage
-                  className="img-fluid-cards"
-                  src="/images/SampleData/Grand i10.jpg"
-                  waves
-                />
-                <MDBCardBody>
-                  <div className="heart-carName">
-                    <h2 className="carName"> 2014 Hyundai Grand i10</h2>
-                    <MDBIcon icon="heart" className="ml-2" />
-                  </div>
-                  <div className="ratedate1">
-                    <p className="bnKmZw l">15000 miles</p>
-                    <p className="bnKmZw l">2014 reg</p>
-                    <p className="bnKmZw l">Petrol</p>
-                    <p className="bnKmZw l">Automatic</p>
-                  </div>
-                  <div className="ljwTDc">
-                    <p className="iFsKIn"> ₹3,30000</p>
-                    {/* <a href="#" type="btn" className="view-car">View this car</a> */}
-                    <MDBBtn color="deep-orange" size="md">
-                      View{" "}
-                    </MDBBtn>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-            </a>
-          </div>
-          <div style={{ padding: "0 10x 0 10px" }}>
-            <a href="/detail-car">
-              <MDBCard className="mb-2">
-                <MDBCardImage
-                  className="img-fluid-cards"
-                  src="/images/SampleData/Brio.jpg"
-                  waves
-                />
-                <MDBCardBody>
-                  <div className="heart-carName">
-                    <h2 className="carName"> 2015 Honda Brio</h2>
-                    <MDBIcon icon="heart" className="ml-2" />
-                  </div>
-                  <div className="ratedate1">
-                    <p className="bnKmZw l">50000 miles</p>
-                    <p className="bnKmZw l">2015 reg</p>
-                    <p className="bnKmZw l">Petrol</p>
-                    <p className="bnKmZw l">Manual</p>
-                  </div>
-                  <div className="ljwTDc">
-                    <p className="iFsKIn"> ₹2,50000</p>
-                    {/* <a href="#" type="btn" className="view-car">View this car</a> */}
-                    <MDBBtn color="deep-orange" size="md">
-                      View{" "}
-                    </MDBBtn>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-            </a>
-          </div>
-          <div style={{ padding: "0 10x 0 10px" }}>
-            <a href="/detail-car">
-              <MDBCard className="mb-2">
-                <MDBCardImage
-                  className="img-fluid-cards"
-                  src="/images/SampleData/Wagon R.jpg"
-                  waves
-                />
-                <MDBCardBody>
-                  <div className="heart-carName">
-                    <h2 className="carName"> 2012 Maruti Suzuki Wagon R</h2>
-                    <MDBIcon icon="heart" className="ml-2" />
-                  </div>
-                  <div className="ratedate1">
-                    <p className="bnKmZw l">48000 miles</p>
-                    <p className="bnKmZw l">2012 reg</p>
-                    <p className="bnKmZw l">CNG</p>
-                    <p className="bnKmZw l">Manual</p>
-                  </div>
-                  <div className="ljwTDc">
-                    <p className="iFsKIn"> ₹2,39000</p>
-                    {/* <a href="#" type="btn" className="view-car">View this car</a> */}
-                    <MDBBtn color="deep-orange" size="md">
-                      View{" "}
-                    </MDBBtn>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-            </a>
-          </div>
+         
         </Carousel>
         ;<hr></hr>
       </MDBContainer>
