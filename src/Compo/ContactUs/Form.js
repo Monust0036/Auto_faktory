@@ -22,7 +22,7 @@ const ContactForm = () => {
         setResult(response.data);
         setState({
           name: '',
-          senderemail: '',
+          email: '',
           subject: '',
           message: ''
         });
@@ -75,7 +75,7 @@ const ContactForm = () => {
           <Form.Control
             type="text"
             name="email"
-            value={state.senderemail}
+            value={state.email}
             placeholder="Enter your email"
             onChange={onInputChange}
             required

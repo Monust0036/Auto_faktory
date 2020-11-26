@@ -42,9 +42,10 @@ class SelectPage extends Component {
               onChange={this.handleChange}
             >
               <option>Select make</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="1">Hyundai</option>
+              <option value="2">Honda</option>
+              <option value="3">Maruti Suzuki </option>
+              <option value="3">Toyota</option>
             </select>
           </MDBCol>
           <MDBCol lg="3">

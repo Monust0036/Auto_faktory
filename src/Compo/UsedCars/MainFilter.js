@@ -53,11 +53,11 @@ class MainFilter extends React.Component {
         .slice()
         .sort((a, b) =>
           sort === "pricelowtohigh"
-            ? a.Price > b.Price
+            ? a.price > b.price
               ? 1
               : -1
             : sort === "pricehightolow"
-            ? a.Price < b.Price
+            ? a.price < b.price
               ? 1
               : -1
             : a._id > b._id
@@ -68,11 +68,11 @@ class MainFilter extends React.Component {
         .slice()
         .sort((a, b) =>
           sort === "drivenlowtohigh"
-            ? a.Mileage > b.Mileage
+            ? a.mileage < b.mileage
               ? 1
               : -1
             : sort === "drivenhighTolow"
-            ? a.Mileage < b.Mileage
+            ? a.mileage > b.mileage
               ? 1
               : -1
             : a._id > b._id
@@ -83,11 +83,11 @@ class MainFilter extends React.Component {
         .slice()
         .sort((a, b) =>
           sort === "yearlowTohigh"
-            ? a.Year > b.Year
+            ? a.year > b.year
               ? 1
               : -1
             : sort === "yearhighTolow"
-            ? a.Year < b.Year
+            ? a.year < b.year
               ? 1
               : -1
             : a._id > b._id
