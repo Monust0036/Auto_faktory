@@ -122,7 +122,7 @@ class MainFilter extends React.Component {
               filterProducts={this.filterProducts}
               sortCarsdata={this.sortCarsdata}
             />
-            <CarsCard carsData={this.state.carsData} />
+            <CarsCard carsData={this.state.carsData} updateState={this.updateState}/>
           </Col>
         </Row>
       </Container>

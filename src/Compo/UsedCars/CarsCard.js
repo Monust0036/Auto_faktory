@@ -63,6 +63,7 @@ class CardExampl extends React.Component {
     // .catch( (error)=> {
     //   console.log(error);
     // });
+    this.props.updateState('carsData',carData)
     this.setState({ carsData: carData})
   }
   render() {
