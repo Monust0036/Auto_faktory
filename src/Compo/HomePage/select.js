@@ -42,21 +42,21 @@ class SelectPage extends Component {
               onChange={this.handleChange}
             >
               <option>Select make</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Maruti Suzuki">Maruti Suzuki</option>
+              <option value="Honda">Honda</option>
             </select>
           </MDBCol>
           <MDBCol lg="3">
             <select
-              className="browser-default custom-select bg-color"
+              className="browser-default custom-select"
               name="model"
               onChange={this.handleChange}
             >
               <option>Select model</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="Brio">Brio</option>
+              <option value="Alto">Alto</option>
+              <option value="Accent">Accent</option>
             </select>
           </MDBCol>
           <MDBCol lg="3">

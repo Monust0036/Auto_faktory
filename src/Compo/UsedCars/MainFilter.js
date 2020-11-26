@@ -23,14 +23,21 @@ class MainFilter extends React.Component {
   }
   getCarData = () => {
     axios
-      .get(`${API}/cardatas`)
+      .get('http://f4bcbde16659.ngrok.io/api/cardatas')
       .then((response) => {
         
         let data = response.data
-        console.log(data)
         if(this.props.category != undefined){
           data = data.filter(item=>item.city.length > 0?item.city[0]['CityName']===this.props.category.city:true)
+          if(this.props.category.make != undefined){
+            data = data.filter(item=>item.varient.make===this.props.category.make)
+          }
+          if(this.props.category.model != undefined){
+            data = data.filter(item=>item.varient.model===this.props.category.model)
+          }
         }
+        // console.log(data,this.props.category)
+
         this.setState({ carsData: data, dataOfcars: data });
       })
       .catch((error) => {
