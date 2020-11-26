@@ -78,7 +78,7 @@ class CardExampl extends Component {
                 <MDBIcon
                   icon="heart"
                   style={{ texAlign: "right" }}
-                  className="ml-2"
+                  className={carData.isfavourite?"red-text":'ml-2' }
                 />
                 <div className="short-spec">
                   <h4 style={{ textAlign: "left" }}>

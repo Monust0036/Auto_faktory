@@ -25,8 +25,13 @@ class MainFilter extends React.Component {
     axios
       .get(`${API}/cardatas`)
       .then((response) => {
-        // handle success
-        this.setState({ carsData: response.data, dataOfcars: response.data });
+        
+        let data = response.data
+        console.log(data)
+        if(this.props.category != undefined){
+          data = data.filter(item=>item.city.length > 0?item.city[0]['CityName']===this.props.category.city:true)
+        }
+        this.setState({ carsData: data, dataOfcars: data });
       })
       .catch((error) => {
         // handle error
@@ -92,8 +97,6 @@ class MainFilter extends React.Component {
     }));
   };
   render() {
-    console.log(this.props.location)
-    //   console.log('carsData',this.state.carsData)
     return (
       <Container>
         <Row className="show-grid">

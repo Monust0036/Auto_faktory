@@ -86,7 +86,7 @@ class CardExampl extends React.Component {
                             " " +
                             carsData.varient.modelType}
                         </h2>
-                            <MDBIcon icon="heart" className="ml-2" />
+                            <MDBIcon icon="heart" className={carsData.isfavourite?"red-text":'ml-2' }/>
                           </div>
                           <div className="ratedate1">
                             <p className="bnKmZw l">{carsData.mileage}</p>

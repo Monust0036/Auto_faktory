@@ -49,7 +49,7 @@ class Sidefilter extends Component {
       emptyListForMultiSearch = [];
     if (savedFilterData.radioButton.year != null) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.radioButton.year > car.year
+        (car) => savedFilterData.radioButton.year < car.year
       );
     }
     if (savedFilterData.radioButton.mileage != null) {
