@@ -12,7 +12,7 @@ import {
   MDBContainer,
 } from "mdbreact";
 import { Link } from 'react-router-dom'
-// import Sidefilter from './SideFilter'
+import axios from 'axios'
 
 class CardExampl extends React.Component {
   constructor(props) {
@@ -50,6 +50,22 @@ class CardExampl extends React.Component {
     this.setState({ carsData: this.props.carsData });
   }
 
+  changeFavoriteValue=(carDataIndex)=>{
+    let carData = this.props.carsData
+    carData[carDataIndex].isfavourite = carData[carDataIndex].isfavourite? false:true
+    // Need To post Data from here...
+    // axios.post('/api', {
+    //   data:carData[carDataIndex]
+    // })
+    // .then( (response) =>{
+    //   console.log(response);
+    // })
+    // .catch( (error)=> {
+    //   console.log(error);
+    // });
+    this.props.updateState('carsData',carData)
+    this.setState({ carsData: carData})
+  }
   render() {
     // console.log(">>>>>>",this.props.carsData)
     const uniqueCouse = this.getUnique(this.state.carsData, "Transmission");
@@ -86,7 +102,7 @@ class CardExampl extends React.Component {
                             " " +
                             carsData.varient.modelType}
                         </h2>
-                            <MDBIcon icon="heart" className={carsData.isfavourite?"red-text":'ml-2' }/>
+                            <MDBIcon icon="heart" className={carsData.isfavourite?"red-text":'ml-2' } onClick={()=>this.changeFavoriteValue(index)}/>
                           </div>
                           <div className="ratedate1">
                             <p className="bnKmZw l">{carsData.mileage}</p>

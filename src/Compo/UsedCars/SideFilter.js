@@ -11,14 +11,17 @@ import {
 } from "@appbaseio/reactivesearch";
 import Checkbox from "muicss/lib/react/checkbox";
 
-import { MDBInput, MDBFormInline, MDBSelect } from "mdbreact";
+import { MDBInput, MDBFormInline, MDBCol } from "mdbreact";
 import ListContainer from "./ExpansionMain/ListContainer";
 import ReactCircleColorPicker from "react-circle-color-picker";
 import Grid from "@material-ui/core/Grid";
+import Slider from "@material-ui/core/Slider";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+
 import BodyTypeCheckbox from "./BodyTypeCheckbox";
 import YearRadio from "./yearRadio";
 import MileageRadio from "./MileageRadio";
-
+const colourList = ['red','white','blue','green','orange','black','yellow'];
 class Sidefilter extends Component {
   state = {
     checkedA: false,
@@ -36,6 +39,8 @@ class Sidefilter extends Component {
       makeAndModel: [],
       checkBox: { fuel: [], bodyType: [], transmission: [], owner: [] },
       radioButton: { year: null, mileage: null },
+      price: null,
+      colour:''
     },
     savedCopyOfFilterData: {},
   };
@@ -75,11 +80,25 @@ class Sidefilter extends Component {
       );
       dataOfcars = emptyListForMultiSearch;
     }
+    if (savedFilterData.price != null) {
+      dataOfcars = dataOfcars.filter(
+        (car) => savedFilterData.price > parseInt(car.price)
+      );
+    }
+    if (savedFilterData.colour.length>0) {
+      dataOfcars = dataOfcars.filter(
+        (car) => savedFilterData.colour.toLowerCase() === car.color.toLowerCase()
+      );
+    }
+    if (savedFilterData.searchInput.length>0) {
+      dataOfcars = dataOfcars.filter(
+        (car) => savedFilterData.searchInput.toLowerCase() === car.varient.model.toLowerCase()
+      );
+    }
     Object.keys(savedFilterData.checkBox).map((typeName, index) => {
       emptyListForMultiSearch = [];
       if (savedFilterData.checkBox[typeName].length > 0) {
         savedFilterData.checkBox[typeName].map((obj) => {
-
           dataOfcars
             .filter((e) => {
               if (typeName == "bodyType") {
@@ -103,10 +122,10 @@ class Sidefilter extends Component {
               }
             });
         });
-        
+
         dataOfcars = emptyListForMultiSearch;
       }
-      
+
       //   console.log(dataOfcars)
     });
     // console.log(dataOfcars);
@@ -157,6 +176,27 @@ class Sidefilter extends Component {
   getColorFilter = (e) => {
     console.log(e);
   };
+  handleSlider = (event, newValue) => {
+    let listOfObj = this.state.savedFilterData;
+    listOfObj.price = newValue;
+    this.setState({ savedFilterData: listOfObj });
+    this.getFilterData();
+  };
+
+  handleColor=(colour)=>{
+    let listOfObj = this.state.savedFilterData;
+    
+    listOfObj.colour = listOfObj.colour === colour? '':colour;
+    this.setState({ savedFilterData: listOfObj });
+    this.getFilterData();
+  }
+  handleSearchInput=(e)=>{
+    let listOfObj = this.state.savedFilterData;
+    
+    listOfObj.searchInput = e.target.value;
+    this.setState({ savedFilterData: listOfObj });
+    this.getFilterData();
+  }
   render() {
     // console.log(this.state.savedFilterData);
 
@@ -175,18 +215,14 @@ class Sidefilter extends Component {
             </h5>
             <br></br>
 
-            <RangeSlider
-              // onChange={(e)=>this.budgetFilter(e)}
-              dataField="ratings_count"
-              componentId="BookSensor"
-              range={{
-                start: 5000,
-                end: 50000,
-              }}
-              rangeLabels={{
-                start: "₹100000",
-                end: "₹2000000",
-              }}
+            <Slider
+              defaultValue={0.00000005}
+              aria-labelledby="discrete-slider-small-steps"
+              step={0.00000001}
+              min={100000}
+              max={1000000}
+              onChange={this.handleSlider}
+              valueLabelDisplay="auto"
             />
           </div>
         </div>
@@ -197,14 +233,7 @@ class Sidefilter extends Component {
             <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
               Make + Models
             </h5>
-            {/* <SelectedFilters /> */}
-            {/* <CategorySearch
-	                componentId="searchbox"
-	                dataField="model"
-	                categoryField="brand.keyword"
-					placeholder="Search cars by Model"
-					
-                /> */}
+      <input className="form-control" type="text" placeholder="Search by model" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
             <ListContainer getCarNameFilter={this.getCarNameFilter} />
           </div>
         </div>
@@ -339,86 +368,21 @@ class Sidefilter extends Component {
           </div>
         </div>
         <hr></hr>
-        <div className="row">
-          {/* <h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Body Type</h5> */}
-          {/* <div className="col">
-				<h5 style={{textAlign:"left", fontSize:16, fontWeight:600}}>Color</h5>
-				<div size="2" className="col">
-					<ReactCircleColorPicker colors={[{ hex: '#84947F', selected: true }, { hex: '#E53B2C', selected: false }]} />
-				</div>
-				
-				
-			</div> */}
-          <div>
-            {/* <Grid container spacing={1} >
-                      <Grid container item xs={12} spacing={3} style={{alignItems:'center'}}>
-                        <React.Fragment >
-                          <Grid item xs={4} style={{alignItems:'center'}}>
-                            <ReactCircleColorPicker
-                              //checked={this.state.checkedWhiteColor}
-                              colors={[{ hex: '#FFFFFF' }]}
-                            />
-                           
-                          </Grid>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              //checked={this.state.checkedBlackColor}
-                              colors={[{ hex: '#000000' }]} />
-                            
-                          </Grid>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              //checked={this.state.checkedSilverColor}
-                               colors={[{ hex: '#C0C0C0' }]} />
-                           
-                          </Grid>
-                        </React.Fragment>
-                      </Grid>
-                      <Grid container item xs={12} spacing={3}>
-                        <React.Fragment>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              // checked={this.state.checkedGreyColor}
-                               colors={[{ hex: '#808080' }]} />
-                            
-                          </Grid>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                               colors={[{ hex: '#0000FF' }]} />
-                            
-                          </Grid>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              // checked={this.state.checkedBeigeColor}
-                               colors={[{ hex: '#f5f5dc' }]} />
-                            
-                          </Grid>
-                        </React.Fragment>
-                      </Grid>
-                      <Grid container item xs={12} spacing={3}>
-                        <React.Fragment>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              // checked={this.state.checkedBronzeColor}
-                              colors={[{ hex: '#cd7f32' }]} />
-                            
-                          </Grid>
-                          <Grid item xs={4}>
-                            <ReactCircleColorPicker
-                              colors={[{ hex: '#A52A2A' }]} />
-                            
-                          </Grid>
-                          <Grid item xs={4} >
-                            
-                            <ReactCircleColorPicker
-                              //
-                               colors={[{ hex: '#800000' }]} />
-                            
-                          </Grid>
-                        </React.Fragment>
-                      </Grid>
-                    </Grid> */}
-          </div>
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Body Type
+        </h5>
+        <div className="row" style={{ flexWrap: "wrap",justifyContent: "center" }}>
+          {colourList.map((colour,index)=><div
+            style={{
+              width: "40px",
+              height: "40px",
+              background: colour,
+              borderRadius: "9999px",
+              margin: '4px',
+              border:' 2px solid #5f5a5a'
+            }}
+            onClick={()=>this.handleColor(colour)}
+          ></div>)}
         </div>
       </ReactiveBase>
     );
