@@ -22,7 +22,7 @@ class UsedCar extends Component {
     return (
       <div className="App">
         <Menu/>
-        <MainFilter/>
+        <MainFilter {...this.props.location} />
         <Carshowroom/>
         <Lovestory />
         <Footer/>
