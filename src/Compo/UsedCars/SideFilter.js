@@ -76,9 +76,9 @@ class Sidefilter extends Component {
       dataOfcars = emptyListForMultiSearch;
     }
     Object.keys(savedFilterData.checkBox).map((typeName, index) => {
+      emptyListForMultiSearch = [];
       if (savedFilterData.checkBox[typeName].length > 0) {
         savedFilterData.checkBox[typeName].map((obj) => {
-          emptyListForMultiSearch = [];
 
           dataOfcars
             .filter((e) => {
@@ -103,8 +103,10 @@ class Sidefilter extends Component {
               }
             });
         });
+        
+        dataOfcars = emptyListForMultiSearch;
       }
-      dataOfcars = emptyListForMultiSearch;
+      
       //   console.log(dataOfcars)
     });
     // console.log(dataOfcars);

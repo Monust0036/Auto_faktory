@@ -9,8 +9,8 @@ import { API } from "../../config.js";
 // const Carsdata = require("../../Data/cars.json");
 
 class MainFilter extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       carsData: [],
       dataOfcars: [],
@@ -92,6 +92,7 @@ class MainFilter extends React.Component {
     }));
   };
   render() {
+    console.log(this.props.location)
     //   console.log('carsData',this.state.carsData)
     return (
       <Container>
