@@ -16,6 +16,8 @@ import ListContainer from "./ExpansionMain/ListContainer";
 import ReactCircleColorPicker from "react-circle-color-picker";
 import Grid from "@material-ui/core/Grid";
 import Slider from "@material-ui/core/Slider";
+import Typography from "@material-ui/core/Typography";
+
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 
 import BodyTypeCheckbox from "./BodyTypeCheckbox";
@@ -40,7 +42,8 @@ class Sidefilter extends Component {
       checkBox: { fuel: [], bodyType: [], transmission: [], owner: [] },
       radioButton: { year: null, mileage: null },
       price: null,
-      colour:''
+      colour:'',
+      searchInput:''
     },
     savedCopyOfFilterData: {},
   };
@@ -92,7 +95,7 @@ class Sidefilter extends Component {
     }
     if (savedFilterData.searchInput.length>0) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.searchInput.toLowerCase() === car.varient.model.toLowerCase()
+        (car) => car.varient.model.includes(savedFilterData.searchInput.charAt(0).toUpperCase() + savedFilterData.searchInput.slice(1)) || car.varient.make.includes(savedFilterData.searchInput.charAt(0).toUpperCase() + savedFilterData.searchInput.slice(1))
       );
     }
     Object.keys(savedFilterData.checkBox).map((typeName, index) => {
@@ -222,8 +225,11 @@ class Sidefilter extends Component {
               min={100000}
               max={1000000}
               onChange={this.handleSlider}
-              valueLabelDisplay="auto"
+              // valueLabelDisplay="auto"
             />
+            <Typography id="range-slider" gutterBottom>
+            Rs.100000 to Rs.1000000
+</Typography>
           </div>
         </div>
 
@@ -233,7 +239,7 @@ class Sidefilter extends Component {
             <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
               Make + Models
             </h5>
-      <input className="form-control" type="text" placeholder="Search by model" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
+      <input className="form-control" type="text" placeholder="Search by model+make" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
             <ListContainer getCarNameFilter={this.getCarNameFilter} />
           </div>
         </div>
