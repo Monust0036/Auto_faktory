@@ -52,7 +52,7 @@ export default function ErrorRadios(props) {
           <FormControlLabel value="30000" control={<Radio  onChange={(e)=>props.getRadioBtnFilterData(30000,'mileage',e)}/>} label="30,000km & less" />
           <FormControlLabel value="50000" control={<Radio  onChange={(e)=>props.getRadioBtnFilterData(50000,'mileage',e)}/>} label="50,000km & less" />
           <FormControlLabel value="75000" control={<Radio  onChange={(e)=>props.getRadioBtnFilterData(75000,'mileage',e)}/>} label="75,000km & less" />
-          <FormControlLabel value="100000" control={<Radio  onChange={(e)=>props.getRadioBtnFilterData(10000,'mileage',e)}/>} label="1,00,000km & less" />
+          <FormControlLabel value="100000" control={<Radio  onChange={(e)=>props.getRadioBtnFilterData(100000,'mileage',e)}/>} label="1,00,000km & less" />
           
         </RadioGroup>
       </FormControl>
