@@ -34,7 +34,7 @@ class App extends Component {
         <Router>
           <Switch>
           <Route  exact path="/" component={Home} />
-          <Route exact path="/used-car" component={UsedCar} handler={DetailCarMain}/>
+          <Route exact path="/used-car" component={UsedCar} />
           <Route exact path="/detail-car" component={DetailCarMain} />
           <Route exact path="/sell-car" component={SellCarMain} />
           <Route exact path="/Contact-form" component={ContactForms} />
