@@ -15,9 +15,6 @@ import DetailSection from "./SellCar/DetailSection"
 import DetailSec2 from "./SellCar/DetailsSection2"
 
 
-// import history from  './history';
-// console.log(history, "rRRRRRRRRRRRRRRRRRRRRRRR")
-
 class SellCar extends Component {
   constructor(props) {
     super(props);
