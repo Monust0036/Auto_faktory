@@ -217,19 +217,33 @@ class Sidefilter extends Component {
               Budget
             </h5>
             <br></br>
-
+            <div style={{display:"flex",justifyContent:"space-between"}}>
+            <Typography id="range-slider" gutterBottom>
+            ₹100000 
+            </Typography>
+            <Typography id="range-slider" gutterBottom>
+              ₹2000000
+            </Typography>
+            </div>
+            
             <Slider
               defaultValue={0.00000005}
               aria-labelledby="discrete-slider-small-steps"
               step={0.00000001}
               min={100000}
-              max={1000000}
+              max={2000000}
               onChange={this.handleSlider}
               // valueLabelDisplay="auto"
             />
-            <Typography id="range-slider" gutterBottom>
-            Rs.100000 to Rs.1000000
-</Typography>
+            <div style={{display:"flex",justifyContent:"space-between"}}>
+            <Typography style={{fontSize:"12px"}}>
+            Minimum Price 
+            </Typography>
+            <Typography style={{fontSize:"12px"}} >
+              Maxmimum Price
+            </Typography >
+            </div>
+            
           </div>
         </div>
 
@@ -239,7 +253,7 @@ class Sidefilter extends Component {
             <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
               Make + Models
             </h5>
-      <input className="form-control" type="text" placeholder="Search by model+make" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
+      <input className="form-control" type="text" placeholder="Search by model + make" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
             <ListContainer getCarNameFilter={this.getCarNameFilter} />
           </div>
         </div>
@@ -375,7 +389,7 @@ class Sidefilter extends Component {
         </div>
         <hr></hr>
         <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-          Body Type
+          Color
         </h5>
         <div className="row" style={{ flexWrap: "wrap",justifyContent: "center" }}>
           {colourList.map((colour,index)=><div
