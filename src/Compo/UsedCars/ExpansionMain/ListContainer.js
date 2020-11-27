@@ -28,7 +28,7 @@ const createFakeDataSource = () => {
             },
             {
                 "id":5,
-                "name":"Grand i 10",
+                "name":"Grand i10",
                 "value":"Hyundai Grand i 10"
             },
             {
@@ -67,6 +67,16 @@ const createFakeDataSource = () => {
                 "id":4,
                 "name":"Alto K10",
                 "value":"Maruti Suzuki Alto K10"
+            },
+            {
+                "id":6,
+                "name":"Wagon R",
+                "value":"Maruti Suzuki Wagon R"
+            },
+            {
+                "id":5,
+                "name":"Swift",
+                "value":"Maruti Suzuki Swift"
             }]
 
     },
@@ -93,6 +103,34 @@ const createFakeDataSource = () => {
                 "id":4,
                 "name":"City",
                 "value":"Honda City"
+            }]
+
+    },
+    {
+        "id":4,
+        "title":"Toyota",
+        "items":
+            [{
+                "id":1,
+                "name":"Etios",
+                "value":"Toyota Etios"
+            },
+            {
+                "id":2,
+                "name":"Innova",
+                "value":"Toyota Innova"
+            }]
+
+    }
+    ,
+    {
+        "id":4,
+        "title":"Tata",
+        "items":
+            [{
+                "id":1,
+                "name":"Nexon",
+                "value":"Tata Nexon"
             }]
 
     }];
