@@ -19,12 +19,13 @@ class Slider extends React.Component {
                 <select  value={this.props.sort} onChange={this.props.sortCarsdata} class="browser-default custom-select">
                     <option selected>Relevance</option>
                     <option value="newest">Newest First</option>
+                    <option value="yearlowTohigh">Year- Low to High</option>
+                    <option value="yearhighTolow">Year- High to Low</option>
                     <option value="pricelowtohigh">Price- Low to High</option>
                     <option value="pricehightolow">Price- High to Low</option>
                     <option value="drivenlowtohigh">Km Driven- Low to High</option>
                     <option value="drivenhighTolow">Km Driven- High to Low</option>
-                    <option value="yearlowTohigh">Year- Low to High</option>
-                    <option value="yearhighTolow">Year- High to Low</option>
+                   
                 </select>
             </div>
           </div>

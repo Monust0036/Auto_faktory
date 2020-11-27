@@ -660,3 +660,13 @@ label.MuiFormControlLabel-root {
     height: 8px;
    
 }
+form.enquire-form {
+    text-align: initial;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+button.primary-enquiry.btn.btn-primary {
+    background-color: #ff7043 !important;
+    color: #fff;
+}

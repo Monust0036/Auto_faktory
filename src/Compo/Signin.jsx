@@ -156,9 +156,10 @@ class  Auth  extends  React.Component {
                 <div className="login-next">
                     {/* <button onClick={this.editPhoneNo}>Edit Phone Number </button> */}
                     <button onClick={this.handleSendOtp}> Resend OTP </button>
-                    <Link to={`/#`}>
-                    <input type="submit" onClick={this.handleVerifyOtp}  value="NEXT"/>
-                </Link>
+                    <a href="/used-car">
+                        <input type="submit" onClick={this.handleVerifyOtp}  value="NEXT"/>
+                    </a>
+               
                 </div>
                 
                 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import Filter from "./SideFilter.js";
+import Enquiry from "./Enquiry.js"
 import CarsCard from "./CarsCard.js";
 import TopStripBanner from "./TopBannerStrip";
 import RelevanceFilter from "./RelevanceFilter";
@@ -23,7 +24,7 @@ class MainFilter extends React.Component {
   }
   getCarData = () => {
     axios
-      .get('http://f4bcbde16659.ngrok.io/api/cardatas')
+      .get(`${API}/cardatas`)
       .then((response) => {
         
         let data = response.data
@@ -123,8 +124,10 @@ class MainFilter extends React.Component {
               sortCarsdata={this.sortCarsdata}
             />
             <CarsCard carsData={this.state.carsData} updateState={this.updateState}/>
+            <Enquiry/>
           </Col>
         </Row>
+        
       </Container>
     );
   }
