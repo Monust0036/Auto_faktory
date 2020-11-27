@@ -653,3 +653,10 @@ label.MuiFormControlLabel-root {
     display: flex;
     justify-content: space-evenly;
 }
+.MuiSlider-root {
+    color: #ff8d00 !important;
+    width: 100%;
+    cursor: pointer;
+    height: 8px;
+   
+}

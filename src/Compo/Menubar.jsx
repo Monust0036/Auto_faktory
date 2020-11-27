@@ -160,7 +160,7 @@ class Menubar extends Component {
               </MDBNavItem>
 
               <MDBNavItem>
-                <MDBNavLink to="#Home">
+                <MDBNavLink to="/favourites/">
                   <MDBIcon far icon="heart" />
                 </MDBNavLink>
               </MDBNavItem>
