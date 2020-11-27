@@ -105,7 +105,7 @@ class CardExampl extends React.Component {
                             <MDBIcon icon="heart" className={carsData.isfavourite?"red-text":'ml-2' } onClick={()=>this.changeFavoriteValue(index)}/>
                           </div>
                           <div className="ratedate1">
-                            <p className="bnKmZw l">{carsData.mileage}</p>
+                            <p className="bnKmZw l">{carsData.mileage} miles</p>
                             <p className="bnKmZw l">{carsData.year} reg</p>
                             <p className="bnKmZw l">{carsData.fuel}</p>
                             <p className="bnKmZw l">{carsData.transmission}</p>

@@ -12,6 +12,7 @@ import {
   MDBBtn,
   MDBIcon,
 } from "mdbreact";
+import { Link } from 'react-router-dom'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
@@ -71,7 +72,7 @@ class Slider extends React.Component {
           ssr={true} // means to render carousel on server-side.
           infinite={true}
           autoPlay={this.props.deviceType !== "mobile" ? true : false}
-          autoPlaySpeed={1000}
+          autoPlaySpeed={3000}
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
@@ -112,9 +113,14 @@ class Slider extends React.Component {
                       <div className="ljwTDc">
                         <p className="iFsKIn"> ₹{data.price}</p>
                         {/* <a href="#" type="btn" className="view-car">View this car</a> */}
-                        <MDBBtn color="deep-orange" size="md">
-                          View{" "}
-                        </MDBBtn>
+                        <Link to={{
+                                pathname: "/detail-car",
+                                state: data
+                              }}>
+                                <MDBBtn color="deep-orange" size="md">
+                                  View
+                                </MDBBtn>
+                              </Link>
                       </div>
                     </MDBCardBody>
                   </MDBCard>

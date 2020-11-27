@@ -40,7 +40,7 @@ class Slider extends React.Component {
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
                 autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                autoPlaySpeed={1000}
+                autoPlaySpeed={false}
                 keyBoardControl={true}
                 customTransition="all .5"
                 transitionDuration={500}
