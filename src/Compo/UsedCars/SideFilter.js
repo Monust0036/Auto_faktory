@@ -23,7 +23,16 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 import BodyTypeCheckbox from "./BodyTypeCheckbox";
 import YearRadio from "./yearRadio";
 import MileageRadio from "./MileageRadio";
-const colourList = ['red','white','blue','green','orange','black','yellow'];
+import CheckIcon from "@material-ui/icons/Check";
+const colourList = [
+  "red",
+  "white",
+  "blue",
+  "green",
+  "orange",
+  "black",
+  "yellow",
+];
 class Sidefilter extends Component {
   state = {
     checkedA: false,
@@ -41,9 +50,9 @@ class Sidefilter extends Component {
       makeAndModel: [],
       checkBox: { fuel: [], bodyType: [], transmission: [], owner: [] },
       radioButton: { year: null, mileage: null },
-      price: null,
-      colour:'',
-      searchInput:''
+      price: [100000, 2000000],
+      colour: [],
+      searchInput: "",
     },
     savedCopyOfFilterData: {},
   };
@@ -85,17 +94,38 @@ class Sidefilter extends Component {
     }
     if (savedFilterData.price != null) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.price > parseInt(car.price)
+        (car) =>
+          savedFilterData.price[0] < parseInt(car.price) &&
+          savedFilterData.price[1] > parseInt(car.price)
       );
     }
-    if (savedFilterData.colour.length>0) {
-      dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.colour.toLowerCase() === car.color.toLowerCase()
+    if (savedFilterData.colour.length > 0) {
+      savedFilterData.colour.map((colorName) =>
+        dataOfcars
+          .filter((e) => colorName.color == e.color.toLowerCase())
+          .map((colorItem, index) => {
+            if (
+              emptyListForMultiSearch.filter(
+                (emptyListData) => emptyListData === colorItem
+              ).length == 0
+            ) {
+              emptyListForMultiSearch.push(colorItem);
+            }
+          })
       );
+      dataOfcars = emptyListForMultiSearch;
     }
-    if (savedFilterData.searchInput.length>0) {
+    if (savedFilterData.searchInput.length > 0) {
       dataOfcars = dataOfcars.filter(
-        (car) => car.varient.model.includes(savedFilterData.searchInput.charAt(0).toUpperCase() + savedFilterData.searchInput.slice(1)) || car.varient.make.includes(savedFilterData.searchInput.charAt(0).toUpperCase() + savedFilterData.searchInput.slice(1))
+        (car) =>
+          car.varient.model.includes(
+            savedFilterData.searchInput.charAt(0).toUpperCase() +
+              savedFilterData.searchInput.slice(1)
+          ) ||
+          car.varient.make.includes(
+            savedFilterData.searchInput.charAt(0).toUpperCase() +
+              savedFilterData.searchInput.slice(1)
+          )
       );
     }
     Object.keys(savedFilterData.checkBox).map((typeName, index) => {
@@ -132,7 +162,15 @@ class Sidefilter extends Component {
       //   console.log(dataOfcars)
     });
     // console.log(dataOfcars);
+    let filteredDataForMake = []
+    savedFilterData.makeAndModel.map((data)=>{
+      if(filteredDataForMake.filter(e=>e===data.make).length === 0){
+        filteredDataForMake.push(data.make)
+      }
+    })
     this.props.updateState("carsData", dataOfcars);
+
+    this.props.updateState("filteredDataForMake", filteredDataForMake);
   };
   handleCheckBox = (value, key, e) => {
     let listOfObj = this.state.savedFilterData;
@@ -176,9 +214,7 @@ class Sidefilter extends Component {
   //   budgetFilter=(e)=>{
   // 	console.log('hiii')
   //   }
-  getColorFilter = (e) => {
-    console.log(e);
-  };
+
   handleSlider = (event, newValue) => {
     let listOfObj = this.state.savedFilterData;
     listOfObj.price = newValue;
@@ -186,20 +222,24 @@ class Sidefilter extends Component {
     this.getFilterData();
   };
 
-  handleColor=(colour)=>{
+  handleColor = (colour) => {
     let listOfObj = this.state.savedFilterData;
-    
-    listOfObj.colour = listOfObj.colour === colour? '':colour;
+    if(this.state.savedFilterData.colour.filter(col=>col.color == colour).length>0){
+      let index = this.state.savedFilterData.colour.findIndex(e=>e.color == colour)
+      listOfObj.colour.splice(index, 1);
+    }else{
+      listOfObj.colour.push({ color: colour })
+    }
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
-  }
-  handleSearchInput=(e)=>{
+  };
+  handleSearchInput = (e) => {
     let listOfObj = this.state.savedFilterData;
-    
+
     listOfObj.searchInput = e.target.value;
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
-  }
+  };
   render() {
     // console.log(this.state.savedFilterData);
 
@@ -217,33 +257,34 @@ class Sidefilter extends Component {
               Budget
             </h5>
             <br></br>
-            <div style={{display:"flex",justifyContent:"space-between"}}>
-            <Typography id="range-slider" gutterBottom>
-            ₹100000 
-            </Typography>
-            <Typography id="range-slider" gutterBottom>
-              ₹2000000
-            </Typography>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography id="range-slider" gutterBottom>
+                ₹{this.state.savedFilterData.price[0]}
+              </Typography>
+              <Typography id="range-slider" gutterBottom>
+                ₹{this.state.savedFilterData.price[1]}
+              </Typography>
             </div>
-            
+
             <Slider
-              defaultValue={0.00000005}
-              aria-labelledby="discrete-slider-small-steps"
-              step={0.00000001}
+              value={this.state.savedFilterData.price}
+              aria-labelledby="range-slider"
+              // defaultValue={0.00000005}
+              // aria-labelledby="discrete-slider-small-steps"
+              // step={0.00000001}
               min={100000}
               max={2000000}
               onChange={this.handleSlider}
               // valueLabelDisplay="auto"
             />
-            <div style={{display:"flex",justifyContent:"space-between"}}>
-            <Typography style={{fontSize:"12px"}}>
-            Minimum Price 
-            </Typography>
-            <Typography style={{fontSize:"12px"}} >
-              Maxmimum Price
-            </Typography >
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography style={{ fontSize: "12px" }}>
+                Minimum Price
+              </Typography>
+              <Typography style={{ fontSize: "12px" }}>
+                Maxmimum Price
+              </Typography>
             </div>
-            
           </div>
         </div>
 
@@ -253,7 +294,14 @@ class Sidefilter extends Component {
             <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
               Make + Models
             </h5>
-      <input className="form-control" type="text" placeholder="Search by model + make" aria-label="Search" style={{marginBottom:'10px'}} onChange={this.handleSearchInput}/>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search by model + make"
+              aria-label="Search"
+              style={{ marginBottom: "10px" }}
+              onChange={this.handleSearchInput}
+            />
             <ListContainer getCarNameFilter={this.getCarNameFilter} />
           </div>
         </div>
@@ -391,18 +439,28 @@ class Sidefilter extends Component {
         <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
           Color
         </h5>
-        <div className="row" style={{ flexWrap: "wrap",justifyContent: "center" }}>
-          {colourList.map((colour,index)=><div
-            style={{
-              width: "40px",
-              height: "40px",
-              background: colour,
-              borderRadius: "9999px",
-              margin: '4px',
-              border:' 2px solid #5f5a5a'
-            }}
-            onClick={()=>this.handleColor(colour)}
-          ></div>)}
+        <div
+          className="row"
+          style={{ flexWrap: "wrap", justifyContent: "center" }}
+        >
+          {colourList.map((colour, index) => {
+            return (
+              <div
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  background: colour,
+                  borderRadius: "9999px",
+                  margin: "4px",
+                  border: " 2px solid #5f5a5a",
+                }}
+                onClick={() => this.handleColor(colour)}
+              >
+                {this.state.savedFilterData.colour.filter(col=>col.color == colour).length>0? 
+                <CheckIcon style={{ marginTop: "5px" }}></CheckIcon>:null}
+              </div>
+            );
+          })}
         </div>
       </ReactiveBase>
     );

@@ -1,12 +1,13 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import Filter from "./SideFilter.js";
-import Enquiry from "./Enquiry.js"
+import Enquiry from "./Enquiry.js";
 import CarsCard from "./CarsCard.js";
 import TopStripBanner from "./TopBannerStrip";
 import RelevanceFilter from "./RelevanceFilter";
 import axios from "axios";
 import { API } from "../../config.js";
+import ReplayIcon from '@material-ui/icons/Replay';
 // const Carsdata = require("../../Data/cars.json");
 
 class MainFilter extends React.Component {
@@ -17,6 +18,7 @@ class MainFilter extends React.Component {
       dataOfcars: [],
       size: "",
       sort: "",
+      filteredDataForMake: [],
     };
   }
   componentDidMount() {
@@ -26,15 +28,22 @@ class MainFilter extends React.Component {
     axios
       .get(`${API}/cardatas`)
       .then((response) => {
-        
-        let data = response.data
-        if(this.props.category != undefined){
-          data = data.filter(item=>item.city.length > 0?item.city[0]['CityName']===this.props.category.city:true)
-          if(this.props.category.make != undefined){
-            data = data.filter(item=>item.varient.make===this.props.category.make)
+        let data = response.data;
+        if (this.props.category != undefined) {
+          data = data.filter((item) =>
+            item.city.length > 0
+              ? item.city[0]["CityName"] === this.props.category.city
+              : true
+          );
+          if (this.props.category.make != undefined) {
+            data = data.filter(
+              (item) => item.varient.make === this.props.category.make
+            );
           }
-          if(this.props.category.model != undefined){
-            data = data.filter(item=>item.varient.model===this.props.category.model)
+          if (this.props.category.model != undefined) {
+            data = data.filter(
+              (item) => item.varient.model === this.props.category.model
+            );
           }
         }
         // console.log(data,this.props.category)
@@ -116,6 +125,44 @@ class MainFilter extends React.Component {
           </Col>
           <Col md={9}>
             <TopStripBanner />
+            {this.state.filteredDataForMake.length>0?
+            <div style={{display: 'flex',marginTop:'20px' }}>
+              <div >
+            <div
+                style={{
+                  padding: "5px 18px",
+                  background: "rgb(235 138 18)",
+                  borderRadius: "4px",
+                  fontWeight: 'bold',
+                  color: 'white',
+                  display:'flex',
+                  alignSelf: 'center',
+                  marginRight:'10px'
+                }}
+                onClick={()=>window.location.reload()}
+              >
+                <ReplayIcon></ReplayIcon>
+                <span>Clear All</span>
+              </div>
+              </div>
+            <div style={{ display: "flex"}}>
+            {this.state.filteredDataForMake.map(make=>
+              <div
+                style={{
+                  padding: "5px 18px",
+                  background: " #efeeee",
+                  borderRadius: "4px",
+                  fontWeight: 'bold',
+                  color: '#eb8a12',
+                  display:'flex',
+                  margin:'0px 5px'
+                }}
+              >
+                <span>{make}</span>
+              </div>
+            )}
+            </div>
+            </ div>:null}
             <RelevanceFilter
               count={this.state.carsData.length}
               size={this.state.size}
@@ -123,11 +170,13 @@ class MainFilter extends React.Component {
               filterProducts={this.filterProducts}
               sortCarsdata={this.sortCarsdata}
             />
-            <CarsCard carsData={this.state.carsData} updateState={this.updateState}/>
-            <Enquiry/>
+            <CarsCard
+              carsData={this.state.carsData}
+              updateState={this.updateState}
+            />
+            <Enquiry />
           </Col>
         </Row>
-        
       </Container>
     );
   }
