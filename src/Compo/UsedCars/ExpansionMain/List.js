@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {withStyles} from '@material-ui/core/styles';
 import ListItem from './ListItem';
+import MUIListItem from '@material-ui/core/ListItem';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const styles = {
     list: {
@@ -15,13 +18,21 @@ const styles = {
         margin: '0 auto'
     }
 };
-const List = ({onCheckItem, list, checkedItems, classes}) => {
+const List = ({onCheckItem, list, checkedItems, checked,classes}) => {
     //hook to render list only when panel actually expanded
     const [expanded, setExpanded] = useState(false);
     return (
         <ExpansionPanel className={classes.list} onClick={() => setExpanded(true)}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                <Typography>{list.title}</Typography>
+                {/* <Typography>{list.title}</Typography> */}
+    {/* Make checkbox */}
+                <MUIListItem>
+                <FormControlLabel control={
+                        <Checkbox  checked={checked} value={list.title}/>
+                        } label={list.title}/>
+                        
+        </MUIListItem>
+        <hr></hr>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
                 {expanded &&

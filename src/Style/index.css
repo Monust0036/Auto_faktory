@@ -670,3 +670,11 @@ button.primary-enquiry.btn.btn-primary {
     background-color: #ff7043 !important;
     color: #fff;
 }
+.MuiExpansionPanelDetails-root {
+    display: flex;
+    padding: 0px 16px 16px;
+    margin-left: 30px;
+}
+.MuiExpansionPanelSummary-root.Mui-expanded{
+    max-height: 20px !important;
+}
