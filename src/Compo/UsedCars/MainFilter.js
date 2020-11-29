@@ -31,11 +31,15 @@ class MainFilter extends React.Component {
         let data = response.data;
         console.log(data)
         if (this.props.category != undefined) {
-          data = data.filter((item) =>
+          console.log(this.props.category)
+          if (this.props.category.city != undefined) {
+            data = data.filter((item) =>
             item.city.length > 0
               ? item.city[0]["CityName"] === this.props.category.city
               : true
           );
+          }
+         
           if (this.props.category.make != undefined) {
             data = data.filter(
               (item) => item.varient.make === this.props.category.make

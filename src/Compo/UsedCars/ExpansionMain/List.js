@@ -28,7 +28,7 @@ const List = ({onCheckItem, list, checkedItems, checked,classes}) => {
     {/* Make checkbox */}
                 <MUIListItem>
                 <FormControlLabel control={
-                        <Checkbox  checked={checked} value={list.title}/>
+                        <Checkbox  checked={list.checked} value={list.title} onChange={(e)=>onCheckItem('make',list.title,[],e)}/>
                         } label={list.title}/>
                         
         </MUIListItem>
@@ -39,8 +39,8 @@ const List = ({onCheckItem, list, checkedItems, checked,classes}) => {
                 <MUIList>
                     {list.items.map(item =>
                         <ListItem
-                            checked={checkedItems[item.value] !== undefined}
-                            onCheckItem={(e)=>onCheckItem(list,item,e)}
+                            checked={item.checked}
+                            onCheckItem={(e)=>onCheckItem('model',list.title,item,e)}
                             key={item.id}
                             item={item}/>
                     )}

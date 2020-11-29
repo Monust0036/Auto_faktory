@@ -5,11 +5,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const ListItem = React.memo(({onCheckItem, item, checked}) => {
-    console.log(`${item.value} rendered`);
+
     return (
         <MUIListItem>
             <FormControlLabel control={
-                <Checkbox onChange={onCheckItem} checked={checked} value={item.value}/>
+                <Checkbox onChange={onCheckItem} checked={checked} value={item.value} />
             } label={item.name}/>
         </MUIListItem>
     )

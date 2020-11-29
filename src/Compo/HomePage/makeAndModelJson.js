@@ -1,5 +1,5 @@
 export const makeAndModelData = {
-  Hyundai: [
+  'Hyundai': [
     "Accent",
     "Accent Viva",
     "Aura",
@@ -26,7 +26,7 @@ export const makeAndModelData = {
     "Venue",
     "Verna",
   ],
-  MarutiSuzuki: [
+  'Maruti Suzuki': [
     "800",
     "A-Star",
     "Alto",
@@ -58,7 +58,7 @@ export const makeAndModelData = {
     "Wagon R",
     "Wagon R 1.0",
   ],
-  Honda: [
+  'Honda': [
     "Accord",
     "Amaze",
     "BR-V",
@@ -71,7 +71,7 @@ export const makeAndModelData = {
     "New Amaze",
     "WR-V",
   ],
-  Renault: [
+  'Renault': [
     "Captur",
     "Duster",
     "Fluence",
@@ -83,7 +83,7 @@ export const makeAndModelData = {
     "Triber",
   ],
 
-  Toyota: [
+  'Toyota': [
     "Camry",
     "Corolla",
     "Corolla Altis",
@@ -95,7 +95,7 @@ export const makeAndModelData = {
     "Innova",
     "Innova Crysta",
   ],
-  Ford: [
+  'Ford': [
     "EcoSport",
     "Endeavour",
     "Fiesta",
@@ -107,7 +107,7 @@ export const makeAndModelData = {
     "Ikon",
     "Mondeo",
   ],
-  Mahindra: [
+  'Mahindra': [
     "Bolero",
     "e2o",
     "KUV100",
@@ -126,7 +126,7 @@ export const makeAndModelData = {
     "XUV500",
     "Xylo",
   ],
-  Tata: [
+  'Tata': [
     "Altroz",
     "Aria",
     "Bolt",

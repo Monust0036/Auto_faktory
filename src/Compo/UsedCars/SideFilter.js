@@ -199,22 +199,24 @@ class Sidefilter extends Component {
     this.getFilterData();
   };
   //   filter for make and modals
-  getCarNameFilter = (list, item, e) => {
-    // console.log(list,item,e.target.checked)
+  getCarNameFilter = (data) => {
     let listOfObj = this.state.savedFilterData;
-    if (e.target.checked) {
-      listOfObj.makeAndModel.push({ model: item.name, make: list.title });
-    } else {
-      let index = listOfObj.makeAndModel.findIndex((e) => e.key == item.name);
-      listOfObj.makeAndModel.splice(index, 1);
-    }
+    data.map((make)=> make.items.map((model,index)=>{
+      let checkIndex = this.state.savedFilterData.makeAndModel.findIndex(e=>e.make === make.title && e.model === model.name);
+      console.log(checkIndex)
+      if(model.checked && checkIndex  < 0){
+        listOfObj.makeAndModel.push({ model: model.name, make: make.title});
+      }
+      if(!model.checked && checkIndex>-1 && !make.checked){
+        listOfObj.makeAndModel.splice(checkIndex, 1);
+      }
+    }))
+  
+  
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
   };
-  //   budgetFilter=(e)=>{
-  // 	console.log('hiii')
-  //   }
-
+ 
   handleSlider = (event, newValue) => {
     let listOfObj = this.state.savedFilterData;
     listOfObj.price = newValue;

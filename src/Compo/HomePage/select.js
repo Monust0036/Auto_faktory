@@ -46,22 +46,23 @@ class SelectPage extends Component {
           <MDBCol lg="3">
             <select
               className="browser-default custom-select"
-              name="model"
+              name="make"
               onChange={this.handleChange}
             > 
             <option >Select model</option>
-              {Object.keys(makeAndModelData).map(make=>makeAndModelData[make].map(model=> <option value={model}>{model}</option>))}
+              {Object.keys(makeAndModelData).map(make=><option value={make}>{make}</option>)}
              
             </select>
           </MDBCol>
           <MDBCol lg="3">
             <select
               className="browser-default custom-select"
-              name="make"
-              disabled
+              name="model"
+              onChange={this.handleChange}
+              disabled={Object.keys(this.state.category).filter(make=> make == 'make').length>0? false:true}
             >
-              {Object.keys(this.state.category).length >2? <option selected>{this.state.category.make} </option>:<option>Select make</option>}
               
+          {Object.keys(this.state.category).filter(make=> make == 'make').length>0 && makeAndModelData[this.state.category.make].map(model=> <option value={model}>{model}</option>)}              
             </select>
           </MDBCol>
           <MDBCol lg="3">
