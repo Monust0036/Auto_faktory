@@ -83,7 +83,7 @@ class CardExampl extends Component {
                 <div className="short-spec">
                   <h4 style={{ textAlign: "left" }}>
                     {" "}
-                    {new Date(carData.varient.updatedAt).getFullYear() +
+                    { carData.year +
                       " " +
                       carData.varient.make +
                       " " +
