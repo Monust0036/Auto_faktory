@@ -29,6 +29,7 @@ class MainFilter extends React.Component {
       .get(`${API}/cardatas`)
       .then((response) => {
         let data = response.data;
+        console.log(data)
         if (this.props.category != undefined) {
           data = data.filter((item) =>
             item.city.length > 0

@@ -8,14 +8,22 @@ import {
   MDBBtn,
 } from "mdbreact";
 import { Link } from "react-router-dom";
-
+import {makeAndModelData} from './makeAndModelJson'
 class SelectPage extends Component {
   state = {
     category: {},
   };
+
   handleChange=(e)=> {
     let category = this.state.category;
     category[e.target.name] = e.target.value;
+    if(e.target.name == 'model'){
+      Object.keys(makeAndModelData).map(make=>makeAndModelData[make].map(model=> {
+        if(model == e.target.value){
+          category.make = make
+        }
+      }))
+    }
     this.setState({ category: category });
   }
   render() {
@@ -28,7 +36,7 @@ class SelectPage extends Component {
               name="city"
               onChange={this.handleChange}
             >
-              <option>Select City</option>
+              <option >Select City</option>
               <option value="Mumbai">Mumbai</option>
               <option value="Delhi">Delhi</option>
               <option value="Bangalore">Bangalore</option>
@@ -38,25 +46,22 @@ class SelectPage extends Component {
           <MDBCol lg="3">
             <select
               className="browser-default custom-select"
-              name="make"
+              name="model"
               onChange={this.handleChange}
-            >
-              <option>Select make</option>
-              <option value="Hyundai">Hyundai</option>
-              <option value="Maruti Suzuki">Maruti Suzuki</option>
-              <option value="Honda">Honda</option>
+            > 
+            <option >Select model</option>
+              {Object.keys(makeAndModelData).map(make=>makeAndModelData[make].map(model=> <option value={model}>{model}</option>))}
+             
             </select>
           </MDBCol>
           <MDBCol lg="3">
             <select
               className="browser-default custom-select"
-              name="model"
-              onChange={this.handleChange}
+              name="make"
+              disabled
             >
-              <option>Select model</option>
-              <option value="Brio">Brio</option>
-              <option value="Alto">Alto</option>
-              <option value="Accent">Accent</option>
+              {Object.keys(this.state.category).length >2? <option selected>{this.state.category.make} </option>:<option>Select make</option>}
+              
             </select>
           </MDBCol>
           <MDBCol lg="3">
