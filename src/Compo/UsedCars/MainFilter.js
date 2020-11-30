@@ -86,36 +86,36 @@ class MainFilter extends React.Component {
             ? 1
             : -1
         ),
-      carsData: this.state.carsData
+        carsData: this.state.carsData
         .slice()
         .sort((a, b) =>
           sort === "drivenlowtohigh"
-            ? a.mileage < b.mileage
-              ? 1
-              : -1
-            : sort === "drivenhighTolow"
             ? a.mileage > b.mileage
               ? 1
               : -1
-            : a._id > b._id
-            ? 1
-            : -1
-        ),
-      carsData: this.state.carsData
-        .slice()
-        .sort((a, b) =>
-          sort === "yearlowTohigh"
-            ? a.year > b.year
-              ? 1
-              : -1
-            : sort === "yearhighTolow"
-            ? a.year < b.year
+            : sort === "drivenhighTolow"
+            ? a.mileage < b.mileage
               ? 1
               : -1
             : a._id > b._id
             ? 1
             : -1
         ),
+      // carsData: this.state.carsData
+      //   .slice()
+      //   .sort((a, b) =>
+      //     sort === "yearlowTohigh"
+      //       ? a.year > b.year
+      //         ? 1
+      //         : -1
+      //       : sort === "yearhighTolow"
+      //       ? a.year < b.year
+      //         ? 1
+      //         : -1
+      //       : a._id > b._id
+      //       ? 1
+      //       : -1
+      //   ),
     }));
   };
   render() {
