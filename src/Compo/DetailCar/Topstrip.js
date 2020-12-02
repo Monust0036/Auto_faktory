@@ -25,6 +25,7 @@ import myImage from "./carsample.jpeg";
 import myImage1 from "./car_img1.jpeg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import ImageViewer360 from "./360Imageviewer"
 
 class CardExampl extends Component {
   constructor(props) {
@@ -178,28 +179,9 @@ class CardExampl extends Component {
               </MDBModalHeader>
 
               <MDBModalBody>
-                <div className="App">
-                  <Pannellum
-                    width="100%"
-                    height="500px"
-                    image={myImage1}
-                    pitch={310}
-                    yaw={360}
-                    hfov={0}
-                    autoLoad
-                    showZoomCtrl={false}
-                    onLoad={() => {
-                      console.log("panorama loaded");
-                    }}
-                  >
-                    <Pannellum.Hotspot
-                      type="custom"
-                      pitch={360}
-                      yaw={360}
-                      handleClick={(evt, name) => console.log(name)}
-                      name="hs1"
-                    />
-                  </Pannellum>
+                <div >
+                {/* 360 view */}
+                <ImageViewer360/>
                 </div>
               </MDBModalBody>
             </div>

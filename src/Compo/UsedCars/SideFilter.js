@@ -25,13 +25,18 @@ import YearRadio from "./yearRadio";
 import MileageRadio from "./MileageRadio";
 import CheckIcon from "@material-ui/icons/Check";
 const colourList = [
-  "red",
   "white",
+  "black",
+  "silver",
   "blue",
+  "red",
+  "grey",
   "green",
   "orange",
-  "black",
   "yellow",
+  "brown",
+  "gold",
+  "purple"
 ];
 class Sidefilter extends Component {
   state = {
@@ -45,6 +50,7 @@ class Sidefilter extends Component {
     checkedT2: false,
     checkedO1: false,
     checkedO2: false,
+    checkedY1:false,
     color: [],
     savedFilterData: {
       makeAndModel: [],
@@ -66,12 +72,12 @@ class Sidefilter extends Component {
       emptyListForMultiSearch = [];
     if (savedFilterData.radioButton.year != null) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.radioButton.year < car.year
+        (car) => savedFilterData.radioButton.year <= car.year
       );
     }
     if (savedFilterData.radioButton.mileage != null) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.radioButton.mileage > car.mileage
+        (car) => savedFilterData.radioButton.mileage <=car.mileage
       );
     }
     if (savedFilterData.makeAndModel.length > 0) {
@@ -273,10 +279,11 @@ class Sidefilter extends Component {
               aria-labelledby="range-slider"
               // defaultValue={0.00000005}
               // aria-labelledby="discrete-slider-small-steps"
-              // step={0.00000001}
+              // step={25000}
               min={100000}
               max={2000000}
               onChange={this.handleSlider}
+              step={10}
               // valueLabelDisplay="auto"
             />
             <div style={{ display: "flex", justifyContent: "space-between" }}>

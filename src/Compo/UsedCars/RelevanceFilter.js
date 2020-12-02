@@ -1,3 +1,4 @@
+import { LocationCity } from "@material-ui/icons";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
 
@@ -5,15 +6,14 @@ import "react-multi-carousel/lib/styles.css";
 
 class Slider extends React.Component {
 
-  
-  
-  render() {
+render() {
     return (
       <>
         
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",padding:"0 15px"}}>
               <div >
-                <p style={{marginBottom:"0px"}}>AutoFaktory Assured <b>{this.props.count}</b> used cars in Mumbai</p>
+                <p style={{marginBottom:"0px"}}>AutoFaktory Assured <b>{this.props.count}</b> used cars in </p>
+              {/* {console.log(this.state)} */}
               </div>
             <div>
                 <select  value={this.props.sort} onChange={this.props.sortCarsdata} class="browser-default custom-select">

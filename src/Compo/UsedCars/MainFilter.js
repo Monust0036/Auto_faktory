@@ -29,7 +29,7 @@ class MainFilter extends React.Component {
       .get(`${API}/cardatas`)
       .then((response) => {
         let data = response.data;
-        console.log(data)
+        console.log(">>>>>>>>>>>>>>>>",data)
         if (this.props.category != undefined) {
           console.log(this.props.category)
           if (this.props.category.city != undefined) {
@@ -69,20 +69,21 @@ class MainFilter extends React.Component {
 
   sortCarsdata = (event) => {
     const sort = event.target.value;
+    console.log(event.target.value)
     this.setState((state) => ({
       sort: sort,
       carsData: this.state.carsData
         .slice()
-        .sort((a, b) =>
+        .sort((k, l) =>
           sort === "pricelowtohigh"
-            ? a.price > b.price
+            ? k.price > l.price
               ? 1
               : -1
             : sort === "pricehightolow"
-            ? a.price < b.price
+            ? k.price < l.price
               ? 1
               : -1
-            : a._id > b._id
+            : k._id > l._id
             ? 1
             : -1
         ),
@@ -101,21 +102,21 @@ class MainFilter extends React.Component {
             ? 1
             : -1
         ),
-      // carsData: this.state.carsData
-      //   .slice()
-      //   .sort((a, b) =>
-      //     sort === "yearlowTohigh"
-      //       ? a.year > b.year
-      //         ? 1
-      //         : -1
-      //       : sort === "yearhighTolow"
-      //       ? a.year < b.year
-      //         ? 1
-      //         : -1
-      //       : a._id > b._id
-      //       ? 1
-      //       : -1
-      //   ),
+      carsData: this.state.carsData
+        .slice()
+        .sort((x, y) =>
+          sort === "yearlowTohigh"
+            ? x.year > y.year
+              ? 1
+              : -1
+            : sort === "yearhighTolow"
+            ? x.year < y.year
+              ? 1
+              : -1
+            : x._id > y._id
+            ? 1
+            : -1
+        ),
     }));
   };
   render() {
@@ -174,6 +175,7 @@ class MainFilter extends React.Component {
               sort={this.state.sort}
               filterProducts={this.filterProducts}
               sortCarsdata={this.sortCarsdata}
+              sortCarsdatas={this.sortCarsdatas}
             />
             <CarsCard
               carsData={this.state.carsData}

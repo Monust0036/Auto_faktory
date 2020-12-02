@@ -36,7 +36,7 @@ class SelectPage extends Component {
               name="city"
               onChange={this.handleChange}
             >
-              <option >Select City</option>
+              {/* <option >Select City</option> */}
               <option value="Mumbai">Mumbai</option>
               <option value="Delhi">Delhi</option>
               <option value="Bangalore">Bangalore</option>
@@ -49,7 +49,7 @@ class SelectPage extends Component {
               name="make"
               onChange={this.handleChange}
             > 
-            <option >Select model</option>
+            <option >Select make</option>
               {Object.keys(makeAndModelData).map(make=><option value={make}>{make}</option>)}
              
             </select>

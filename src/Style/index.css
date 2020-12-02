@@ -678,3 +678,7 @@ button.primary-enquiry.btn.btn-primary {
 .MuiExpansionPanelSummary-root.Mui-expanded{
     max-height: 20px !important;
 }
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
