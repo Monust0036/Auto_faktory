@@ -20,12 +20,14 @@ import {
   MDBModalHeader,
   MDBInput,
 } from "mdbreact";
+import { Form, Button } from 'react-bootstrap';
 import { Pannellum } from "pannellum-react";
 import myImage from "./carsample.jpeg";
 import myImage1 from "./car_img1.jpeg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import ImageViewer360 from "./360Imageviewer"
+import BuycarForm from "./buyCarForm"
 
 class CardExampl extends Component {
   constructor(props) {
@@ -48,6 +50,8 @@ class CardExampl extends Component {
       [modalNumber]: !this.state[modalNumber],
     });
   };
+
+  
   render() {
     const { carData } = this.props;
     console.log(this.props);
@@ -228,29 +232,10 @@ class CardExampl extends Component {
             <MDBModalHeader toggle={this.toggle(15)}> </MDBModalHeader>
 
             <MDBModalBody>
-              <h4 className="LoginModal__loginHeading">
-                Login to Book Test Drive
-              </h4>
+              <BuycarForm/>
 
-              <MDBInput
-                label=" Enter phone number"
-                type="text"
-                id="inputMDEx"
-                class="form-control"
-              />
-              <div className="LoginModal-whatsappCheckWrap">
-                <i
-                  className="fa fa-check LoginModal__checkIcon LoginModal__checked"
-                  aria-hidden="true"
-                ></i>
-                Send updates on Whatsapp
-              </div>
-              <p className="LoginModal-terms">
-                By logging in, I agree to <a href="#">terms</a> and{" "}
-                <a href="#">privacy policy</a>{" "}
-              </p>
-              <hr />
-              <button className="LoginModal-getOtpBtnWrap">proceed</button>
+             
+              {/* <button className="LoginModal-getOtpBtnWrap">proceed</button> */}
             </MDBModalBody>
           </MDBModal>
         </MDBContainer>
