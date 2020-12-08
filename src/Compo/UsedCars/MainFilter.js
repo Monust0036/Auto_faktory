@@ -19,6 +19,7 @@ class MainFilter extends React.Component {
       size: "",
       sort: "",
       filteredDataForMake: [],
+      hasShowClearALlButton:false
     };
   }
   componentDidMount() {
@@ -69,55 +70,27 @@ class MainFilter extends React.Component {
 
   sortCarsdata = (event) => {
     const sort = event.target.value;
-    console.log(event.target.value)
-    this.setState((state) => ({
-      sort: sort,
-      carsData: this.state.carsData
-        .slice()
-        .sort((k, l) =>
-          sort === "pricelowtohigh"
-            ? k.price > l.price
-              ? 1
-              : -1
-            : sort === "pricehightolow"
-            ? k.price < l.price
-              ? 1
-              : -1
-            : k._id > l._id
-            ? 1
-            : -1
-        ),
-        carsData: this.state.carsData
-        .slice()
-        .sort((a, b) =>
-          sort === "drivenlowtohigh"
-            ? a.mileage > b.mileage
-              ? 1
-              : -1
-            : sort === "drivenhighTolow"
-            ? a.mileage < b.mileage
-              ? 1
-              : -1
-            : a._id > b._id
-            ? 1
-            : -1
-        ),
-      carsData: this.state.carsData
-        .slice()
-        .sort((x, y) =>
-          sort === "yearlowTohigh"
-            ? x.year > y.year
-              ? 1
-              : -1
-            : sort === "yearhighTolow"
-            ? x.year < y.year
-              ? 1
-              : -1
-            : x._id > y._id
-            ? 1
-            : -1
-        ),
-    }));
+    let carsData = this.state.carsData
+    if('pricelowtohigh'=== event.target.value){
+    carsData.sort((a,b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0)); 
+    }
+    if('pricehightolow' === event.target.value){
+      carsData.sort((a,b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0)); 
+      }
+      if('yearhighTolow' === event.target.value){
+        carsData.sort((a,b) => (a.year < b.year) ? 1 : ((b.year < a.year) ? -1 : 0)); 
+        }
+        if('yearlowTohigh' === event.target.value){
+          carsData.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0)); 
+          }
+          if('drivenlowtohigh' === event.target.value){
+            carsData.sort((a,b) => (a.mileage > b.mileage) ? 1 : ((b.mileage > a.mileage) ? -1 : 0)); 
+            }
+            if('drivenhighTolow' === event.target.value){
+              carsData.sort((a,b) => (a.mileage < b.mileage) ? 1 : ((b.mileage < a.mileage) ? -1 : 0)); 
+              }
+    this.setState({carsData:carsData});
+
   };
   render() {
     return (
@@ -127,11 +100,12 @@ class MainFilter extends React.Component {
             <Filter
               updateState={this.updateState}
               dataOfcars={this.state.dataOfcars}
+              hasShowClearALlButton={this.state.hasShowClearALlButton}
             />
           </Col>
           <Col md={9}>
             <TopStripBanner />
-            {this.state.filteredDataForMake.length>0?
+            {this.state.filteredDataForMake.length>0 || this.state.hasShowClearALlButton?
             <div style={{display: 'flex',marginTop:'20px' }}>
               <div >
             <div

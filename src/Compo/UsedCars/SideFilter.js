@@ -70,6 +70,18 @@ class Sidefilter extends Component {
     let dataOfcars = this.props.dataOfcars,
       savedFilterData = this.state.savedFilterData,
       emptyListForMultiSearch = [];
+      let a = [100000, 2000000]
+      let b = [100000, 2000000]
+      console.log(savedFilterData)
+      if(a==b){
+        console.log("true")
+
+      }else{
+        console.log("false")
+      }
+      // console.log(a !== b,savedFilterData.searchInput.length>0,savedFilterData.colour.length>0,savedFilterData.radioButton.mileage != null ,savedFilterData.radioButton.year != null , savedFilterData.colour.length>0, savedFilterData.makeAndModel.length>0 , savedFilterData.checkBox.fuel>0,savedFilterData.checkBox.bodyType>0,savedFilterData.checkBox.transmission.length>0, savedFilterData.checkBox.owner.length>0)
+      savedFilterData.price[0] !== 100000||savedFilterData.price[1] !== 2000000||savedFilterData.searchInput.length>0||savedFilterData.colour.length>0||savedFilterData.radioButton.mileage != null ||savedFilterData.radioButton.year != null || savedFilterData.colour.length>0|| savedFilterData.makeAndModel.length>0 || savedFilterData.checkBox.fuel.length>0||savedFilterData.checkBox.bodyType.length>0||savedFilterData.checkBox.transmission.length>0|| savedFilterData.checkBox.owner.length>0? this.props.updateState('hasShowClearALlButton',true):this.props.updateState('hasShowClearALlButton',false)
+
     if (savedFilterData.radioButton.year != null) {
       dataOfcars = dataOfcars.filter(
         (car) => savedFilterData.radioButton.year <= car.year
@@ -199,8 +211,12 @@ class Sidefilter extends Component {
   getRadioBtnFilterData = (value, key, e) => {
     let listOfObj = this.state.savedFilterData;
 
-    listOfObj.radioButton[key] = value;
-
+   
+    if(value === 0){
+      listOfObj.radioButton[key] = null
+    }else{
+      listOfObj.radioButton[key] = value;
+    }
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
   };
@@ -243,7 +259,6 @@ class Sidefilter extends Component {
   };
   handleSearchInput = (e) => {
     let listOfObj = this.state.savedFilterData;
-
     listOfObj.searchInput = e.target.value;
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
