@@ -65,7 +65,7 @@ class Menubar extends Component {
             <MDBNavLink to="/" className="p-0">
               <div className="logo">
                 <img
-                  src="/images/logo/Autofaktorylogo.png"
+                  src="/images/logo/Autofaktorylogo.svg"
                   width="300"
                   height="80"
                   alt="Auto-factory"

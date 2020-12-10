@@ -14,7 +14,7 @@ class Slider extends React.Component {
                 <MDBRow>
                 
                   <MDBCol md="4">
-                  <img src="https://www.cazoo.co.uk/static/home/quality-assured.svg" alt="thumbnail"  />
+                  <img src="/images/quality-assured AF.svg" alt="thumbnail"  className="quality-assured-image" />
                   <p style={{fontWeight:"600",fontSize:"24px"}}>AutoFaktory Quality Assured</p>
                   <p>Not only are our cars thoroughly checked and reconditioned, but each one has had a recent service and MOT (if required) and also shows the number of previous owners.</p>
 
@@ -22,14 +22,14 @@ class Slider extends React.Component {
                     
                   </MDBCol>
                   <MDBCol md="4">
-                  <img src="https://www.cazoo.co.uk/static/home/quality-assured.svg" alt="thumbnail"  />
+                  <img src="/images/quality-assured AF.svg" alt="thumbnail" className="quality-assured-image"  />
                   <p style={{fontWeight:"600",fontSize:"24px"}}>AutoFaktory Quality Assured</p>
                   <p>Not only are our cars thoroughly checked and reconditioned, but each one has had a recent service and MOT (if required) and also shows the number of previous owners.</p>
 
                     
                   </MDBCol>
                   <MDBCol md="4">
-                  <img src="https://www.cazoo.co.uk/static/home/quality-assured.svg" alt="thumbnail"  />
+                  <img src="/images/quality-assured AF.svg" alt="thumbnail" className="quality-assured-image"  />
                   <p style={{fontWeight:"600",fontSize:"24px"}}>AutoFaktory Quality Assured</p>
                   <p>Not only are our cars thoroughly checked and reconditioned, but each one has had a recent service and MOT (if required) and also shows the number of previous owners.</p>
 
