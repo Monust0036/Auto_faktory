@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./menu.css";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -60,8 +61,8 @@ class Menubar extends Component {
       // <Router>
       <MDBNavbar className="p-none sticky-top">
         <MDBNavbar dark expand="md" className="container innernav">
-          <MDBNavbarBrand>
-            <MDBNavLink to="/">
+          <MDBNavbarBrand className="nav-brand-container">
+            <MDBNavLink to="/" className="p-0">
               <div className="logo">
                 <img
                   src="/images/logo/Autofaktorylogo.png"
@@ -72,7 +73,7 @@ class Menubar extends Component {
               </div>
             </MDBNavLink>
           </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
+          <MDBNavbarToggler onClick={this.toggleCollapse}  className="nav-toggler"/>
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav>
               <MDBCol md="4">
