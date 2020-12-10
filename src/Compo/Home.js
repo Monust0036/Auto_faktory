@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
-import '../Style/index.css'
+import './HomePage/home.css';
 import Menu from './Menubar'
 import Teams from './HomePage/Teams'
 import Theorychange from './HomePage/Changes';

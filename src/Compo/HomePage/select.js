@@ -28,7 +28,7 @@ class SelectPage extends Component {
   }
   render() {
     return (
-      <MDBContainer>
+      <MDBContainer className="homepage-select-container">
         <MDBRow>
           <MDBCol lg="3">
             <select
@@ -49,7 +49,7 @@ class SelectPage extends Component {
               name="make"
               onChange={this.handleChange}
             > 
-            <option >Select make</option>
+            <option selected hidden >Select Make</option>
               {Object.keys(makeAndModelData).map(make=><option value={make}>{make}</option>)}
              
             </select>
@@ -61,6 +61,7 @@ class SelectPage extends Component {
               onChange={this.handleChange}
               disabled={Object.keys(this.state.category).filter(make=> make == 'make').length>0? false:true}
             >
+            <option selected hidden >Select Model</option>
               
           {Object.keys(this.state.category).filter(make=> make == 'make').length>0 && makeAndModelData[this.state.category.make].map(model=> <option value={model}>{model}</option>)}              
             </select>
@@ -72,9 +73,9 @@ class SelectPage extends Component {
                 category: this.state.category,
               }}
             >
-              <MDBBtn className="search-Btn" color="red accent-4">
+              <button className="btn search-Btn"  >
                 Search car
-              </MDBBtn>
+              </button>
             </Link>
           </MDBCol>
         </MDBRow>

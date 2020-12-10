@@ -33,14 +33,18 @@ i.far.fa-heart,i.fa.fa-user-circle{
     opacity: 0.9;
   }
 
-.search-Btn{
+.btn.search-Btn{
     width: 100%;
-    margin-top: 0px !important;
-    /* color: rgb(195, 59, 42) !important; */
-    height: 50px !important;
+    margin: 10px 0;
+    background: rgb(195, 59, 42) ;
+    color: white;
+    font-weight: 600;
+    height: 50px ;
+    border-radius: 4px;
 }
 .custom-select{
     height: 50px !important;
+    margin: 10px 0;
 }
 .mt{
     margin-top: 20% !important;
