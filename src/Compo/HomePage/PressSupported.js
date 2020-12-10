@@ -20,7 +20,7 @@ class Presssupported extends Component {
                     
                     <div className="row">
                     { pressdata.map((pressdata, index) => { 
-                        return<div key={index} className="col-sm mt-4 example hoverable">
+                        return<div key={index} className="col-sm px-3 mt-4 example hoverable">
                                 <a href={pressdata.link}>
                                 <img
                                 style={{cursor:"pointer"}}
