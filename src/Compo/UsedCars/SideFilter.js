@@ -50,7 +50,7 @@ class Sidefilter extends Component {
     checkedT2: false,
     checkedO1: false,
     checkedO2: false,
-    checkedY1:false,
+    checkedY1: false,
     color: [],
     savedFilterData: {
       makeAndModel: [],
@@ -77,7 +77,7 @@ class Sidefilter extends Component {
     }
     if (savedFilterData.radioButton.mileage != null) {
       dataOfcars = dataOfcars.filter(
-        (car) => savedFilterData.radioButton.mileage <=car.mileage
+        (car) => savedFilterData.radioButton.mileage <= car.mileage
       );
     }
     if (savedFilterData.makeAndModel.length > 0) {
@@ -126,11 +126,11 @@ class Sidefilter extends Component {
         (car) =>
           car.varient.model.includes(
             savedFilterData.searchInput.charAt(0).toUpperCase() +
-              savedFilterData.searchInput.slice(1)
+            savedFilterData.searchInput.slice(1)
           ) ||
           car.varient.make.includes(
             savedFilterData.searchInput.charAt(0).toUpperCase() +
-              savedFilterData.searchInput.slice(1)
+            savedFilterData.searchInput.slice(1)
           )
       );
     }
@@ -169,8 +169,8 @@ class Sidefilter extends Component {
     });
     // console.log(dataOfcars);
     let filteredDataForMake = []
-    savedFilterData.makeAndModel.map((data)=>{
-      if(filteredDataForMake.filter(e=>e===data.make).length === 0){
+    savedFilterData.makeAndModel.map((data) => {
+      if (filteredDataForMake.filter(e => e === data.make).length === 0) {
         filteredDataForMake.push(data.make)
       }
     })
@@ -207,22 +207,22 @@ class Sidefilter extends Component {
   //   filter for make and modals
   getCarNameFilter = (data) => {
     let listOfObj = this.state.savedFilterData;
-    data.map((make)=> make.items.map((model,index)=>{
-      let checkIndex = this.state.savedFilterData.makeAndModel.findIndex(e=>e.make === make.title && e.model === model.name);
+    data.map((make) => make.items.map((model, index) => {
+      let checkIndex = this.state.savedFilterData.makeAndModel.findIndex(e => e.make === make.title && e.model === model.name);
       console.log(checkIndex)
-      if(model.checked && checkIndex  < 0){
-        listOfObj.makeAndModel.push({ model: model.name, make: make.title});
+      if (model.checked && checkIndex < 0) {
+        listOfObj.makeAndModel.push({ model: model.name, make: make.title });
       }
-      if(!model.checked && checkIndex>-1 && !make.checked){
+      if (!model.checked && checkIndex > -1 && !make.checked) {
         listOfObj.makeAndModel.splice(checkIndex, 1);
       }
     }))
-  
-  
+
+
     this.setState({ savedFilterData: listOfObj });
     this.getFilterData();
   };
- 
+
   handleSlider = (event, newValue) => {
     let listOfObj = this.state.savedFilterData;
     listOfObj.price = newValue;
@@ -232,10 +232,10 @@ class Sidefilter extends Component {
 
   handleColor = (colour) => {
     let listOfObj = this.state.savedFilterData;
-    if(this.state.savedFilterData.colour.filter(col=>col.color == colour).length>0){
-      let index = this.state.savedFilterData.colour.findIndex(e=>e.color == colour)
+    if (this.state.savedFilterData.colour.filter(col => col.color == colour).length > 0) {
+      let index = this.state.savedFilterData.colour.findIndex(e => e.color == colour)
       listOfObj.colour.splice(index, 1);
-    }else{
+    } else {
       listOfObj.colour.push({ color: colour })
     }
     this.setState({ savedFilterData: listOfObj });
@@ -257,220 +257,194 @@ class Sidefilter extends Component {
         app="good-books-ds"
         url="https://a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61@arc-cluster-appbase-demo-6pjy6z.searchbase.io"
         enableAppbase
+        className="sidefilter"
       >
-        <div className="row">
-          <div className="col">
-            <br></br>
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Budget
+        <br></br>
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Budget
             </h5>
-            <br></br>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Typography id="range-slider" gutterBottom>
-                ₹{this.state.savedFilterData.price[0]}
+        <br></br>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography id="range-slider" gutterBottom>
+            ₹{this.state.savedFilterData.price[0]}
+          </Typography>
+          <Typography id="range-slider" gutterBottom>
+            ₹{this.state.savedFilterData.price[1]}
+          </Typography>
+        </div>
+
+        <Slider
+          value={this.state.savedFilterData.price}
+          aria-labelledby="range-slider"
+          // defaultValue={0.00000005}
+          // aria-labelledby="discrete-slider-small-steps"
+          // step={25000}
+          min={100000}
+          max={2000000}
+          onChange={this.handleSlider}
+          step={10}
+        // valueLabelDisplay="auto"
+        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography style={{ fontSize: "12px" }}>
+            Minimum Price
               </Typography>
-              <Typography id="range-slider" gutterBottom>
-                ₹{this.state.savedFilterData.price[1]}
+          <Typography style={{ fontSize: "12px" }}>
+            Maxmimum Price
               </Typography>
-            </div>
-
-            <Slider
-              value={this.state.savedFilterData.price}
-              aria-labelledby="range-slider"
-              // defaultValue={0.00000005}
-              // aria-labelledby="discrete-slider-small-steps"
-              // step={25000}
-              min={100000}
-              max={2000000}
-              onChange={this.handleSlider}
-              step={10}
-              // valueLabelDisplay="auto"
-            />
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Typography style={{ fontSize: "12px" }}>
-                Minimum Price
-              </Typography>
-              <Typography style={{ fontSize: "12px" }}>
-                Maxmimum Price
-              </Typography>
-            </div>
-          </div>
         </div>
 
         <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
-              Make + Models
+        <h5 style={{ float: "left", fontSize: 16, fontWeight: 600 }}>
+          Make + Models
             </h5>
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Search by model + make"
-              aria-label="Search"
-              style={{ marginBottom: "10px" }}
-              onChange={this.handleSearchInput}
-            />
-            <ListContainer getCarNameFilter={this.getCarNameFilter} />
-          </div>
-        </div>
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Search by model + make"
+          aria-label="Search"
+          style={{ marginBottom: "10px" }}
+          onChange={this.handleSearchInput}
+        />
+        <ListContainer getCarNameFilter={this.getCarNameFilter} />
         <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Year
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Year
             </h5>
-            <YearRadio getRadioBtnFilterData={this.getRadioBtnFilterData} />
-          </div>
-        </div>
+        <YearRadio getRadioBtnFilterData={this.getRadioBtnFilterData} />
         <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Mileage
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Mileage
             </h5>
-            <MileageRadio getRadioBtnFilterData={this.getRadioBtnFilterData} />
-          </div>
-        </div>
+        <MileageRadio getRadioBtnFilterData={this.getRadioBtnFilterData} />
         <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Fuel type
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Fuel type
             </h5>
 
-            <div style={{ float: "left" }}>
-              <Checkbox
-                checked={this.state.checkedA}
-                label="Petrol"
-                onChange={(e) => this.handleCheckBox("petrol", "fuel", e)}
-                value="checkedA"
-              />
-              <Checkbox
-                checked={this.state.checkedB}
-                label="Diesel"
-                onChange={(e) => this.handleCheckBox("Diesel", "fuel", e)}
-                value="checkedB"
-              />
-              <Checkbox
-                checked={this.state.checkedC}
-                label="CNG"
-                onChange={(e) => this.handleCheckBox("cng", "fuel", e)}
-                value="checkedC"
-              />
-            </div>
-          </div>
-        </div>
-        <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Body Type
-            </h5>
-
-            <div style={{ float: "left" }}>
-              {/* <BodyTypeCheckbox
-						handleFilters = { filters => handleFilters(filters, "continents")}
-					/> */}
-
-              <Checkbox
-                checked={this.state.checkedB1}
-                label="Hatchback"
-                onChange={(e) => this.handleCheckBox("hatchback", "body", e)}
-                value="checkedB1"
-              />
-              <Checkbox
-                checked={this.state.checkedB2}
-                label="Sedan"
-                onChange={(e) => this.handleCheckBox("sedan", "body", e)}
-                value="checkedB2"
-              />
-              <Checkbox
-                checked={this.state.checkedB3}
-                label="SUV"
-                onChange={(e) => this.handleCheckBox("suv", "body", e)}
-                value="checkedB3"
-              />
-            </div>
-          </div>
-        </div>
-        <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Transmission
-            </h5>
-
-            <div style={{ float: "left" }}>
-              <Checkbox
-                checked={this.state.checkedT1}
-                label="Automatic"
-                onChange={(e) =>
-                  this.handleCheckBox("automatic", "transmission", e)
-                }
-                value="checkedT1"
-              />
-              <Checkbox
-                checked={this.state.checkedT2}
-                label="Manual"
-                onChange={(e) =>
-                  this.handleCheckBox("manual", "transmission", e)
-                }
-                value="checkedT2"
-              />
-            </div>
-          </div>
-        </div>
-        <hr></hr>
-        <div className="row">
-          <div className="col">
-            <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-              Owner
-            </h5>
-
-            <div style={{ float: "left" }}>
-              <Checkbox
-                checked={this.state.checkedO1}
-                label="1st Owner"
-                onChange={(e) => this.handleCheckBox("1", "owner", e)}
-                value="checkedO1"
-              />
-              <Checkbox
-                checked={this.state.checkedO2}
-                label="2nd Owner"
-                onChange={(e) => this.handleCheckBox("2", "owner", e)}
-                value="checkedO2"
-              />
-            </div>
-          </div>
+        <div style={{overflow:"auto"}}>
+          <Checkbox
+            checked={this.state.checkedA}
+            label="Petrol"
+            onChange={(e) => this.handleCheckBox("petrol", "fuel", e)}
+            value="checkedA"
+          />
+          <Checkbox
+            checked={this.state.checkedB}
+            label="Diesel"
+            onChange={(e) => this.handleCheckBox("Diesel", "fuel", e)}
+            value="checkedB"
+          />
+          <Checkbox
+            checked={this.state.checkedC}
+            label="CNG"
+            onChange={(e) => this.handleCheckBox("cng", "fuel", e)}
+            value="checkedC"
+          />
         </div>
         <hr></hr>
         <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
-          Color
-        </h5>
+          Body Type
+            </h5>
+
+        <div style={{overflow:"auto"}}>
+          {/* <BodyTypeCheckbox
+						handleFilters = { filters => handleFilters(filters, "continents")}
+					/> */}
+
+          <Checkbox
+            checked={this.state.checkedB1}
+            label="Hatchback"
+            onChange={(e) => this.handleCheckBox("hatchback", "body", e)}
+            value="checkedB1"
+          />
+          <Checkbox
+            checked={this.state.checkedB2}
+            label="Sedan"
+            onChange={(e) => this.handleCheckBox("sedan", "body", e)}
+            value="checkedB2"
+          />
+          <Checkbox
+            checked={this.state.checkedB3}
+            label="SUV"
+            onChange={(e) => this.handleCheckBox("suv", "body", e)}
+            value="checkedB3"
+          />
+          <hr></hr>
+        </div>
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Transmission
+            </h5>
+
+        <div style={{overflow:"auto"}}>
+          <Checkbox
+            checked={this.state.checkedT1}
+            label="Automatic"
+            onChange={(e) =>
+              this.handleCheckBox("automatic", "transmission", e)
+            }
+            value="checkedT1"
+          />
+          <Checkbox
+            checked={this.state.checkedT2}
+            label="Manual"
+            onChange={(e) =>
+              this.handleCheckBox("manual", "transmission", e)
+            }
+            value="checkedT2"
+          />
+        </div>
+        <hr></hr>
+        <h5 style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+          Owner
+            </h5>
+
+        <div style={{overflow:"auto"}}>
+          <Checkbox
+            checked={this.state.checkedO1}
+            label="1st Owner"
+            onChange={(e) => this.handleCheckBox("1", "owner", e)}
+            value="checkedO1"
+          />
+          <Checkbox
+            checked={this.state.checkedO2}
+            label="2nd Owner"
+            onChange={(e) => this.handleCheckBox("2", "owner", e)}
+            value="checkedO2"
+          />
+        </div>
+        <hr></hr>
         <div
-          className="row"
+          className="row m-0"
           style={{ flexWrap: "wrap", justifyContent: "center" }}
         >
+          <h5 className="col-12" style={{ textAlign: "left", fontSize: 16, fontWeight: 600 }}>
+            Color
+        </h5>
+
           {colourList.map((colour, index) => {
             return (
               <div
                 style={{
+                  padding: "4px",
+                }}
+                onClick={() => this.handleColor(colour)}
+              >
+                <div style={{
                   width: "40px",
                   height: "40px",
                   background: colour,
                   borderRadius: "9999px",
-                  margin: "4px",
                   border: " 2px solid #5f5a5a",
-                }}
-                onClick={() => this.handleColor(colour)}
-              >
-                {this.state.savedFilterData.colour.filter(col=>col.color == colour).length>0? 
-                <CheckIcon style={{ marginTop: "5px" }}></CheckIcon>:null}
+                }}>
+                  {this.state.savedFilterData.colour.filter(col => col.color == colour).length > 0 ?
+                    <CheckIcon style={{ marginTop: "5px" }}></CheckIcon> : null}
+                </div>
               </div>
             );
           })}
         </div>
+
       </ReactiveBase>
     );
   }

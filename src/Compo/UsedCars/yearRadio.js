@@ -45,8 +45,9 @@ export default function ErrorRadios(props) {
   };
 
   return (
+    <div style={{overflow:"auto"}}>
     <form onSubmit={handleSubmit} style={{textAlign:"initial"}}>
-      <FormControl component="fieldset" error={error} className={classes.formControl}>
+      <FormControl component="div" error={error} className={classes.formControl}>
         {/* <FormLabel component="legend">Pop quiz: Material-UI is...</FormLabel> */}
         <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
           <FormControlLabel value="" control={<Radio onChange={()=>props.getRadioBtnFilterData(0,'year')}/>} label="Any" />
@@ -60,5 +61,6 @@ export default function ErrorRadios(props) {
         </RadioGroup>
       </FormControl>
     </form>
+    </div>
   );
 }

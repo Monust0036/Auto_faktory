@@ -391,10 +391,6 @@ ul.css-1w1pnf0-UL.eekr4lp2 {
 /* scrollbar  */
 
 
-.scrollbar {
-    overflow: scroll;
-    height: 300px !important;
-  }
   
   
   .scrollbar::-webkit-scrollbar {
