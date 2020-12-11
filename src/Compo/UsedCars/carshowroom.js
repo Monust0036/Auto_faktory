@@ -85,7 +85,7 @@ class Slider extends React.Component {
           {this.state.carData.map((data, index) => {
             return (
               <div style={{ padding: "0 10x 0 10px" }}>
-                <a href="/detail-car">
+                
                   <MDBCard className="mb-2">
                     <MDBCardImage
                       className="img-fluid-cards"
@@ -124,7 +124,7 @@ class Slider extends React.Component {
                       </div>
                     </MDBCardBody>
                   </MDBCard>
-                </a>
+                
               </div>
             );
           })}
