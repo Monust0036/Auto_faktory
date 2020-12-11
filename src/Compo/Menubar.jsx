@@ -64,16 +64,15 @@ class Menubar extends Component {
           <MDBNavbarBrand className="nav-brand-container">
             <MDBNavLink to="/" className="p-0">
               <div className="logo">
-                <img
-                  src="/images/logo/Autofaktorylogo.svg"
-                  width="300"
-                  height="80"
-                  alt="Auto-factory"
-                />
+              <object
+                  className="logo-img"
+                  data='/images/logo/Autofaktorylogo.svg'>
+                
+                </object>
               </div>
             </MDBNavLink>
           </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse}  className="nav-toggler"/>
+          <MDBNavbarToggler onClick={this.toggleCollapse} className="nav-toggler" />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav>
               <MDBCol md="4">

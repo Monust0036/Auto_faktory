@@ -12,6 +12,7 @@ import Carousel from './HomePage/caraousel/Carousel.js'
 import Lovestory from "./HomePage/loveStory"
 import Find from './HomePage/Find';
 import CarBuyingConf from './HomePage/CarBuyingConfidence'
+import Carshowroom from "./UsedCars/carshowroom";
 
 
 // import history from  './history';
@@ -30,7 +31,8 @@ class Main extends Component {
         <Teams/> 
         <CarBuyingConf/>
         <Presssupported/>
-        <ReacentCar/>
+        <Carshowroom/>
+        
         {/* <Carousel/> */}
         <Theorychange/> 
         <Lovestory/>

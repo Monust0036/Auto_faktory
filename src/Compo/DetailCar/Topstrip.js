@@ -51,14 +51,14 @@ class CardExampl extends Component {
     });
   };
 
-  
+
   render() {
     const { carData } = this.props;
     console.log(this.props);
     return (
       <MDBContainer>
         <MDBRow style={{ marginTop: "20px" }}>
-          <MDBCol size="8">
+          <MDBCol md="8">
             <MDBCard style={{ margin: "0 0.375rem" }} onClick={this.toggle(14)}>
               <MDBCardImage
                 style={{ borderRadius: "4px" }}
@@ -67,28 +67,29 @@ class CardExampl extends Component {
                 waves
               />
             </MDBCard>
-            <MDBBtn color="elegant" size="lg" onClick={this.toggle(14)}>
+            <MDBBtn color="elegant" onClick={this.toggle(14)}>
               Gallery
-            </MDBBtn>
-            <MDBBtn color="elegant" size="lg" onClick={this.toggle(13)}>
+                </MDBBtn>
+            <MDBBtn color="elegant" onClick={this.toggle(14)}>
               View 360° Interior
-            </MDBBtn>
-            <MDBBtn color="elegant" size="lg" onClick={this.toggle(16)}>
+                </MDBBtn>
+
+            <MDBBtn color="elegant" onClick={this.toggle(16)}>
               View 360° Exterior
-            </MDBBtn>
+                </MDBBtn>
           </MDBCol>
-          <MDBCol size="4">
+          <MDBCol md="4">
             <MDBCard>
               <MDBCardBody>
                 <MDBIcon
                   icon="heart"
                   style={{ texAlign: "right" }}
-                  className={carData.isfavourite?"red-text":'ml-2' }
+                  className={carData.isfavourite ? "red-text" : 'ml-2'}
                 />
                 <div className="short-spec">
                   <h4 style={{ textAlign: "left" }}>
                     {" "}
-                    { carData.year +
+                    {carData.year +
                       " " +
                       carData.varient.make +
                       " " +
@@ -184,8 +185,8 @@ class CardExampl extends Component {
 
               <MDBModalBody>
                 <div >
-                {/* 360 view */}
-                <ImageViewer360/>
+                  {/* 360 view */}
+                  <ImageViewer360 />
                 </div>
               </MDBModalBody>
             </div>
@@ -211,11 +212,11 @@ class CardExampl extends Component {
               <MDBModalBody>
                 <MDBContainer>
                   <Carousel>
-                    {carData.images.map((image,index)=>
-                    <div>
-                      <img src={image.location}/>
-                      {/* <p className="legend">Legend 1</p> */}
-                    </div>
+                    {carData.images.map((image, index) =>
+                      <div>
+                        <img src={image.location} />
+                        {/* <p className="legend">Legend 1</p> */}
+                      </div>
                     )}
                   </Carousel>
                 </MDBContainer>
@@ -232,9 +233,9 @@ class CardExampl extends Component {
             <MDBModalHeader toggle={this.toggle(15)}> </MDBModalHeader>
 
             <MDBModalBody>
-              <BuycarForm/>
+              <BuycarForm />
 
-             
+
               {/* <button className="LoginModal-getOtpBtnWrap">proceed</button> */}
             </MDBModalBody>
           </MDBModal>
