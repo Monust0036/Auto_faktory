@@ -13,12 +13,13 @@ export class Confirm extends Component {
     e.preventDefault();
     // PROCESS FORM //
     axios.post(`${API}/sellerdata/create/`, this.props.formData)
-    .then( (response)=> {
-      console.log(response);
-    }).catch((error)=>{
-      console.log(error);
-    })
-    this.props.nextStep();
+      .then((response) => {
+        console.log(response);
+        this.props.nextStep();
+      }).catch((error) => {
+        alert("Failed! Please check the input you have entered.")
+        console.log(error);
+      })
   };
 
   back = e => {
@@ -27,7 +28,7 @@ export class Confirm extends Component {
   };
 
   render() {
-    const {formData} = this.props;
+    const { formData } = this.props;
     return (
       <MuiThemeProvider>
         <>
@@ -36,31 +37,33 @@ export class Confirm extends Component {
             fullWidth
             maxWidth='sm'
           > */}
-          <Container maxWidth="sm" style={{marginTop:"50px"}}>
-          <AppBar title="Confirm User Data" />
+          <Container maxWidth="sm" style={{ marginTop: "50px" }}>
+            <AppBar title="Confirm User Data" />
             <List>
-              {Object.keys(formData).map((item,index)=>
-              <ListItem>
-                <ListItemText primary={item} secondary={formData[item]} />
-              </ListItem>
+              {Object.keys(formData).map((item, index) =>
+                <ListItem>
+                  <ListItemText primary={item} secondary={formData[item]} />
+                </ListItem>
               )}
-              
+
             </List>
             <br />
 
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
+            <div className="row justify-content-between">
+              <Button
+                color="secondary"
+                variant="contained"
+                onClick={this.back}
+              >Back</Button>
 
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Confirm & Continue</Button>
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={this.continue}
+              >Confirm & Continue</Button>
+            </div>
           </Container>
-            
+
           {/* </Dialog> */}
         </>
       </MuiThemeProvider>

@@ -13,7 +13,7 @@ class Presssupported extends Component {
                 {/* press */}
                 <br></br>
                 <br></br>
-                    <h2 className="h1-responsive font-weight-bold">
+                    <h2 className="h1-responsive text-center font-weight-bold">
                        Browse by lifestyle
                     </h2>
                     <h5>Choose a car to match your needs</h5>
@@ -28,7 +28,7 @@ class Presssupported extends Component {
                                 alt={pressdata.press}
                                 className="img-fluid"/>
                                 </a>
-                                <h5 className="font-weight-bold mb-5">Family Friendly </h5>
+                                <h5 className="font-weight-bold mb-5 text-center">Family Friendly </h5>
                                 
                             </div>
                         })}

@@ -16,19 +16,28 @@ import MenuItem from "@material-ui/core/MenuItem"
 export class FirstForm extends Component {
   constructor(props) {
     super(props)
-    this.state={
-      formData:this.props.formData
+    this.state = {
+      formData: this.props.formData
     }
   }
   continue = e => {
     e.preventDefault();
-    this.props.nextStep();
+    let formData = this.state.formData
+    
+    let {model,make} = formData
+    
+    console.log(formData.year && formData["​mileage"] );
+    // let {city,​email,​fuel,​make,​mileage,​model,​name,​ownership,​phone,​year}=formData
+    console.log(  formData["make"] , formData["mileage"] , formData["model"] , formData["fuel"] , formData["ownership"] , formData["city"] , formData["year"]) ;
+    if( formData["make"] && formData["mileage"] && formData["model"] && formData["fuel"] && formData["ownership"] && formData["city"] && formData["year"]) return this.props.nextStep();
+    alert("All Fields are Required!")
+
   };
-  handleChange=(e)=>{
+  handleChange = (e) => {
     let formData = this.state.formData
     formData[e.target.name] = e.target.value
-    this.setState({formData:formData})
-    this.props.updateState('formData',formData)
+    this.setState({ formData: formData })
+    this.props.updateState('formData', formData)
   }
   render() {
     console.log(this.state.formData)
@@ -42,41 +51,41 @@ export class FirstForm extends Component {
             fullWidth
             maxWidth='sm'
           > */}
-          <Container maxWidth="xl" style={{marginTop:"30px"}}>
-                <Grid container justify='center' spacing={3} noValidate>
-                    <Grid item>
-                    <FormControl variant="outlined">
-                    <InputLabel htmlFor="year">Year</InputLabel>
-                      <Select 
+          <Container maxWidth="xl" style={{ marginTop: "30px" }}>
+            <Grid container justify='center' spacing={3} noValidate>
+              <Grid item>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="year">Year</InputLabel>
+                  <Select
                     //   value={year} onChange={
                     //     handleChange("year")}
                     //     id="year"
                     //      clearOnEscape={true}
                     //     openOnFocus={true}
-                      defaultValue={formData.year}
-                       style={{ width: 250, backgroundColor: "white", }}
-                       name='year'
-                       onChange={(e)=>this.handleChange(e)}
-                        label="Year"
-                      >
-                        <MenuItem value={"2011"}>2011 </MenuItem>
-                        <MenuItem value={"2012"}>2012 </MenuItem>
-                        <MenuItem value={"2013"}>2013 </MenuItem>
-                        <MenuItem value={"2014"}>2014 </MenuItem>
-                        <MenuItem value={"2015"}>2015 </MenuItem>
-                        <MenuItem value={"2016"}>2016 </MenuItem>
-                        <MenuItem value={"2017"}>2017 </MenuItem>
-                        <MenuItem value={"2018"}>2018 </MenuItem>
-                        <MenuItem value={"2019"}>2019 </MenuItem>
-                        <MenuItem value={"2020"}>2020 </MenuItem>
-                    </Select>
-                    </FormControl>
-                    </Grid>
-                  
-                  
-                    <Grid item >
-                    <FormControl variant="outlined" >
-                    <InputLabel htmlFor="maker">Select Maker</InputLabel>                  
+                    defaultValue={formData.year}
+                    style={{ width: 250, backgroundColor: "white", }}
+                    name='year'
+                    onChange={(e) => this.handleChange(e)}
+                    label="Year"
+                  >
+                    <MenuItem value={"2011"}>2011 </MenuItem>
+                    <MenuItem value={"2012"}>2012 </MenuItem>
+                    <MenuItem value={"2013"}>2013 </MenuItem>
+                    <MenuItem value={"2014"}>2014 </MenuItem>
+                    <MenuItem value={"2015"}>2015 </MenuItem>
+                    <MenuItem value={"2016"}>2016 </MenuItem>
+                    <MenuItem value={"2017"}>2017 </MenuItem>
+                    <MenuItem value={"2018"}>2018 </MenuItem>
+                    <MenuItem value={"2019"}>2019 </MenuItem>
+                    <MenuItem value={"2020"}>2020 </MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+
+
+              <Grid item >
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="maker">Select Maker</InputLabel>
                   <Select
                     // id="maker"
                     // openOnFocus={true}
@@ -84,19 +93,19 @@ export class FirstForm extends Component {
                     // clearOnEscape={true}
                     // value={maker}
                     // onChange={(handleChange("maker"))  
-                       
+
                     // }
                     name='make'
-                    onChange={(e)=>this.handleChange(e)}
+                    onChange={(e) => this.handleChange(e)}
                     style={{ width: 250, backgroundColor: "white", }}
-                  
+
                     label="Select Maker"
                   >
                     <MenuItem value={"MARUTI"}>MARUTI </MenuItem>
                     <MenuItem value={"HONDA"}>HONDA </MenuItem>
                     <MenuItem value={"TOYOTA"}>TOYOTA </MenuItem>
-                    
-                 
+
+
 
                     {/* { 
                      year.length>0 &&  
@@ -112,26 +121,26 @@ export class FirstForm extends Component {
                     } */}
 
                   </Select>
-                    </FormControl>
+                </FormControl>
 
-                </Grid>
+              </Grid>
 
-                <Grid item >
-                    <FormControl variant="outlined" >
-                    <InputLabel htmlFor="model">Select Model</InputLabel>                  
+              <Grid item >
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="model">Select Model</InputLabel>
                   <Select
-                //     id="model"
-                //     openOnFocus={true}
-                //     disabled={!disabledModel }
-                //     clearOnEscape={true}
-                //     value={model}
-                   
-                //  onChange = { handleChange("model")}
-                name='model'
-                onChange={(e)=>this.handleChange(e)}
+                    //     id="model"
+                    //     openOnFocus={true}
+                    //     disabled={!disabledModel }
+                    //     clearOnEscape={true}
+                    //     value={model}
+
+                    //  onChange = { handleChange("model")}
+                    name='model'
+                    onChange={(e) => this.handleChange(e)}
 
                     style={{ width: 250, backgroundColor: "white", }}
-                  
+
                     label="Select Model"
                   >
                     <MenuItem value={"YARIS"}>YARIS </MenuItem>
@@ -152,13 +161,13 @@ export class FirstForm extends Component {
                   </Select>
                 </FormControl>
 
-        </Grid>
+              </Grid>
 
 
 
-        <Grid item >
-                    <FormControl variant="outlined" >
-                    <InputLabel htmlFor="variant">Select Variant</InputLabel>                  
+              <Grid item >
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="variant">Select Variant</InputLabel>
                   <Select
                     // id="variant"
                     // openOnFocus={true}
@@ -166,28 +175,28 @@ export class FirstForm extends Component {
                     // clearOnEscape={true}
                     // value={variant}
                     // onChange={  handleChange("variant")}   
-                 
+
                     style={{ width: 250, backgroundColor: "white", }}
                     name='fuel'
-                    onChange={(e)=>this.handleChange(e)}
+                    onChange={(e) => this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="Petrol">Petrol</MenuItem>
                     <MenuItem value="Diesel">Diesel </MenuItem>
                     <MenuItem value="CNG">CNG </MenuItem>
                     <MenuItem value="Electric">Electric </MenuItem>
-                    
+
 
                   </Select>
                 </FormControl>
 
-        </Grid>
-      </Grid>
-      <Grid container justify='center' spacing={3} noValidate>
+              </Grid>
+            </Grid>
+            <Grid container justify='center' spacing={3} noValidate>
 
-        <Grid item >
-                    <FormControl variant="outlined" >
-                    <InputLabel htmlFor="rto">Select RTO</InputLabel>                  
+              <Grid item >
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="rto">Select RTO</InputLabel>
                   <Select
                     // id="rto"
                     // openOnFocus={true}
@@ -195,10 +204,10 @@ export class FirstForm extends Component {
                     // value = {rto}
                     // clearOnEscape={true}
                     // disabled={!disabledRto }
-                  
+
                     style={{ width: 250, backgroundColor: "white", }}
                     name='city'
-                    onChange={(e)=>this.handleChange(e)}
+                    onChange={(e) => this.handleChange(e)}
                     label="Select rto"
                   >
                     <MenuItem value="MUMBAI">MUMBAI</MenuItem>
@@ -219,10 +228,10 @@ export class FirstForm extends Component {
                   </Select>
                 </FormControl>
 
-        </Grid>
+              </Grid>
 
-        <Grid item >
-                    <FormControl variant="outlined" >
+              <Grid item >
+                <FormControl variant="outlined" >
                   <InputLabel htmlFor="kms">Select Kms Driven</InputLabel>
                   <Select
                     // id="kms"
@@ -230,11 +239,11 @@ export class FirstForm extends Component {
                     // value = {kms}
                     // clearOnEscape={true}
                     // onChange={  handleChange("kms")}
-                   // value={this.state.selectedMaker}
+                    // value={this.state.selectedMaker}
                     style={{ width: 250, backgroundColor: "white", }}
                     // disabled={!disabledkms }
                     name='mileage'
-                       onChange={(e)=>this.handleChange(e)}
+                    onChange={(e) => this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="10000">10,000</MenuItem>
@@ -247,12 +256,12 @@ export class FirstForm extends Component {
                   </Select>
                 </FormControl>
 
-        </Grid>
+              </Grid>
 
 
-        <Grid item >
-                    <FormControl variant="outlined" >
-                  <InputLabel  htmlFor="ownership"> Ownership</InputLabel>
+              <Grid item >
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="ownership"> Ownership</InputLabel>
                   <Select
                     // id="selectMaker"
                     // openOnFocus={true}
@@ -262,85 +271,45 @@ export class FirstForm extends Component {
                     // value={ownership}
                     style={{ width: 250, backgroundColor: "white", }}
                     name='ownership'
-                       onChange={(e)=>this.handleChange(e)}
+                    onChange={(e) => this.handleChange(e)}
                     label="Select Variant"
                   >
                     <MenuItem value="First">     First    </MenuItem>
                     <MenuItem value="Second">     Second    </MenuItem>
                     <MenuItem value="Third">     Third    </MenuItem>
-                
+
 
                   </Select>
                 </FormControl>
 
-        </Grid>
+              </Grid>
 
-       </Grid>
-  <br/> <br/>
-        <Grid container alignContent='center' spacing={3} noValidate>
+            </Grid>
+            <br /> <br />
+            <Grid container alignContent='center' spacing={3} noValidate>
 
-        <Grid  alignContent='center'>
+              <Grid alignContent='center'>
 
 
-</Grid>
-</Grid>
+              </Grid>
+            </Grid>
 
-     
-      <div
-        style={{ display: "flex", marginTop: 50, justifyContent: "center" }}
-      >
-        <Button
-        //   variant="contained"
-        //   disabled={!isEmpty || isError}
-        //   color="primary"
-        //   onClick={handleNext}
-        color="primary"
-              variant="contained"
-              onClick={this.continue}
-        >
-          Next
+
+            <div
+              style={{ display: "flex", marginTop: 50, justifyContent: "center" }}
+            >
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={this.continue.bind(this)}
+              >
+                Next
         </Button>
-      </div>
+            </div>
 
 
-
-
-          {/* <AppBar title="Enter User Details" />
-            <TextField
-              placeholder="Enter Your First Name"
-              label="First Name"
-              onChange={handleChange('firstName')}
-              defaultValue={formData.firstName}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Last Name"
-              label="Last Name"
-              onChange={handleChange('lastName')}
-              defaultValue={formData.lastName}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Email"
-              label="Email"
-              onChange={handleChange('email')}
-              defaultValue={formData.email}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button> */}
           </Container>
-            
-          {/* </Dialog> */}
+
         </>
       </MuiThemeProvider>
     );

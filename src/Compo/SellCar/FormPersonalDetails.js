@@ -10,42 +10,51 @@ import Container from '@material-ui/core/Container';
 export class FormPersonalDetails extends Component {
   constructor(props) {
     super(props)
-    this.state={
-      formData:this.props.formData
+    this.state = {
+      formData: this.props.formData
     }
   }
   continue = e => {
     e.preventDefault();
+    let formData = this.state.formData
+    if(!formData.phone) return alert("Phone Number is Compulsary!")
+    for (let key in formData) {
+      if (!formData[key]) {
+        return alert("All Fields are Compulsary!")
+        
+      }
+    }
     this.props.nextStep();
+
   };
 
   back = e => {
     e.preventDefault();
     this.props.prevStep();
   };
-  handleChange=(e)=>{
+  handleChange = (e) => {
     let formData = this.state.formData
     formData[e.target.name] = e.target.value
-    this.setState({formData:formData})
-    this.props.updateState('formData',formData)
+    this.setState({ formData: formData })
+    this.props.updateState('formData', formData)
   }
   render() {
     const { formData } = this.state;
     return (
       <MuiThemeProvider>
         <div >
-            
+
           {/* <Dialog
             open
             fullWidth
             maxWidth='sm'
           > */}
-            <Container maxWidth="sm" style={{marginTop:"50px"}}>
+          <Container maxWidth="sm" style={{ marginTop: "50px" }}>
             <AppBar title="Enter Personal Details" />
             <TextField
               placeholder="Enter Your FullName"
               label="Name"
-              onChange={(e)=>this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
               value={formData.name}
               margin="normal"
               name='name'
@@ -56,7 +65,7 @@ export class FormPersonalDetails extends Component {
               placeholder="Enter Your Email"
               label="Email"
               type="email"
-              onChange={(e)=>this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
               value={formData.email}
               margin="normal"
               name='email'
@@ -66,7 +75,7 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="i.e: xxx-xxx-xxxx"
               label="Phone number*"
-              onChange={(e)=>this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
               value={formData.mobile}
               margin="normal"
               name='phone'
@@ -74,19 +83,20 @@ export class FormPersonalDetails extends Component {
             />
             <br />
             <br />
+            <div className="row justify-content-between">
+              <Button
+                color="secondary"
+                variant="contained"
+                onClick={this.back}
+              >Back</Button>
 
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
-
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
-          {/* </Dialog> */}
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={this.continue.bind(this)}
+              >Continue</Button>
+            </div>
+            {/* </Dialog> */}
           </Container>
         </div>
       </MuiThemeProvider>

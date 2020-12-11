@@ -9,7 +9,7 @@ class Teams extends Component {
                 <MDBCardBody >
                     <br></br>
                     <br></br>
-                    <h2 className="h1-responsive font-weight-bold" style={{color:"#2E2725"}}>
+                    <h2 className="h1-responsive font-weight-bold text-center" style={{color:"#2E2725"}}>
                         How it works
                     </h2>
                     {/* <strong className="w-responsive mx-auto mb-5">

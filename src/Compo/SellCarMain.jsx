@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
-import '../Style/index.css'
+import "./SellCar/style.css"
 import Menu from './Menubar'
 import Footer from './Footer';
 import ReacentCar from './HomePage/recentCar'
