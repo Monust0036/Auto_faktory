@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { API } from "../../config.js";
 import { MDBBtn,MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,MDBIcon, MDBContainer,MDBInput } from 'mdbreact';
 
-const ContactForm = () => {
+const ContactForm = (props) => {
   const [state, setState] = useState({
     name: '',
     email: '',
@@ -18,6 +18,7 @@ const ContactForm = () => {
 
   const sendEmail = event => {
     event.preventDefault();
+    console.log("in here");
     axios
       .post(`${API}/msg-send`, { ...state })
       .then(response => {
@@ -36,7 +37,12 @@ const ContactForm = () => {
           success: false,
           message: 'Something went wrong. Try again later'
         });
-      });
+        alert("Something went wrong. Try again later")
+      })
+      .finally(async e=>{
+        props.onClose()
+      })
+      
   };
 
   const onInputChange = event => {
@@ -67,6 +73,8 @@ const ContactForm = () => {
             type="text"
             name="name"
             value={state.name}
+
+            pattern="^[\s\w]+"
             placeholder="Enter your full name"
             onChange={onInputChange}
             required
@@ -78,9 +86,10 @@ const ContactForm = () => {
         <Form.Label >Your address</Form.Label>
           <Form.Control
             type="text"
-            name="name"
-            value={state.name}
-            placeholder="Enter your full name"
+            name="address"
+            pattern="^[\s\w]+"
+            value={state.address}
+            placeholder="Enter your Address"
             onChange={onInputChange}
             required
           />
@@ -92,6 +101,7 @@ const ContactForm = () => {
           <Form.Control
             type="text"
             name="email"
+            pattern="^[\w\d@._]+"
             value={state.email}
             placeholder="Enter your email"
             onChange={onInputChange}
@@ -103,8 +113,10 @@ const ContactForm = () => {
           <Form.Control
             type="text"
             name="mobile"
-            value={state.mobile}
-            placeholder="Enter your email"
+            value={state.mobile} 
+            pattern="^[\d]{10}"
+            placeholder="Enter your Mobile Number"
+            title="10 digit number"
             onChange={onInputChange}
             required
           />
@@ -132,7 +144,7 @@ const ContactForm = () => {
             required
           />
         </Form.Group>
-        <Button  className="LoginModal-getOtpBtnWrap">
+        <Button type="submit"  className="LoginModal-getOtpBtnWrap">
           Proceed
         </Button>
       </form>

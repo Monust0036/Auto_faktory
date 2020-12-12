@@ -233,7 +233,7 @@ class CardExampl extends Component {
             <MDBModalHeader toggle={this.toggle(15)}> </MDBModalHeader>
 
             <MDBModalBody>
-              <BuycarForm />
+              <BuycarForm onClose={this.toggle(15)} />
 
 
               {/* <button className="LoginModal-getOtpBtnWrap">proceed</button> */}

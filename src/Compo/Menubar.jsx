@@ -161,7 +161,7 @@ class Menubar extends Component {
 
               <MDBNavItem>
                 <MDBNavLink to="/favourites/">
-                  <MDBIcon far icon="heart" />
+                  <MDBIcon far icon="heart" />Signin
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
@@ -213,7 +213,7 @@ class Menubar extends Component {
                               <br></br>
                               <br></br>
                               {/* <div className="form-group"> */}
-                              <Signin />
+                              <Signin onClose={this.toggle(13)} />
                               {/* <input type="email" className="form-control" placeholder="Phone Number" />
                                   <br></br> */}
 

@@ -25,6 +25,16 @@ class UsedCar extends Component {
     super(props);
     this.state = {}
   }
+
+  componentDidMount(){
+    console.log("scroll top");
+    window.scrollTo({top:0})
+
+  }
+  componentDidUpdate(){
+    console.log("scroll top");
+    window.scrollTo({top:0})
+  }
   render() {
     return (
       <div className="App">
@@ -36,7 +46,7 @@ class UsedCar extends Component {
         <CarSpecifications carData = {this.props.location.state}/>
         <CarFeatures carData = {this.props.location.state}/>
         <CarReports carData = {this.props.location.state}/>
-        <RecentlyViewCar/>
+        {/* <RecentlyViewCar/> */}
         <Carshowroom/>
         <Lovestory />
         {/* <PanaromaView /> */}

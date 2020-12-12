@@ -14,13 +14,16 @@ import { MDBBtn, MDBCollapse } from "mdbreact";
 class MainFilter extends React.Component {
   constructor(props) {
     super(props);
+    let isOpen = true
+    if (window.innerWidth < 992)
+      isOpen = false
     this.state = {
       carsData: [],
       dataOfcars: [],
       size: "",
       sort: "",
       filteredDataForMake: [],
-      isOpen: true
+      isOpen
     };
   }
   componentDidMount() {
@@ -131,7 +134,7 @@ class MainFilter extends React.Component {
       <Container>
         <Row className="show-grid ">
           <MDBBtn
-            color="primary"
+            color="elegant"
             onClick={this.toggleCollapse.bind(this)}
             className="d-md-none col mx-2"
             style={{ marginBottom: "1rem" }}

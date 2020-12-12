@@ -37,7 +37,7 @@ class  Auth  extends  React.Component {
                     'Content-Type':  'application/json'
                 },
                 body:  JSON.stringify({
-                    phoneNumber:  this.state.phoneNumber
+                    phoneNumber:  `+91${this.state.phoneNumber}`
                 })
             }
         )
@@ -60,7 +60,7 @@ class  Auth  extends  React.Component {
         e.preventDefault();
         if(this.state.phoneNumber) {
             // console.log(e,"i am coming here ")
-            validator.isMobilePhone(this.state.phoneNumber)
+            /^[\d]{10}$/.test(this.state.phoneNumber)
                 ? this.handleSendOtp()
                 : this.setState({ invalid:  'Enter a valid Phone Number' })
         }
@@ -81,31 +81,27 @@ class  Auth  extends  React.Component {
                         'Content-Type':  'application/json'
                     },
                     body:  JSON.stringify({
-                        phoneNumber:  this.state.phoneNumber,
+                        phoneNumber:  `+91${this.state.phoneNumber}`,
                         otp:  this.state.otp
                     })
                 }
             )
-            .then(res  =>  res.json())
-            .then(data  => {
-                if (data.success) {
-                    localStorage.setItem('storiesloggeduser', data.signuptoken);
-                    localStorage.setItem('storiesloggeduserid', data.userId);
+            .then(async res  =>  {
+                let data = await res.json()
+                console.log(data);
+                if (data.logintoken) {
+                    localStorage.setItem('token', data.logintoken);
+                    localStorage.setItem('userid', data.userId);
                     // this.props.handleIslogged(true);
-                    this.props.history.push('/');
+                    await alert("Sign in Success!!")
+                    this.props.onClose()
+                    // this.props.history.p ush('/');
                     return('success')
                  
 
                 }
-                if (!data.success) this.setState({ msg:  data.message });
-                if (data.logintoken) {
-                    localStorage.setItem('storiesloggeduser', data.logintoken);
-                    localStorage.setItem('storiesloggeduserid', data.userId);
-                    // this.props.handleIslogged(true);
-                    
-                    this.props.history.push('/');
-                    
-                }
+                else this.setState({ msg:  data.message });
+                
             })
         }
         else {
@@ -127,7 +123,7 @@ class  Auth  extends  React.Component {
                     type="tel"
                     className="form-control"
                     name="phoneNumber"
-                    placeholder="918888888888"
+                    placeholder="8888888888"
                     value={this.state.phoneNumber}
                     onChange={this.handleChange}
                     required
@@ -148,7 +144,7 @@ class  Auth  extends  React.Component {
                     type="tel"
                     className="form-control"
                     name="otp"
-                    placeholder="8432"
+                    placeholder="Enter OTP"
                     value={this.state.otp}
                     onChange={this.handleChange}
                     required
