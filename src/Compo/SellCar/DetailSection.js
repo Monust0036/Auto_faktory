@@ -10,7 +10,7 @@ class Slider extends React.Component {
             <MDBContainer >
                 <br></br>
                 <h2 className="h1-responsive font-weight-bold text-center" style={{color:"#2E2725",padding:"40px 0 20px 0"}}>
-                With Spinny, your car is sold the minute
+                With AutoFaktory, your car is sold the minute
                     </h2>
                 <MDBRow>
                 
